@@ -27,10 +27,18 @@ if(isset($_REQUEST['page'])){
 }
 $menupontok = array(
     'index' => "Főoldal",
-    'belepes' => $szoveg,
+    'felhasznalo' => $szoveg,
     'regisztracio' => "Regisztráció");
 $title = $menupontok[$page];
 
+include 'includes/htmlheader.inc.php';
+
+?>
+<body>
+  <?php
+  include 'includes/menu.inc.php';
+
+include 'controller/'.$page.'.php';
 ?>
 </body>
 </html>

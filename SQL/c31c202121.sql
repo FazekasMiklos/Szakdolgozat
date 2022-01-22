@@ -147,6 +147,7 @@ CREATE TABLE `orszagok` (
 -- Tábla szerkezet ehhez a táblához `posztok`
 --
 
+
 CREATE TABLE `posztok` (
   `poz_id` int(255) NOT NULL,
   `poz_nev` varchar(20) COLLATE utf8mb4_hungarian_ci NOT NULL
