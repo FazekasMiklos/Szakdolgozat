@@ -1,7 +1,7 @@
 <?php 
 		if (isset($_POST['user']) && isset($_POST['email']) && isset($_POST['pass'])) {
 			$user = $_POST['user'];
-			$pass = $_POST['pass'];
+			$pass = md5($_POST['pass']);
 			$email = $_POST['email'];
  
 			$query = "INSERT INTO `felhasznalok` (`felhasznalonev`,`jelszo`,`email`) VALUES ('$user', '$pass', '$email')";

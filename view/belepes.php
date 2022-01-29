@@ -5,10 +5,9 @@ if(!empty($_SESSION["userid"])) {
     echo "Üdv ".$_SESSION['felhasznalonev']."!";
     ?>
     <br>
+    <a href="index.php?page=logout" title="Logout">Kijelentkezés
     
-        <form action="belepes.php" method="get">
-        <input type="submit" name="logout" value="Kilépés">
-    </form>
+      
     <?php
 }
 else {

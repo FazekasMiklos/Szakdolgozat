@@ -7,7 +7,7 @@
 </head>
 <body align="middle">
 	<div><center><h2>Regisztráció</h2></center></div>
-	<form action='register.php' method='POST'>
+	<form action='index.php?page=register' method='POST'>
 		<label for="user">Felhasználónév:</label>	<br/>
 		<input type='text' name='user' id="user"  required/><br/>
 		<label for="user">Jelszó:</label>	<br/>
