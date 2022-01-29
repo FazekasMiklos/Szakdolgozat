@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Gép: localhost
--- Létrehozás ideje: 2022. Jan 28. 14:48
--- Kiszolgáló verziója: 10.3.29-MariaDB-0+deb10u1
--- PHP verzió: 7.4.23
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2022. Jan 29. 19:33
+-- Kiszolgáló verziója: 10.4.17-MariaDB
+-- PHP verzió: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `adminok` (
-  `user_id` int(255) NOT NULL
+  `userid` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -38,9 +38,9 @@ CREATE TABLE `adminok` (
 --
 
 CREATE TABLE `baratok` (
-  `barat_id` int(255) NOT NULL,
-  `user_id1` int(255) NOT NULL,
-  `user_id2` int(255) NOT NULL,
+  `baratid` int(255) NOT NULL,
+  `userid1` int(255) NOT NULL,
+  `userid2` int(255) NOT NULL,
   `elfogadva` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -51,10 +51,10 @@ CREATE TABLE `baratok` (
 --
 
 CREATE TABLE `ertekelesek` (
-  `ertekeles_id` int(255) NOT NULL,
-  `user_id` int(255) NOT NULL,
-  `jatekos_id` int(255) DEFAULT NULL,
-  `klub_id` int(255) DEFAULT NULL,
+  `ertekelesid` int(255) NOT NULL,
+  `userid` int(255) NOT NULL,
+  `jatekosid` int(255) DEFAULT NULL,
+  `klubid` int(255) DEFAULT NULL,
   `ertekeles` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
@@ -67,7 +67,7 @@ CREATE TABLE `ertekelesek` (
 CREATE TABLE `felhasznalok` (
   `userid` int(255) NOT NULL,
   `felhasznalonev` varchar(30) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `email` varchar(30) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `jelszo` varchar(100) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
@@ -76,7 +76,8 @@ CREATE TABLE `felhasznalok` (
 --
 
 INSERT INTO `felhasznalok` (`userid`, `felhasznalonev`, `email`, `jelszo`) VALUES
-(1, 'asd', 'asd', 'a8f5f167f44f4964e6c998dee827110c');
+(1, 'asd', 'asd', 'a8f5f167f44f4964e6c998dee827110c'),
+(3, 'xd', 'xd@gmail.com', 'e0ec65fcfcf174244bc6201ec441d367');
 
 -- --------------------------------------------------------
 
@@ -85,11 +86,12 @@ INSERT INTO `felhasznalok` (`userid`, `felhasznalonev`, `email`, `jelszo`) VALUE
 --
 
 CREATE TABLE `jatekosok` (
-  `jatekos_id` int(255) NOT NULL,
-  `orszag_id` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `klub_id` int(255) NOT NULL,
-  `poz_id` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `szuletesi datum` date NOT NULL,
+  `jatekosid` int(255) NOT NULL,
+  `orszagid` varchar(3) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `klubid` int(255) NOT NULL,
+  `pozid` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `nev` varchar(50) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `szuletesidatum` date NOT NULL,
   `merkozesek` int(255) DEFAULT NULL,
   `golok` int(255) DEFAULT NULL,
   `golpasszok` int(255) DEFAULT NULL,
@@ -104,12 +106,12 @@ CREATE TABLE `jatekosok` (
 --
 
 CREATE TABLE `kedvencek` (
-  `kedvenc_id` int(255) NOT NULL,
-  `user_id` int(255) NOT NULL,
-  `jatekos_id` int(255) DEFAULT NULL,
-  `liga_id` int(255) DEFAULT NULL,
-  `orszag_id` varchar(3) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
-  `klub_id` int(255) DEFAULT NULL
+  `kedvencid` int(255) NOT NULL,
+  `userid` int(255) NOT NULL,
+  `jatekosid` int(255) DEFAULT NULL,
+  `ligaid` int(255) DEFAULT NULL,
+  `orszagid` varchar(3) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `klubid` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 -- --------------------------------------------------------
@@ -119,16 +121,16 @@ CREATE TABLE `kedvencek` (
 --
 
 CREATE TABLE `klubbok` (
-  `klub_id` int(255) NOT NULL,
+  `klubid` int(255) NOT NULL,
   `nev` varchar(30) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `liga_id` int(255) NOT NULL
+  `ligaid` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `klubbok`
 --
 
-INSERT INTO `klubbok` (`klub_id`, `nev`, `liga_id`) VALUES
+INSERT INTO `klubbok` (`klubid`, `nev`, `ligaid`) VALUES
 (1, 'Manchester City', 1),
 (2, 'Aston Villa', 1),
 (3, 'Arsenal', 1),
@@ -234,16 +236,16 @@ INSERT INTO `klubbok` (`klub_id`, `nev`, `liga_id`) VALUES
 --
 
 CREATE TABLE `ligak` (
-  `liga_id` int(255) NOT NULL,
+  `ligaid` int(255) NOT NULL,
   `nev` varchar(20) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `orszag_id` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL
+  `orszagid` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `ligak`
 --
 
-INSERT INTO `ligak` (`liga_id`, `nev`, `orszag_id`) VALUES
+INSERT INTO `ligak` (`ligaid`, `nev`, `orszagid`) VALUES
 (1, 'Premier League', 'ENG'),
 (2, 'La Liga', 'ESP'),
 (3, 'Seria A', 'ITA'),
@@ -257,7 +259,7 @@ INSERT INTO `ligak` (`liga_id`, `nev`, `orszag_id`) VALUES
 --
 
 CREATE TABLE `orszagok` (
-  `orszag_id` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `orszagid` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `nev` varchar(20) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `ranglista` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
@@ -266,7 +268,7 @@ CREATE TABLE `orszagok` (
 -- A tábla adatainak kiíratása `orszagok`
 --
 
-INSERT INTO `orszagok` (`orszag_id`, `nev`, `ranglista`) VALUES
+INSERT INTO `orszagok` (`orszagid`, `nev`, `ranglista`) VALUES
 ('ALG', 'Algéria', 29),
 ('ARG', 'Argentina', 5),
 ('AUS', 'Ausztrália', 35),
@@ -325,15 +327,15 @@ INSERT INTO `orszagok` (`orszag_id`, `nev`, `ranglista`) VALUES
 --
 
 CREATE TABLE `posztok` (
-  `poz_id` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `poz_nev` varchar(20) COLLATE utf8mb4_hungarian_ci NOT NULL
+  `pozid` varchar(3) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `poznev` varchar(20) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `posztok`
 --
 
-INSERT INTO `posztok` (`poz_id`, `poz_nev`) VALUES
+INSERT INTO `posztok` (`pozid`, `poznev`) VALUES
 ('CS', 'Csatár'),
 ('KA', 'Kapus'),
 ('KP', 'Középpályás'),
@@ -346,9 +348,9 @@ INSERT INTO `posztok` (`poz_id`, `poz_nev`) VALUES
 --
 
 CREATE TABLE `uzenetek` (
-  `uzenet_id` int(255) NOT NULL,
-  `user_idKuldott` int(255) NOT NULL,
-  `user_idFogadott` int(255) NOT NULL,
+  `uzenetid` int(255) NOT NULL,
+  `useridKuldott` int(255) NOT NULL,
+  `useridFogadott` int(255) NOT NULL,
   `szoveg` text NOT NULL,
   `szdatum` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -360,10 +362,10 @@ CREATE TABLE `uzenetek` (
 --
 
 CREATE TABLE `velemenyek` (
-  `velemeny_id` int(255) NOT NULL,
-  `user_id` int(255) NOT NULL,
-  `jatekos_id` int(255) DEFAULT NULL,
-  `klub_id` int(255) DEFAULT NULL,
+  `velemenyid` int(255) NOT NULL,
+  `userid` int(255) NOT NULL,
+  `jatekosid` int(255) DEFAULT NULL,
+  `klubid` int(255) DEFAULT NULL,
   `szoveg` text COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
@@ -375,24 +377,29 @@ CREATE TABLE `velemenyek` (
 -- A tábla indexei `adminok`
 --
 ALTER TABLE `adminok`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`userid`);
 
 --
 -- A tábla indexei `baratok`
 --
 ALTER TABLE `baratok`
-  ADD PRIMARY KEY (`barat_id`),
-  ADD UNIQUE KEY `user_id1` (`user_id1`),
-  ADD UNIQUE KEY `user_id2` (`user_id2`);
+  ADD PRIMARY KEY (`baratid`),
+  ADD UNIQUE KEY `user_id1` (`userid1`),
+  ADD UNIQUE KEY `user_id2` (`userid2`),
+  ADD KEY `userid1` (`userid1`),
+  ADD KEY `userid2` (`userid2`);
 
 --
 -- A tábla indexei `ertekelesek`
 --
 ALTER TABLE `ertekelesek`
-  ADD PRIMARY KEY (`ertekeles_id`),
-  ADD UNIQUE KEY `jatekos_id` (`jatekos_id`),
-  ADD UNIQUE KEY `klub_id` (`klub_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD PRIMARY KEY (`ertekelesid`),
+  ADD UNIQUE KEY `jatekos_id` (`jatekosid`),
+  ADD UNIQUE KEY `klub_id` (`klubid`),
+  ADD KEY `user_id` (`userid`),
+  ADD KEY `userid` (`userid`),
+  ADD KEY `jatekosid` (`jatekosid`),
+  ADD KEY `klubid` (`klubid`);
 
 --
 -- A tábla indexei `felhasznalok`
@@ -404,147 +411,204 @@ ALTER TABLE `felhasznalok`
 -- A tábla indexei `jatekosok`
 --
 ALTER TABLE `jatekosok`
-  ADD PRIMARY KEY (`jatekos_id`),
-  ADD UNIQUE KEY `orszag_id` (`orszag_id`),
-  ADD UNIQUE KEY `klub_id` (`klub_id`),
-  ADD UNIQUE KEY `poz_id` (`poz_id`),
-  ADD KEY `poz_id_2` (`poz_id`),
-  ADD KEY `klub_id_2` (`klub_id`),
-  ADD KEY `orszag_id_2` (`orszag_id`);
+  ADD PRIMARY KEY (`jatekosid`),
+  ADD UNIQUE KEY `klub_id` (`klubid`),
+  ADD UNIQUE KEY `poz_id` (`pozid`),
+  ADD UNIQUE KEY `orszag_id` (`orszagid`),
+  ADD KEY `poz_id_2` (`pozid`),
+  ADD KEY `klub_id_2` (`klubid`),
+  ADD KEY `orszag_id_2` (`orszagid`),
+  ADD KEY `orszagid` (`orszagid`),
+  ADD KEY `klubid` (`klubid`),
+  ADD KEY `pozid` (`pozid`);
 
 --
 -- A tábla indexei `kedvencek`
 --
 ALTER TABLE `kedvencek`
-  ADD PRIMARY KEY (`kedvenc_id`),
-  ADD UNIQUE KEY `user_id` (`user_id`),
-  ADD UNIQUE KEY `klub_id` (`klub_id`),
-  ADD UNIQUE KEY `jatekos_id` (`jatekos_id`),
-  ADD UNIQUE KEY `liga_id` (`liga_id`),
-  ADD UNIQUE KEY `orszag_id` (`orszag_id`);
+  ADD PRIMARY KEY (`kedvencid`),
+  ADD UNIQUE KEY `user_id` (`userid`),
+  ADD UNIQUE KEY `klub_id` (`klubid`),
+  ADD UNIQUE KEY `jatekos_id` (`jatekosid`),
+  ADD UNIQUE KEY `liga_id` (`ligaid`),
+  ADD UNIQUE KEY `orszag_id` (`orszagid`),
+  ADD KEY `userid` (`userid`),
+  ADD KEY `jatekosid` (`jatekosid`),
+  ADD KEY `ligaid` (`ligaid`),
+  ADD KEY `orszagid` (`orszagid`),
+  ADD KEY `klubid` (`klubid`);
 
 --
 -- A tábla indexei `klubbok`
 --
 ALTER TABLE `klubbok`
-  ADD PRIMARY KEY (`klub_id`),
-  ADD KEY `liga_id` (`liga_id`);
+  ADD PRIMARY KEY (`klubid`),
+  ADD KEY `liga_id` (`ligaid`);
 
 --
 -- A tábla indexei `ligak`
 --
 ALTER TABLE `ligak`
-  ADD PRIMARY KEY (`liga_id`),
-  ADD UNIQUE KEY `orszag_id` (`orszag_id`),
-  ADD UNIQUE KEY `orszag_id_2` (`orszag_id`);
+  ADD PRIMARY KEY (`ligaid`),
+  ADD UNIQUE KEY `orszag_id` (`orszagid`),
+  ADD UNIQUE KEY `orszag_id_2` (`orszagid`);
 
 --
 -- A tábla indexei `orszagok`
 --
 ALTER TABLE `orszagok`
-  ADD PRIMARY KEY (`orszag_id`);
+  ADD PRIMARY KEY (`orszagid`);
 
 --
 -- A tábla indexei `posztok`
 --
 ALTER TABLE `posztok`
-  ADD PRIMARY KEY (`poz_id`);
+  ADD PRIMARY KEY (`pozid`);
 
 --
 -- A tábla indexei `uzenetek`
 --
 ALTER TABLE `uzenetek`
-  ADD PRIMARY KEY (`uzenet_id`),
-  ADD UNIQUE KEY `user_idKuldott` (`user_idKuldott`),
-  ADD UNIQUE KEY `user_idFogadott` (`user_idFogadott`);
+  ADD PRIMARY KEY (`uzenetid`),
+  ADD UNIQUE KEY `user_idKuldott` (`useridKuldott`),
+  ADD UNIQUE KEY `user_idFogadott` (`useridFogadott`);
 
 --
 -- A tábla indexei `velemenyek`
 --
 ALTER TABLE `velemenyek`
-  ADD PRIMARY KEY (`velemeny_id`),
-  ADD UNIQUE KEY `user_id` (`user_id`),
-  ADD UNIQUE KEY `jatekos_id` (`jatekos_id`),
-  ADD UNIQUE KEY `klub_id` (`klub_id`);
+  ADD PRIMARY KEY (`velemenyid`),
+  ADD UNIQUE KEY `user_id` (`userid`),
+  ADD UNIQUE KEY `jatekos_id` (`jatekosid`),
+  ADD UNIQUE KEY `klub_id` (`klubid`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
 
 --
+-- AUTO_INCREMENT a táblához `baratok`
+--
+ALTER TABLE `baratok`
+  MODIFY `baratid` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `ertekelesek`
+--
+ALTER TABLE `ertekelesek`
+  MODIFY `ertekelesid` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  MODIFY `userid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT a táblához `jatekosok`
+--
+ALTER TABLE `jatekosok`
+  MODIFY `jatekosid` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `kedvencek`
+--
+ALTER TABLE `kedvencek`
+  MODIFY `kedvencid` int(255) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT a táblához `klubbok`
 --
 ALTER TABLE `klubbok`
-  MODIFY `klub_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `klubid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT a táblához `ligak`
 --
 ALTER TABLE `ligak`
-  MODIFY `liga_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ligaid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT a táblához `uzenetek`
+--
+ALTER TABLE `uzenetek`
+  MODIFY `uzenetid` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `velemenyek`
+--
+ALTER TABLE `velemenyek`
+  MODIFY `velemenyid` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- Megkötések a kiírt táblákhoz
 --
 
 --
+-- Megkötések a táblához `adminok`
+--
+ALTER TABLE `adminok`
+  ADD CONSTRAINT `adminok_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Megkötések a táblához `baratok`
 --
 ALTER TABLE `baratok`
-  ADD CONSTRAINT `baratok_ibfk_1` FOREIGN KEY (`user_id1`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `baratok_ibfk_2` FOREIGN KEY (`user_id2`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `baratok_ibfk_1` FOREIGN KEY (`userid1`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `baratok_ibfk_2` FOREIGN KEY (`userid2`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `ertekelesek`
 --
 ALTER TABLE `ertekelesek`
-  ADD CONSTRAINT `ertekelesek_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ertekelesek_ibfk_3` FOREIGN KEY (`jatekos_id`) REFERENCES `jatekosok` (`jatekos_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ertekelesek_ibfk_4` FOREIGN KEY (`klub_id`) REFERENCES `klubbok` (`klub_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `ertekelesek_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ertekelesek_ibfk_2` FOREIGN KEY (`jatekosid`) REFERENCES `jatekosok` (`jatekosid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ertekelesek_ibfk_3` FOREIGN KEY (`klubid`) REFERENCES `klubbok` (`klubid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `jatekosok`
 --
 ALTER TABLE `jatekosok`
-  ADD CONSTRAINT `jatekosok_ibfk_2` FOREIGN KEY (`jatekos_id`) REFERENCES `kedvencek` (`jatekos_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `jatekosok_ibfk_3` FOREIGN KEY (`poz_id`) REFERENCES `posztok` (`poz_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `jatekosok_ibfk_4` FOREIGN KEY (`orszag_id`) REFERENCES `orszagok` (`orszag_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `jatekosok_ibfk_5` FOREIGN KEY (`klub_id`) REFERENCES `klubbok` (`klub_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `jatekosok_ibfk_1` FOREIGN KEY (`klubid`) REFERENCES `klubbok` (`klubid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `jatekosok_ibfk_2` FOREIGN KEY (`pozid`) REFERENCES `posztok` (`pozid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `jatekosok_ibfk_3` FOREIGN KEY (`orszagid`) REFERENCES `orszagok` (`orszagid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `kedvencek`
 --
 ALTER TABLE `kedvencek`
-  ADD CONSTRAINT `kedvencek_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `kedvencek_ibfk_3` FOREIGN KEY (`orszag_id`) REFERENCES `orszagok` (`orszag_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `kedvencek_ibfk_4` FOREIGN KEY (`liga_id`) REFERENCES `ligak` (`liga_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `kedvencek_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kedvencek_ibfk_2` FOREIGN KEY (`jatekosid`) REFERENCES `jatekosok` (`jatekosid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kedvencek_ibfk_3` FOREIGN KEY (`ligaid`) REFERENCES `ligak` (`ligaid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kedvencek_ibfk_4` FOREIGN KEY (`orszagid`) REFERENCES `orszagok` (`orszagid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kedvencek_ibfk_5` FOREIGN KEY (`klubid`) REFERENCES `klubbok` (`klubid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `klubbok`
 --
 ALTER TABLE `klubbok`
-  ADD CONSTRAINT `klubbok_ibfk_1` FOREIGN KEY (`liga_id`) REFERENCES `ligak` (`liga_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `klubbok_ibfk_1` FOREIGN KEY (`ligaid`) REFERENCES `ligak` (`ligaid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `ligak`
 --
 ALTER TABLE `ligak`
-  ADD CONSTRAINT `ligak_ibfk_1` FOREIGN KEY (`orszag_id`) REFERENCES `orszagok` (`orszag_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `ligak_ibfk_1` FOREIGN KEY (`orszagid`) REFERENCES `orszagok` (`orszagid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `uzenetek`
 --
 ALTER TABLE `uzenetek`
-  ADD CONSTRAINT `uzenetek_ibfk_2` FOREIGN KEY (`user_idKuldott`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `uzenetek_ibfk_3` FOREIGN KEY (`user_idFogadott`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `uzenetek_ibfk_1` FOREIGN KEY (`useridKuldott`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `uzenetek_ibfk_2` FOREIGN KEY (`useridFogadott`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `velemenyek`
 --
 ALTER TABLE `velemenyek`
-  ADD CONSTRAINT `velemenyek_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `velemenyek_ibfk_2` FOREIGN KEY (`jatekos_id`) REFERENCES `jatekosok` (`jatekos_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `velemenyek_ibfk_3` FOREIGN KEY (`klub_id`) REFERENCES `klubbok` (`klub_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `velemenyek_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `velemenyek_ibfk_2` FOREIGN KEY (`jatekosid`) REFERENCES `jatekosok` (`jatekosid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `velemenyek_ibfk_3` FOREIGN KEY (`klubid`) REFERENCES `klubbok` (`klubid`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
