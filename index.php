@@ -4,7 +4,10 @@ session_start();
 
 require 'includes/db.inc.php';
 require 'model/felhasznalok.php';
+require 'model/orszagmodel.php';
 $felhasznalo = new User;
+$orszag = new Orszagok;
+
 
 if(!isset($_REQUEST['page'])){
         header('Location: index.php?page=index');
@@ -22,7 +25,7 @@ if(!empty($_REQUEST['action'])) {
 
 // ki vagy be vagyok lépve?
 if(!empty($_SESSION["userid"])) {
-        $szoveg = $_SESSION["felhasznalonev"].": Kilépés";
+        $szoveg = $_SESSION["felhasznalonev"].":Kijelentkezés";
         $action = "kilepes";
 }
 else {
@@ -38,7 +41,11 @@ if(isset($_REQUEST['page'])) {
 
 $menupontok = array(    'index' => "Főoldal",
                         'register' => "Regisztrálás",
-                        'login' => $szoveg
+                        'login' => $szoveg,
+                        'orszag' => "Országok",
+                        'liga' => "Ligák",
+                        'jatekos' => "Játékosok",
+                        'csapat' => "Csapatok"
                 );
 $title = $menupontok[$page];
 
