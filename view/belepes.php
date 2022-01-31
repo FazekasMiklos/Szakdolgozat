@@ -13,7 +13,7 @@ else {
         echo $loginError;
 
     ?> 
-    <div id = "frm">  
+    <div id = "btn">  
         <h1>Bejelentkezés</h1>  
         <form name="f1" action="index.php?page=login" method = "post">  
             <p>  
@@ -25,7 +25,7 @@ else {
                 <input type = "password" name  = "pw" required/>  
             </p>  
             <p>     
-                <input type = "submit" id = "btn" value = "Belépés" />  
+                <input type = "submit" value = "Belépés" />  
             </p>  
         </form>  
     </div>
