@@ -5,9 +5,13 @@ session_start();
 require 'includes/db.inc.php';
 require 'model/felhasznalok.php';
 require 'model/orszagmodel.php';
+require 'model/ligamodel.php';
+require 'model/csapatmodel.php';
+
 $felhasznalo = new User;
 $orszag = new Orszagok;
-
+$liga = new Ligak;
+$csapat = new Csapatok;
 
 if(!isset($_REQUEST['page'])){
         header('Location: index.php?page=index');

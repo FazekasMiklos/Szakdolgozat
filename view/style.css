@@ -1,9 +1,7 @@
-body{   
-    background: #eee;  
-}   
+  
 #btn{  
     color: #fff;  
-    background: #337ab7;  
+    background-color: blue;  
     padding: 50px;   
     text-align: center;
     margin: 120px auto;
