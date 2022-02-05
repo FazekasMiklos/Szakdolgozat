@@ -5,6 +5,7 @@ if(!empty($_SESSION["userid"])) {
     echo "Üdv ".$_SESSION['felhasznalonev']."!";
     ?>
     <br>
+    <a href="index.php?page=profile" title="Profile">Adatok módosítása<br>  
     <a href="index.php?page=logout" title="Logout">Kijelentkezés  
     <?php
 }
