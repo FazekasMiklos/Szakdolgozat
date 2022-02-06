@@ -4,8 +4,9 @@
 			$felhasznalonev = $_POST['user'];
 			$jelszo = md5($_POST['pass']);
 			$email = $_POST['email'];
+			$profilkep = $_POST['profilkep'];
  
-			$query = "UPDATE `felhasznalok` SET felhasznalonev = '$felhasznalonev', jelszo = '$jelszo', email = '$email' WHERE userid = '$userid'";
+			$query = "UPDATE `felhasznalok` SET felhasznalonev = '$felhasznalonev', jelszo = '$jelszo', email = '$email', profilkep = '$profilkep' WHERE userid = '$userid'";
  
 			$result = mysqli_query($conn,$query);
 			if ($query) {

@@ -29,7 +29,7 @@ if(!empty($_REQUEST['action'])) {
 
 // ki vagy be vagyok lépve?
 if(!empty($_SESSION["userid"])) {
-        $szoveg = $_SESSION["felhasznalonev"].":Kijelentkezés";
+        $szoveg = "Adatok és kijelentkezés";
         $action = "kilepes";
 }
 else {

@@ -1,12 +1,20 @@
 <link rel = "stylesheet" type = "text/css" href = "style.css">   
 <?php
-
 if(!empty($_SESSION["userid"])) {
-    echo "Üdv ".$_SESSION['felhasznalonev']."!";
     ?>
     <br>
-    <a href="index.php?page=profile" title="Profile">Adatok módosítása<br>  
-    <a href="index.php?page=logout" title="Logout">Kijelentkezés  
+    <div id = "btn">
+    <?php echo"Profilkép:";?> 
+    <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['profilkep']); ?>" width="100"/></a>
+    <?php echo"Felhasználónév:";?> 
+    <?php echo($row['felhasznalonev']);?><br>
+    <?php echo"Jelszó:";?> 
+    <?php echo($row['jelszo']);?><br>
+    <?php echo"Email:";?> 
+    <?php echo($row['email']);?><br>
+    <a href="index.php?page=profile" title="Profile">Adatok módosítása<br><br>  
+    <a href="index.php?page=logout" title="Logout">Kijelentkezés
+</div>
     <?php
 }
 else {
@@ -32,4 +40,4 @@ else {
     </div>
     <?php						
 					}
-				?>  
+				?> 

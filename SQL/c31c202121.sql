@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Feb 03. 12:53
--- Kiszolgáló verziója: 10.4.14-MariaDB
--- PHP verzió: 7.4.10
+-- Létrehozás ideje: 2022. Feb 06. 13:17
+-- Kiszolgáló verziója: 10.4.17-MariaDB
+-- PHP verzió: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,17 +68,18 @@ CREATE TABLE `felhasznalok` (
   `userid` int(255) NOT NULL,
   `felhasznalonev` varchar(30) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `jelszo` varchar(100) COLLATE utf8mb4_hungarian_ci NOT NULL
+  `jelszo` varchar(100) COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `profilkep` mediumblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `felhasznalok`
 --
 
-INSERT INTO `felhasznalok` (`userid`, `felhasznalonev`, `email`, `jelszo`) VALUES
-(1, 'asd', 'asd', 'a8f5f167f44f4964e6c998dee827110c'),
-(3, 'xd', 'xd@gmail.com', 'e0ec65fcfcf174244bc6201ec441d367'),
-(6, 'jani', 'fsfsssf@gmail.com', 'd5d51a2d88cda585e37315067891381f');
+INSERT INTO `felhasznalok` (`userid`, `felhasznalonev`, `email`, `jelszo`, `profilkep`) VALUES
+(1, 'asd', 'asdasd@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', ''),
+(3, 'xd', 'xd@gmail.com', '7f30eefe5c51e1ae0939dab2051db75f', ''),
+(10, 'idk', 'idk@gmail.com', 'd67077351ca6ebbf3b3baa770a4fbb58', 0x70726f66696c6b65702e6a7067);
 
 -- --------------------------------------------------------
 
@@ -539,7 +540,7 @@ ALTER TABLE `ertekelesek`
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `userid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `userid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT a táblához `jatekosok`
