@@ -6,10 +6,9 @@ class User {
     private $felhasznalonev;
     private $email;
     private $jelszo;
-    private $profilkep;
 
     public function set_user($userid, $conn) {
-        $sql = "SELECT userid, felhasznalonev, email, jelszo, profilkep FROM felhasznalok";
+        $sql = "SELECT userid, felhasznalonev, email, jelszo FROM felhasznalok";
         $sql .= " WHERE userid = $userid ";
         $result = $conn->query($sql);
         if ($conn->query($sql)) {
@@ -19,7 +18,6 @@ class User {
                 $this->felhasznalonev = $row['felhasznalonev'];
                 $this->email = $row['email'];
                 $this->jelszo = $row['jelszo'];
-                $this->profilkep = $row['profilkep'];
             }
         } 
         else {
@@ -37,10 +35,6 @@ class User {
 
     public function get_felhasznalonev() {
         return $this->felhasznalonev;
-    }
-
-    public function get_profilkep() {
-        return $this->profilkep;
     }
 
     public function get_userid() {

@@ -7,11 +7,13 @@ require 'model/felhasznalok.php';
 require 'model/orszagmodel.php';
 require 'model/ligamodel.php';
 require 'model/csapatmodel.php';
+require 'model/profilkepmodel.php';
 
 $felhasznalo = new User;
 $orszag = new Orszagok;
 $liga = new Ligak;
 $csapat = new Csapatok;
+$image = new Profilkepek;
 
 if(!isset($_REQUEST['page'])){
         header('Location: index.php?page=index');
@@ -30,6 +32,7 @@ if(!empty($_REQUEST['action'])) {
 // ki vagy be vagyok lépve?
 if(!empty($_SESSION["userid"])) {
         $szoveg = "Adatok és kijelentkezés";
+        $upload = "Profilkép beállítás";
         $action = "kilepes";
 }
 else {
@@ -50,7 +53,7 @@ $menupontok = array(    'index' => "Főoldal",
                         'liga' => "Ligák",
                         'jatekos' => "Játékosok",
                         'csapat' => "Csapatok",
-                        'upload' => "Profilkép beállítás"
+                        'upload' => $upload
                 );
 $title = $menupontok[$page];
 
