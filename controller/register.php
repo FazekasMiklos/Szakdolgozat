@@ -1,10 +1,9 @@
 <?php 
-		if(isset($_POST['user']) && isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['profilkep'])){
+
+		if(isset($_POST['sentForm'])){
 			$user = $_POST['user'];
 			$pass = md5($_POST['pass']);
 			$email = $_POST['email'];
-            $profilkep = $_POST['profilkep'];
-
 			$query = "INSERT INTO `felhasznalok` (`felhasznalonev`,`jelszo`,`email`,`profilkep`) VALUES ('$user', '$pass', '$email', '$profilkep')";
  
 			$result = mysqli_query($conn,$query);

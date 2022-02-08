@@ -49,7 +49,8 @@ $menupontok = array(    'index' => "Főoldal",
                         'orszag' => "Országok",
                         'liga' => "Ligák",
                         'jatekos' => "Játékosok",
-                        'csapat' => "Csapatok"
+                        'csapat' => "Csapatok",
+                        'upload' => "Profilkép beállítás"
                 );
 $title = $menupontok[$page];
 

@@ -6,10 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body align="middle">
-	<div id="btn"><h2>Regisztráció</h2>
-	<form action='index.php?page=register' method='POST'>
-	    <label for="user">Profilkép:</label><br/>
-	    <input type="file" name='profilkep' id="profilkep"><br>
+<div id="btn"><h2>Regisztráció</h2>
+ 	<form action='index.php?page=register' method='POST'>
 		<label for="user">Felhasználónév:</label>	<br/>
 		<input type='text' name='user' id="user"  required/><br/>
 		<label for="user">Jelszó:</label>	<br/>
