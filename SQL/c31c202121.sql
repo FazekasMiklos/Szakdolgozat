@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Feb 06. 13:17
--- Kiszolgáló verziója: 10.4.17-MariaDB
--- PHP verzió: 8.0.0
+-- Létrehozás ideje: 2022. Feb 09. 12:25
+-- Kiszolgáló verziója: 10.4.14-MariaDB
+-- PHP verzió: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,18 +68,17 @@ CREATE TABLE `felhasznalok` (
   `userid` int(255) NOT NULL,
   `felhasznalonev` varchar(30) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `jelszo` varchar(100) COLLATE utf8mb4_hungarian_ci NOT NULL,
-  `profilkep` mediumblob DEFAULT NULL
+  `jelszo` varchar(100) COLLATE utf8mb4_hungarian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `felhasznalok`
 --
 
-INSERT INTO `felhasznalok` (`userid`, `felhasznalonev`, `email`, `jelszo`, `profilkep`) VALUES
-(1, 'asd', 'asdasd@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', ''),
-(3, 'xd', 'xd@gmail.com', '7f30eefe5c51e1ae0939dab2051db75f', ''),
-(10, 'idk', 'idk@gmail.com', 'd67077351ca6ebbf3b3baa770a4fbb58', 0x70726f66696c6b65702e6a7067);
+INSERT INTO `felhasznalok` (`userid`, `felhasznalonev`, `email`, `jelszo`) VALUES
+(1, 'asd', 'asd@gmail.com', 'a8f5f167f44f4964e6c998dee827110c'),
+(3, 'xd', 'xd@gmail.com', '7f30eefe5c51e1ae0939dab2051db75f'),
+(17, 'aaaaaaaa', 'fsfsssf@gmail.com', '0cc175b9c0f1b6a831c399e269772661');
 
 -- --------------------------------------------------------
 
@@ -382,6 +381,28 @@ INSERT INTO `posztok` (`pozid`, `poznev`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `profilkepek`
+--
+
+CREATE TABLE `profilkepek` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
+  `size` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `profilkepek`
+--
+
+INSERT INTO `profilkepek` (`id`, `userid`, `name`, `size`) VALUES
+(1, 1, 'kep1.jpg', 260068),
+(2, 3, 'kep2.jpg', 247901),
+(3, 3, 'kep2.jpg', 247901);
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `uzenetek`
 --
 
@@ -504,6 +525,13 @@ ALTER TABLE `posztok`
   ADD PRIMARY KEY (`pozid`);
 
 --
+-- A tábla indexei `profilkepek`
+--
+ALTER TABLE `profilkepek`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userid` (`userid`);
+
+--
 -- A tábla indexei `uzenetek`
 --
 ALTER TABLE `uzenetek`
@@ -540,7 +568,7 @@ ALTER TABLE `ertekelesek`
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `userid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `userid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT a táblához `jatekosok`
@@ -565,6 +593,12 @@ ALTER TABLE `klubbok`
 --
 ALTER TABLE `ligak`
   MODIFY `ligaid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT a táblához `profilkepek`
+--
+ALTER TABLE `profilkepek`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT a táblához `uzenetek`
@@ -632,6 +666,12 @@ ALTER TABLE `klubbok`
 --
 ALTER TABLE `ligak`
   ADD CONSTRAINT `ligak_ibfk_1` FOREIGN KEY (`orszagid`) REFERENCES `orszagok` (`orszagid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Megkötések a táblához `profilkepek`
+--
+ALTER TABLE `profilkepek`
+  ADD CONSTRAINT `profilkepek_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `felhasznalok` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `uzenetek`
