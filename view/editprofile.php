@@ -5,11 +5,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body align="middle">
+<body>
 	<div id="btn"><h2>Adatok módosítása</h2>
-	<form action='index.php?page=profile' method='POST'>
+	<form action='index.php?page=profile' method='POST' enctype="multipart/form-data">
 	    <label for="user">Profilkép:</label><br/>
-	    <input type="file" name='profilkep' id="profilkep"><br>
+	    <input type='file' name='profilkep' id="profilkep"><br>
 		<label for="user">Felhasználónév:</label>	<br/>
 		<input type='text' name='user' id="user"  required/><br/>
 		<label for="user">Jelszó:</label>	<br/>
