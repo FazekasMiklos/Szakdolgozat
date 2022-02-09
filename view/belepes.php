@@ -1,28 +1,19 @@
-<link rel = "stylesheet" type = "text/css" href = "style.css">   
-<?php
-if(!empty($_SESSION["userid"])) {
+<link rel = "stylesheet" type = "text/css" href = "style.css"> 
+ <?php 
+if(!empty($_SESSION["userid"])) { 
     ?>
-    <br>
     <div id = "btn">
-    <?php echo"Profilkép:";?> 
-    <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['profilkep']); ?>" width="100"/></a>
-    <?php echo"Felhasználónév:";?> 
-    <?php echo($row['felhasznalonev']);?><br>
-    <?php echo"Jelszó:";?> 
-    <?php echo($row['jelszo']);?><br>
-    <?php echo"Email:";?> 
-    <?php echo($row['email']);?><br>
+    <a href="index.php?page=adatok" title="Adat">Adataid<br><br>  
     <a href="index.php?page=profile" title="Profile">Adatok módosítása<br><br>  
     <a href="index.php?page=logout" title="Logout">Kijelentkezés
-</div>
+    </div>
     <?php
 }
 else {
     if(isset($_POST['user']))
         echo $loginError;
-
-    ?> 
-    <div id = "btn">  
+        ?>
+ <div id = "btn"> 
         <h1>Bejelentkezés</h1>  
         <form name="f1" action="index.php?page=login" method = "post">  
             <p>  
@@ -38,6 +29,8 @@ else {
             </p>  
         </form>  
     </div>
-    <?php						
-					}
-				?> 
+        <?php						
+    }
+?> 
+    
+    

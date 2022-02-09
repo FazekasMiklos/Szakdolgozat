@@ -1,25 +1,33 @@
 <?php
-$sql = "SELECT * FROM felhasznalok";
-   $result = mysqli_query($conn, $sql);
-   if (mysqli_num_rows($result) > 0) {
-     while ($row = mysqli_fetch_assoc($result)) {
-      $userid = $row['userid'];
+$userid=$_SESSION['userid'];
+if (isset($_POST['upload'])){
+$profilkep = $_FILES['profilkep']['name'];
+// destination of the file on the server
+$destination = 'kepek/profilkepek/' . $profilkep;
+// get the file extension
+$extension = pathinfo($profilkep, PATHINFO_EXTENSION);
 
-      $sqlImg = "SELECT profilkep FROM felhasznalok WHERE userid='$userid'";
-      $resultImg = mysqli_query($conn, $sqlImg);
-     }
-    }
-if (isset($_SESSION['userid'])) {
- echo "You are logged in!";
+// the physical file on a temporary uploads directory on the server
+$file = $_FILES['profilkep']['tmp_name'];
+$size = $_FILES['profilkep']['size'];
 
- echo '<form action="index.php?page=uploaddd" method="post" 
- enctype="multipart/form-data">
-   <input type="file" name="file">
-   <button type="submit" name="submit">UPLOAD FILE</button>
- </form>';
+if (!in_array($extension, ['jpg', 'png', 'svg'])) {
+echo "You file extension must be .jpg, .png or .svg";
+} elseif ($_FILES['profilkep']['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
+echo "File too large!";
+} else {
+// move the uploaded (temporary) file to the specified destination
+if (move_uploaded_file($file, $destination)) {
+  $query = "INSERT INTO profilkepek (userid, name, size) VALUES ('$userid','$profilkep','$size')";
+ 
+			$result = mysqli_query($conn,$query);
+			if ($query) {
+				echo 'Sikeresen feltöltve a profilkép!';
+			} else {
+				echo "Hiba történt a profilkép feltöltése közben.";
+			}
+		}
+	}
 }
-else {
- echo "You are not logged in!";
-
-}
+include 'view/feltoltes.php';
 ?>

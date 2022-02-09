@@ -7,8 +7,6 @@
 			$profilkep = $_FILES['profilkep']['name'];
             // destination of the file on the server
     $destination = 'kepek/profilkepek/' . $profilkep;
-	echo "<img src='$destination'>";
-
     // get the file extension
     $extension = pathinfo($profilkep, PATHINFO_EXTENSION);
 
@@ -25,7 +23,7 @@
         if (move_uploaded_file($file, $destination)) {
 
 			$query = "UPDATE `felhasznalok` SET felhasznalonev = '$felhasznalonev', jelszo = '$jelszo', email = '$email' WHERE userid = '$userid'";
-			$query = "INSERT INTO profilkepek (userid, name, size) VALUES ('$userid','$profilkep','$size')";
+			$query = "UPDATE profilkepek SET  name = '$profilkep', size = '$size' WHERE userid = '$userid'";
  
 			$result = mysqli_query($conn,$query);
 			if ($query) {
