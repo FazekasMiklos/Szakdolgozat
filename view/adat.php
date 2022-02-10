@@ -3,7 +3,7 @@
 $result = $conn->query("SELECT * FROM felhasznalok as f INNER JOIN profilkepek as p ON (f.userid = p.userid) WHERE f.userid = '".$_SESSION['userid']."'");
 while($row = $result->fetch_assoc()){
     echo"Profilkep:"; 
-    echo $row['filename'] . "<br />";
+    echo $row['name'] . "<br />";
      echo"Felhasználónév:"; 
     echo $row['felhasznalonev'] . "<br />";
     echo"Jelszó:"; 

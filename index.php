@@ -34,10 +34,13 @@ if(!empty($_SESSION["userid"])) {
         $szoveg = "Adatok és kijelentkezés";
         $upload = "Profilkép beállítás";
         $action = "kilepes";
+        $reg = "";
 }
 else {
         $szoveg = "Belépés";
-        $action = "belepes";        
+        $action = "belepes";
+        $reg = "Regisztrálás";
+        $upload= "";        
 } 
 
 if(isset($_REQUEST['page'])) {
@@ -47,7 +50,7 @@ if(isset($_REQUEST['page'])) {
 }
 
 $menupontok = array(    'index' => "Főoldal",
-                        'register' => "Regisztrálás",
+                        'register' => $reg,
                         'login' => $szoveg,
                         'orszag' => "Országok",
                         'liga' => "Ligák",
