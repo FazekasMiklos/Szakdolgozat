@@ -1,7 +1,6 @@
 <?php 
    if(isset($_POST['user']) and isset($_POST['pw'])) {
-	$profilkep = $_FILES['profilkep']['name'];
-    $destination = 'kepek/profilkepek/' . $profilkep; 
+	
 	$loginError = '';
 	if($loginError == '') {
 		$sql = "SELECT `userid` FROM `felhasznalok` WHERE `felhasznalonev` = '".$_POST['user']."' ";
