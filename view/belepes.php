@@ -1,15 +1,13 @@
 <link rel = "stylesheet" type = "text/css" href = "style.css"> 
- <?php 
-if(!empty($_SESSION["userid"])) { 
+ <?php
+ if(!empty($_SESSION["userid"])) { 
     ?>
-    <div id = "btn">
-    <a href="index.php?page=adatok" title="Adat">Adataid<br><br>  
-    <a href="index.php?page=profile" title="Profile">Adatok módosítása<br><br>  
-    <a href="index.php?page=logout" title="Logout">Kijelentkezés
-    </div>
-    <?php
-}
-else {
+ <div id = "btn">
+ <a href="index.php?page=logout" title="Logout">Kijelentkezés
+ </div>
+ <?php
+ }
+ else { 
     if(isset($_POST['user']))
         echo $loginError;
         ?>
@@ -29,8 +27,8 @@ else {
             </p>  
         </form>  
     </div>
-        <?php						
+   
+    <?php						
     }
 ?> 
-    
     

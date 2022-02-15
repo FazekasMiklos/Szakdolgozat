@@ -21,6 +21,7 @@ if(!isset($_REQUEST['page'])){
     }
 
 $page = 'index';
+
     
 
 // kilépés végrehajtása
@@ -31,16 +32,14 @@ if(!empty($_REQUEST['action'])) {
 
 // ki vagy be vagyok lépve?
 if(!empty($_SESSION["userid"])) {
-        $szoveg = "Adatok és kijelentkezés";
+        $szoveg = "Kijelentkezés";
         $upload = "Profilkép beállítás";
         $action = "kilepes";
-        $reg = "";
 }
 else {
         $szoveg = "Belépés";
         $action = "belepes";
-        $reg = "Regisztrálás";
-        $upload= "";        
+        $reg = "Regisztrálás";      
 } 
 
 if(isset($_REQUEST['page'])) {
@@ -48,7 +47,17 @@ if(isset($_REQUEST['page'])) {
                 $page = $_REQUEST['page']; 
         }
 }
-
+if(!empty($_SESSION["userid"])) {
+$menupontok = array(    'index' => "Főoldal",
+                        'login' => $szoveg,
+                        'orszag' => "Országok",
+                        'liga' => "Ligák",
+                        'jatekos' => "Játékosok",
+                        'csapat' => "Csapatok",
+                        'adatok' => "Adatok",
+                        'upload' => $upload
+                );
+}else
 $menupontok = array(    'index' => "Főoldal",
                         'register' => $reg,
                         'login' => $szoveg,
@@ -56,14 +65,12 @@ $menupontok = array(    'index' => "Főoldal",
                         'liga' => "Ligák",
                         'jatekos' => "Játékosok",
                         'csapat' => "Csapatok",
-                        'upload' => $upload
                 );
 $title = $menupontok[$page];
 
 include 'includes/htmlheader.inc.php';
 ?>
 <body>
-
 <?php
 
 include 'includes/menu.inc.php';

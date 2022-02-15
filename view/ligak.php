@@ -13,7 +13,7 @@ $result = $conn->query("SELECT ligaid,nev,orszagid,logo FROM ligak");
       ?>
             <div id="btn">
             <a href="index.php?page=csapat" title="Csapat">
-            <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['logo']); ?>" width="100"/></a>
+            <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['logo']); ?>" width="100"/></a><br>
             <?php echo"Név:";?> 
             <?php echo($row['nev']);?><br>
  </div>
