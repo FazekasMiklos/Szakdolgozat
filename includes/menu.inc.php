@@ -14,12 +14,17 @@
             if($key == 'felhasznalo') $key.='&action='.$action;
             ?>
             <li class="nav-item<?php echo $active; ?>">
-                <a class="nav-link" href="index.php?page=<?php echo $key; ?>"><?php echo $value; ?></a>
+                <a class="nav-link" href="index.php?page=<?php echo $key; ?>"><?php echo $value; ?>
+              </a>
             </li>
             <?php            
         }
 
       ?>
+      <form action="search.php" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
+      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
+    </form>
     </ul>
   </div>
 </nav>

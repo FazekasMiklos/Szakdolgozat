@@ -47,15 +47,19 @@ if(isset($_REQUEST['page'])) {
                 $page = $_REQUEST['page']; 
         }
 }
+if(isset($_REQUEST['search'])) {
+        $_SESSION['search']='';
+    }
 if(!empty($_SESSION["userid"])) {
 $menupontok = array(    'index' => "Főoldal",
-                        'login' => $szoveg,
+                        'logout' => $szoveg,
                         'orszag' => "Országok",
                         'liga' => "Ligák",
                         'jatekos' => "Játékosok",
                         'csapat' => "Csapatok",
                         'adatok' => "Adatok",
-                        'upload' => $upload
+                        'upload' => $upload,
+                        
                 );
 }else
 $menupontok = array(    'index' => "Főoldal",
@@ -65,6 +69,7 @@ $menupontok = array(    'index' => "Főoldal",
                         'liga' => "Ligák",
                         'jatekos' => "Játékosok",
                         'csapat' => "Csapatok",
+                        
                 );
 $title = $menupontok[$page];
 
