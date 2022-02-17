@@ -5,17 +5,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body align="middle">
-<div id="btn"><h2>Regisztráció</h2>
+<div id="reg">
+<h1>Regisztráció</h1>
  	<form action='index.php?page=register' method='POST'>
 		<label for="user">Felhasználónév:</label>	<br/>
-		<input type='text' name='user' id="user"  required/><br/>
+		<input type='text' class="form-control" name='user' id="user"  required/><br/>
 		<label for="user">Jelszó:</label>	<br/>
-		<input type='password' name='pass' id="pass"  required/><br/>
+		<input type='password' class="form-control" name='pass' id="pass"  required/><br/>
 		<label for="user">Email:</label>	<br/>
-		<input type='email' name='email' id="email"  required/><br/><br>
-		<input type='submit' name='sentForm' id="sentForm" />
+		<input type='email' class="form-control" name='email' id="email"  required/><br/>
+		<input type='submit' class="btn mb-2" style="background-color:#228B22; color:white;" name='sentForm' id="sentForm" />
 	</form>
-	</div>
+</div>
 </body>
 </html>

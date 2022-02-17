@@ -4,7 +4,6 @@
 <link rel = "stylesheet" type = "text/css" href = "style.css">
 </head>
 <body> 
-<h1 style=text-align:center>Ha egy liga csapatait szeretnéd megtekinteni akkor kattints az adott liga képére</h1>
 <?php 
 $result = $conn->query("SELECT ligaid,nev,orszagid,logo FROM ligak"); 
 ?>

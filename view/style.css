@@ -10,3 +10,10 @@
 *{
 background-image: "háttérkép.jpg";
 }
+#reg{  
+    padding: 20px; 
+    text-align: center;  
+    margin: 30px auto;
+    width: 25%;
+    border-radius: 2px;
+}

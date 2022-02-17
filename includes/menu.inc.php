@@ -21,7 +21,7 @@
         }
 
       ?>
-      <form action="search.php" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
+      <form action="" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
       <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
     </form>
