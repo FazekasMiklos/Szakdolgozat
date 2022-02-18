@@ -1,22 +1,24 @@
-<div id = "btn">
+<div id = "reg">
 <?php 
 if(!empty($_SESSION["userid"])) { 
     ?>
-<a href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a> 
     <?php
 $result = $conn->query("SELECT * FROM felhasznalok as f INNER JOIN profilkepek as p ON (f.userid = p.userid) WHERE f.userid = '".$_SESSION['userid']."'");
 while($row = $result->fetch_assoc()){
-    echo"Profilkep:"; 
-    echo $row['name'] . "<br />";
+    echo"Profilkép:";
+    ?> 
+    <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" width="100"/><br><br>
+    <?php
      echo"Felhasználónév:"; 
-    echo $row['felhasznalonev'] . "<br />";
+    echo $row['felhasznalonev'] ."<br>"."<br>";
     echo"Jelszó:"; 
-     echo $row['jelszo'] . "<br />";
+     echo $row['jelszo']."<br>"."<br>";
      echo"Email:"; 
-     echo $row['email'] . "<br />";
+     echo $row['email']."<br>"."<br>";
 }
 ?>
 <?php
 }
 ?>
+<a href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a> 
 </div>

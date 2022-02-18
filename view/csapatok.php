@@ -12,7 +12,7 @@ $result = $conn->query("SELECT klubid,nev,ligaid FROM klubbok");
       ?>
             <div id="btn">
             <?php echo"Név:";?> 
-            <?php echo($row['nev']);?><br>
+            <?php echo($row['nev']);?>
  </div>
  <?php
  } 

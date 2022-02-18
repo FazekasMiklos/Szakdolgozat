@@ -16,7 +16,8 @@ $result = $conn->query("SELECT orszagid,nev,ranglista,zaszlok FROM orszagok");
             <?php echo($row['nev']);?><br>
             <?php echo"Ranglistahelyezés:";?>
             <?php echo($row['ranglista']);?>
- </div>
+            </div>
+ 
  <?php
  } 
  ?>
