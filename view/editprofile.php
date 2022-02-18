@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div id="btn"><h2>Adatok módosítása</h2>
+	<div id="reg"><h2>Adatok módosítása</h2>
 	<form action='index.php?page=profile' method='POST' enctype="multipart/form-data">
 	    <label for="user">Profilkép:</label><br/>
 	    <input type='file' name='profilkep' id="profilkep"><br>

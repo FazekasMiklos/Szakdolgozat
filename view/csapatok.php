@@ -3,19 +3,21 @@
 <head>
 <link rel = "stylesheet" type = "text/css" href = "style.css">
 </head>
-<body> 
+<body>
+<div id="btn"> 
 <?php 
 $result = $conn->query("SELECT klubid,nev,ligaid FROM klubbok"); 
 ?>
  <?php 
  while($row = $result->fetch_assoc()){
       ?>
-            <div id="btn">
+            <div id="btm">
             <?php echo"Név:";?> 
             <?php echo($row['nev']);?>
  </div>
  <?php
  } 
  ?>
+ </div>
 </body>
 </html>
