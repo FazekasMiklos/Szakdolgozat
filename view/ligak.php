@@ -6,15 +6,15 @@
 <body>
 <div id="btn"> 
 <?php 
-$result = $conn->query("SELECT ligaid,liganev,orszagid,logo FROM ligak"); 
+$result = $conn->query("SELECT * FROM ligak"); 
 ?>
  <?php 
  while($row = $result->fetch_assoc()){
       ?>
             <div id="btm">
-            <a href="index.php?page=csapat" title="Csapat">
+            <a href="index.php?page=league&id=<?php echo ($row['ligaid']); ?>">
             <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['logo']); ?>" width="100"/></a><br>
-            <?php echo"Név:";?> 
+            <?php echo"Név:";?>
             <?php echo($row['liganev']);?><br>
  </div>
  <?php
