@@ -6,14 +6,14 @@
 <body>
 <div id="btn"> 
 <?php 
-$result = $conn->query("SELECT klubid,nev,ligaid FROM klubbok"); 
+$result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok"); 
 ?>
  <?php 
  while($row = $result->fetch_assoc()){
       ?>
             <div id="btm">
             <?php echo"Név:";?><br>
-            <?php echo($row['nev']);?>
+            <?php echo($row['klubnev']);?>
  </div>
  <?php
  } 

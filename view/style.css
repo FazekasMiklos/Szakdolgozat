@@ -22,3 +22,13 @@ background-image: "háttérkép.jpg";
 #kozep{
     margin: auto;
 }
+#adat{
+  text-align: center;
+  width: 20%;
+  padding: 10px;
+  height: auto;
+  border-style: solid;
+}
+h1{
+    text-align: center;
+}

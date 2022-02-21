@@ -6,7 +6,7 @@
 <body>
 <div id="btn">  
 <?php 
-$result = $conn->query("SELECT orszagid,nev,ranglista,zaszlok FROM orszagok"); 
+$result = $conn->query("SELECT orszagid,orszagnev,ranglista,zaszlok FROM orszagok"); 
 ?>
  <?php 
  while($row = $result->fetch_assoc()){
@@ -14,7 +14,7 @@ $result = $conn->query("SELECT orszagid,nev,ranglista,zaszlok FROM orszagok");
             <div id="btm">
             <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['zaszlok']); ?>" width="100"/><br>
             <?php echo"Név:";?> 
-            <?php echo($row['nev']);?><br>
+            <?php echo($row['orszagnev']);?><br>
             <?php echo"Ranglistahelyezés:";?>
             <?php echo($row['ranglista']);?>
             </div>

@@ -13,7 +13,7 @@ $result = $conn->query("SELECT * FROM jatekosok");
       ?>
             <div id="btm">
             <?php echo"Név:";?><br>
-            <a href="index.php?page=jatekos=<?php echo ($row['jatekosid']); ?>">
+            <a href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
             <?php echo($row['nev']);?>
             </a>
  </div>
