@@ -19,7 +19,7 @@ if ($result->num_rows > 0){
 <?php
 while($row = $result->fetch_assoc() ){
     ?>
-<a href="index.php?page=league&id=<?php echo ($row['ligaid']); ?>">
+<a style="color: white"; href="index.php?page=league&id=<?php echo ($row['ligaid']); ?>">
 <?php echo $row["liganev"]?><br></a>
 <?php
 }
@@ -28,8 +28,9 @@ if($result2->num_rows > 0){
 ?>
 <?php
 while($row = $result2->fetch_assoc() ){
-echo $row["klubnev"]."<br>";
-?>
+    ?>
+    <a style="color: white"; href="index.php?page=team&id=<?php echo ($row['klubid']); ?>">
+<?php echo $row["klubnev"]?><br></a>
 <?php
 }
 }
@@ -39,8 +40,9 @@ if ($result3->num_rows > 0){
 ?>
 <?php
 while($row = $result3->fetch_assoc() ){
-echo $row["orszagnev"]."<br>";
-?>
+    ?>
+    <a style="color: white"; href="index.php?page=country&id=<?php echo ($row['orszagid']); ?>">
+<?php echo $row["orszagnev"]?><br></a>
 <?php
 }
 }
@@ -51,7 +53,7 @@ if ($result4->num_rows > 0){
 <?php
 while($row = $result4->fetch_assoc() ){
     ?>
-<a href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">  
+<a style="color: white"; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">  
 <?php echo $row["nev"]?><br></a>
 <?php
 }

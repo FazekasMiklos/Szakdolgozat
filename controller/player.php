@@ -25,9 +25,11 @@ if(isset($_GET['id'])){
     <div id="adat"> <?php echo"Védéseinek száma:";?><br>
     <?php echo($row['vedesek']);?><br></div>
     <div id="adat"> <?php echo"Nemzetisége:";?><br>
-    <?php echo($row['orszagnev']);?><br></div>
+    <a style="color: white"; href="index.php?page=country&id=<?php echo ($row['orszagid']); ?>">
+    <?php echo($row['orszagnev']);?><br></a></div>
     <div id="adat"> <?php echo"Jelenlegi klubja:";?><br>
-    <?php echo($row['klubnev']);?><br></div>
+    <a style="color: white"; href="index.php?page=team&id=<?php echo ($row['klubid']); ?>">
+    <?php echo($row['klubnev']);?><br></a></div>
     <div id="adat"> <?php echo"Posztja:";?><br>
     <?php echo($row['poznev']);?><br></div>
     </div>

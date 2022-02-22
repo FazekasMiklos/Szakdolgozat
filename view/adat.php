@@ -11,8 +11,6 @@ while($row = $result->fetch_assoc()){
     <?php
      echo"Felhasználónév:"; 
     echo $row['felhasznalonev'] ."<br>"."<br>";
-    echo"Jelszó:"; 
-     echo $row['jelszo']."<br>"."<br>";
      echo"Email:"; 
      echo $row['email']."<br>"."<br>";
 }
@@ -20,5 +18,5 @@ while($row = $result->fetch_assoc()){
 <?php
 }
 ?>
-<a href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a> 
+<a style="color: white"; href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a> 
 </div>

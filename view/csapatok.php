@@ -13,7 +13,8 @@ $result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok");
       ?>
             <div id="btm">
             <?php echo"Név:";?><br>
-            <?php echo($row['klubnev']);?>
+            <a style="color: white"; href="index.php?page=team&id=<?php echo ($row['klubid']); ?>">
+            <?php echo($row['klubnev']);?></a>
  </div>
  <?php
  } 

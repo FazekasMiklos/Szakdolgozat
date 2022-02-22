@@ -10,18 +10,18 @@
 				$azonosUser = mysqli_query($conn, "SELECT * FROM felhasznalok WHERE felhasznalonev = '".$_POST['user']."'");
 				$azonosEmail = mysqli_query($conn, "SELECT * FROM felhasznalok WHERE email = '".$_POST['email']."'");
 				if(mysqli_num_rows($azonosUser)) {
-					exit('Ez a felhasználónév foglalt');
+					exit("<p style='color:white;'>Ez a felhasználónév foglalt</p>");
 					header('Location: index.php?page=login');
 				}elseif(mysqli_num_rows($azonosEmail)){
-				  exit('Ez az email már regisztrálva van');
+				  exit("<p style='color:white;'>Ez az email már regisztrálva van</p>");
 				}
 				else{
 			$query = "INSERT INTO `felhasznalok` (`felhasznalonev`,`jelszo`,`email`) VALUES ('$user', '$pass', '$email')";
 			$result = mysqli_query($conn,$query);
 			if ($query) {
-				echo 'Sikeresen elmentve a felhasználó!';
+				echo "<p style='color:white;'>Sikeresen elmentve a felhasználó!</p>";
 			} else {
-				echo "Hiba történt a felhasználó mentése közben.";
+				echo "<p style='color:white;'>Hiba történt a felhasználó mentése közben.</p>";
 			}
 		}
 	}

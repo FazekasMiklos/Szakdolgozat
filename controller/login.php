@@ -1,7 +1,7 @@
 <?php 
    if(isset($_POST['user']) and isset($_POST['pw'])) {
 	
-	$loginError = '';
+	$loginError = "";
 	if($loginError == '') {
 		$sql = "SELECT `userid` FROM `felhasznalok` WHERE `felhasznalonev` = '".$_POST['user']."' ";
 
@@ -18,10 +18,10 @@
                     header('Location: index.php?page=index');
                     exit();
 				}
-				else $loginError .= 'Érvénytelen jelszó<br>';
+				else $loginError .= "<p style='color:white;'>Érvénytelen jelszó<br></p>";
 			}
 		}
-		else $loginError .= 'Érvénytelen felhasználónév<br>';
+		else $loginError .= "<p style='color:white;'>Érvénytelen felhasználónév<br></p>";
 	}
 }
 
