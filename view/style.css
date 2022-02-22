@@ -7,10 +7,12 @@
     width: 10%;
     margin: 10px;
     text-align: center;
+    color: white;
 } 
-*{
-background-image: "háttérkép.jpg";
+body{
+background-image: url("háttérkép.jpg");
 }
+
 #reg{  
     padding: 20px; 
     text-align: center;  
@@ -18,6 +20,7 @@ background-image: "háttérkép.jpg";
     width: 25%;
     border-radius: 2px;
     border-style: solid;
+    color: white;
 }
 #kozep{
     margin: auto;
@@ -28,7 +31,9 @@ background-image: "háttérkép.jpg";
   padding: 10px;
   height: auto;
   border-style: solid;
+  color: white;
 }
 h1{
+    color: white;
     text-align: center;
 }

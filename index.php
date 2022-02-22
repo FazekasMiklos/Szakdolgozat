@@ -82,7 +82,11 @@ $title = $menupontok[$page];
 
 include 'includes/htmlheader.inc.php';
 ?>
-<body>
+<!doctype html>
+<head>
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+</head>
+<body> 
 <?php
 
 include 'includes/menu.inc.php';

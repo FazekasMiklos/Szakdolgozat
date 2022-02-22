@@ -12,11 +12,10 @@ $result = $conn->query("SELECT orszagid,orszagnev,ranglista,zaszlok FROM orszago
  while($row = $result->fetch_assoc()){
       ?>
             <div id="btm">
-            <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['zaszlok']); ?>" width="100"/><br>
+            <a href="index.php?page=country&id=<?php echo ($row['orszagid']); ?>">
+            <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['zaszlok']); ?>" width="100"/><br></a>
             <?php echo"Név:";?> 
             <?php echo($row['orszagnev']);?><br>
-            <?php echo"Ranglistahelyezés:";?>
-            <?php echo($row['ranglista']);?>
             </div>
  
  <?php

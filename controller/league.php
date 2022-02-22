@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
     ?>
     <h1><?php echo($row['liganev']);?><br></h1>
     <div id="btn">
-    <div id="adat"><?php echo"A ligajátékosai:";?><br>
+    <div id="adat"><?php echo"A liga játékosai:";?><br>
     <?php echo($row['nev']);?><br></div>
     <div id="adat"><?php echo"A liga csapatai:";?><br>
     <?php
