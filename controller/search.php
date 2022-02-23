@@ -13,7 +13,7 @@ $result = $conn->query($sql);
 $result2 = $conn->query($sql2);
 $result3 = $conn->query($sql3);
 $result4 = $conn->query($sql4);
-
+if ($result->num_rows > 0 || $result2->num_rows > 0 || $result3->num_rows > 0 || $result4->num_rows > 0){
 if ($result->num_rows > 0){
 ?>
 <?php
@@ -60,6 +60,9 @@ while($row = $result4->fetch_assoc() ){
 }
 }else{
     echo "<p style='color:white;'>Nincs ilyen adat</p>";
+}
+}else{
+    echo "<p style='color:white;'>Nem írtál karaktert</p>";
 }
 ?>
 </div>

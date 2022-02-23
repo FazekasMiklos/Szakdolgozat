@@ -3,12 +3,18 @@
 if(!empty($_SESSION["userid"])) { 
     ?>
     <?php
-$result = $conn->query("SELECT * FROM felhasznalok as f INNER JOIN profilkepek as p ON (f.userid = p.userid) WHERE f.userid = '".$_SESSION['userid']."'");
-while($row = $result->fetch_assoc()){
+$result = $conn->query("SELECT * FROM felhasznalok WHERE userid = '".$_SESSION['userid']."'");
+$result1 = $conn->query("SELECT * FROM profilkepek INNER JOIN felhasznalok ON (felhasznalok.userid=profilkepek.userid) WHERE felhasznalok.userid = '".$_SESSION['userid']."'");
+
+while($row = $result1->fetch_assoc()){
     echo"Profilkép:";
     ?> 
     <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" width="100"/><br><br>
     <?php
+    }
+    ?>
+    <?php
+    while($row = $result->fetch_assoc()){
      echo"Felhasználónév:"; 
     echo $row['felhasznalonev'] ."<br>"."<br>";
      echo"Email:"; 
