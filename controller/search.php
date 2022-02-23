@@ -58,6 +58,8 @@ while($row = $result4->fetch_assoc() ){
 <?php
 }
 }
+}else{
+    echo "<p style='color:white;'>Nincs ilyen adat</p>";
 }
 ?>
 </div>

@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#228B22;">
+<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="nav justify-content-center">
     <?php 
    if(!empty($_SESSION["userid"])) { 
     ?>
@@ -27,7 +27,7 @@
             ?>
             <div id="kozep">
             <li class="nav-item<?php echo $active; ?>">
-                <a class="nav-link" href="index.php?page=<?php echo $key; ?>"><?php echo $value; ?>
+                <a class="nav-link"  style="color: white;" href="index.php?page=<?php echo $key; ?>"><?php echo $value; ?>
               </a>
             </li>
         </div>
@@ -39,6 +39,5 @@
       <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
     </form>
-    </ul>
 </div>
 </nav>
