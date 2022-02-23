@@ -18,5 +18,6 @@ while($row = $result->fetch_assoc()){
 <?php
 }
 ?>
-<a style="color: white"; href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a> 
+<a style="color: white"; href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a>
+<a style="color: white"; href="index.php?page=profilepic" title="Profile">Profilkép módosítása<br><br></a>
 </div>
