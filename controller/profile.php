@@ -13,8 +13,7 @@
             }
         
         }
-        else{
-            isset($_POST['profileedit']);
+        if(isset($_POST['profileedit'])){
 			$profilkep = $_FILES['profilkep']['name'];
             $loginError = '';
     $destination = 'kepek/profilkepek/' . $profilkep;
