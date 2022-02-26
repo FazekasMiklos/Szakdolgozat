@@ -35,6 +35,7 @@ if(isset($_GET['id'])){
     </div>
 <?php
 }
+include 'view/kommentek.php';
 ?>
 </body>
 </html>

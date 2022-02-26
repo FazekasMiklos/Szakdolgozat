@@ -16,12 +16,12 @@ if(isset($_GET['id'])){
     <h1 style="color: white;"><?php echo($row['liganev']);?><br></h1>
     <div id="btn">
     <div id="reg"><?php echo"A liga csapatai:";?><br>
-    <a style="color: white"; href="index.php?page=team&id=<?php echo ($row['klubid']); ?>">
+    <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
     <?php
     echo($row['klubnev'])."<br>";
     while($row = $result->fetch_assoc()){
     ?></a>
-    <a style="color: white"; href="index.php?page=team&id=<?php echo ($row['klubid']); ?>">
+    <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
     <?php echo($row['klubnev']);?><br></a>
     <?php
     }

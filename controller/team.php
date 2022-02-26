@@ -6,10 +6,10 @@
 <body>
 
 <?php
-if(isset($_GET['id'])){
-    $id = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "SELECT * FROM klubbok INNER JOIN ligak ON (ligak.ligaid = klubbok.ligaid) WHERE klubbok.klubid='$id'";
-    $sql1 = "SELECT * FROM klubbok INNER JOIN jatekosok ON (jatekosok.klubid = klubbok.klubid)  WHERE klubbok.klubid='$id'";
+if(isset($_GET['id2'])){
+    $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
+    $sql = "SELECT * FROM klubbok INNER JOIN ligak ON (ligak.ligaid = klubbok.ligaid) WHERE klubbok.klubid='$id2'";
+    $sql1 = "SELECT * FROM klubbok INNER JOIN jatekosok ON (jatekosok.klubid = klubbok.klubid)  WHERE klubbok.klubid='$id2'";
     $result = mysqli_query($conn,$sql) or die;
     $result1 = mysqli_query($conn,$sql1) or die;
     $row = mysqli_fetch_array($result);
@@ -30,15 +30,17 @@ if(isset($_GET['id'])){
     while($row1 = $result1->fetch_assoc()){
     ?></a>
      <a style="color: white"; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
-    <?php echo($row1['nev']);?><br></a>
+    <?php echo($row1['nev']);?><br>
     <?php
     }
 }
     ?>
+    </a>
     </div>
     </div>
 <?php
 }
+include 'view/kommentek.php';
 ?>
 </body>
 </html>

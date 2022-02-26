@@ -29,7 +29,7 @@ if($result2->num_rows > 0){
 <?php
 while($row = $result2->fetch_assoc() ){
     ?>
-    <a style="color: white"; href="index.php?page=team&id=<?php echo ($row['klubid']); ?>">
+    <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
 <?php echo $row["klubnev"]?><br></a>
 <?php
 }

@@ -65,7 +65,7 @@ $menupontok = array(    'index' => "Főoldal",
                         'jatekos' => "Játékosok",
                         'csapat' => "Csapatok",
                         'adatok' => "Adatok",
-                        'upload' => $upload,         
+                        'upload' => $upload,      
                 );
 }else
 $menupontok = array(    'index' => "Főoldal",
