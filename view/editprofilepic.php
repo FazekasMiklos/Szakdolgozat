@@ -11,7 +11,7 @@
 		<div id="reg">
 		<h2>Profilkép módosítása</h2>
 	    <input type='file' name='profilkep' id="profilkep"><br><br>
-		<input type='submit' name='profileedit' id="profileedit" value = "Módosítás" />
+		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='profileedit' id="profileedit" value = "Módosítás" />
 </div>
 </div>
 </form>

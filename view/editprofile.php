@@ -16,6 +16,6 @@
 		<input type='password' name='pass' id="pass"  required/><br/>
 		<label for="user">Email:</label>	<br/>
 		<input type='email' name='email' id="email"  required/><br/><br>
-		<input type='submit' name='edit' id="edit" value = "Módosítás" /><br></div></div></form>
+		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='edit' id="edit" value = "Módosítás" /><br></div></div></form>
 </body>
 </html>

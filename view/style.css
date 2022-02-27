@@ -47,15 +47,22 @@ h1{
 .nav-item{
     color:white;
 }
-.adat3{
-    text-align: center;
-    width: 162%;
-  }
-.adat2{
-    text-align: center;
-    width: 180%;
-  }
 .container{
     border-top: solid;
+    position: relative;
+}
+.adat2{
+    text-align: center;
+    width: 190%;
+    position: absolute;
+  }
+#komment{
+  padding: 10px;
+  height: auto;
+  color: white;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4); 
+  color:white;
+  background-repeat: repeat-y;
 }
 

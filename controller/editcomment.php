@@ -20,7 +20,7 @@ include 'controller/komment.php';
     <input type='hidden' name='uid' value='".$uid."'>
     <input type='hidden' name='date' value='".$date."'>
     <textarea name='message'>".$message."</textarea><br>
-    <button type='submit' class='btn mb-2' style='background-color:#228B22; color:white;' name='editsubmit'>Módosítás</button>
+    <button type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='editsubmit'>Módosítás</button>
     </form>";
     ?>
      </div>

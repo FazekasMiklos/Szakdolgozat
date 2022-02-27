@@ -9,8 +9,8 @@
 <div id="reg">
  	<form action='index.php?page=profiledelete' method='POST'>
 		<label for="user">Biztos hogy törölni akarod a profilod?</label>	<br/>
-		<input type='submit' class="btn mb-2" style="background-color:#228B22; color:white;" name='igen' id="igen" value = "Igen" />
-        <input type='submit' class="btn mb-2" style="background-color:#228B22; color:white;" name='nem' id="nem" value = "Nem" />
+		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='igen' id="igen" value = "Igen" />
+        <input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='nem' id="nem" value = "Nem" />
 	</form>
 </div>
 </div>

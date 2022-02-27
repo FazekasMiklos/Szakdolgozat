@@ -11,17 +11,19 @@ include 'controller/komment.php';
 </head>
 <body>
 <h1 style="color: white;">Vélemények<br></h1>
-<div id='adat'>
+<div id='komment'>
     <?php
     if (isset($_SESSION['userid'])){ 
     echo "<form method='POST' action='".setComments($conn)."'>
     <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-    <textarea name='message'></textarea><br>
-    <button type='submit' class='btn mb-2' style='background-color:#228B22; color:white;' name='submit'>Küldés</button>
+    <div class='text-center'>
+    <textarea rows='4' cols='200' name='message'></textarea><br>
+    <button type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='submit'>Küldés</button>
+    </div><br>
     </form>";
     } else {
-        echo "A kommenteléshez be kell jelentkezned!";
+        echo "<div class='text-center'><h5>A kommenteléshez be kell jelentkezned!</h5></div><br>";
     }
     getComments($conn);
     ?>

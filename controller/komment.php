@@ -21,57 +21,53 @@ function setComments($conn){
 function getComments($conn){
     if(isset($_GET['id'])){
     $id = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "SELECT * FROM velemenyek INNER JOIN felhasznalok ON (felhasznalok.userid=velemenyek.userid) WHERE jatekosid='$id'";
+    $sql = "SELECT * FROM velemenyek INNER JOIN felhasznalok ON (felhasznalok.userid=velemenyek.userid) WHERE jatekosid='$id' ORDER BY datum DESC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
         echo "<div class='container'>";
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
-            echo "<div class='adat2'>";        
-    echo "<form method='POST' action='".deleteComments($conn)."'>
+    echo "<div class='adat2'>        
+    <form method='POST' action='".deleteComments($conn)."'>
     <input type='hidden' name='id' value='".$row['velemenyid']."'>
     <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
     </form>
-    </div>
-    <div class='adat3'>
     <form method='POST' action='index.php?page=editcomment'>
     <input type='hidden' name='id' value='".$row['velemenyid']."'>
     <input type='hidden' name='uid' value='".$row['userid']."'>
     <input type='hidden' name='date' value='".$row['datum']."'>
     <input type='hidden' name='message' value='".$row['szoveg']."'>
     <button class='btn btn-link' style='color:white;'>Módosítás</button>
-    </form>";
-    echo "</div>";
+    </form>
+    </div>";
     }
 }
     echo $row['felhasznalonev']."<br>";
     echo $row['datum']."<br>";
-    echo $row['szoveg']."<br>"."<br>";
+    echo $row['szoveg']."<br>";
     echo "</div>";
     }
 }else if(isset($_GET['id2'])){
     $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
-    $sql = "SELECT * FROM velemenyek INNER JOIN felhasznalok ON (felhasznalok.userid=velemenyek.userid) WHERE klubid='$id2'";
+    $sql = "SELECT * FROM velemenyek INNER JOIN felhasznalok ON (felhasznalok.userid=velemenyek.userid) WHERE klubid='$id2' ORDER BY datum DESC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
         echo "<div class='container'>";
         if (isset($_SESSION['userid'])){
             if ($_SESSION['userid'] == $row['userid']){
-                echo "<div class='adat2'>";        
-        echo "<form method='POST' action='".deleteComments($conn)."'>
+                echo "<div class='adat2'>        
+        <form method='POST' action='".deleteComments($conn)."'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
         <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
-        </form>
-        </div>
-        <div class='adat3'>
+        </form>      
         <form method='POST' action='index.php?page=editcomment'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
         <input type='hidden' name='uid' value='".$row['userid']."'>
         <input type='hidden' name='date' value='".$row['datum']."'>
         <input type='hidden' name='message' value='".$row['szoveg']."'>
         <button class='btn btn-link' style='color:white;'>Módosítás</button>
-        </form>";
-        echo "</div>";
+        </form>
+        </div>";
         }
     }
     echo $row['felhasznalonev']."<br>";
@@ -89,7 +85,7 @@ function editComments($conn){
         $message = $_POST['message'];
         $sql ="UPDATE velemenyek SET szoveg='$message' WHERE velemenyid='$cid'";
         $result = $conn->query($sql);
-        header("Location: index.php?page=player");
+        header("Location: index.php?page=jatekos");
 
     }
 }

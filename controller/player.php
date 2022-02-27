@@ -28,7 +28,7 @@ if(isset($_GET['id'])){
     <a style="color: white"; href="index.php?page=country&id=<?php echo ($row['orszagid']); ?>">
     <?php echo($row['orszagnev']);?><br></a></div>
     <div id="adat"> <?php echo"Jelenlegi klubja:";?><br>
-    <a style="color: white"; href="index.php?page=team&id=<?php echo ($row['klubid']); ?>">
+    <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
     <?php echo($row['klubnev']);?><br></a></div>
     <div id="adat"> <?php echo"Posztja:";?><br>
     <?php echo($row['poznev']);?><br></div>
