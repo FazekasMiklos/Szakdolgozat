@@ -50,19 +50,21 @@ h1{
 .container{
     border-top: solid;
     position: relative;
+    width: auto;
 }
 .adat2{
-    text-align: center;
-    width: 190%;
     position: absolute;
+    text-align: right;
   }
 #komment{
+    position: relative;
   padding: 10px;
   height: auto;
   color: white;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.4); 
   color:white;
-  background-repeat: repeat-y;
+  width: auto;
 }
+
 

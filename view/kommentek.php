@@ -18,7 +18,7 @@ include 'controller/komment.php';
     <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <div class='text-center'>
-    <textarea rows='4' cols='200' name='message'></textarea><br>
+    <textarea rows='4' class='form-control' name='message'></textarea><br>
     <button type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='submit'>Küldés</button>
     </div><br>
     </form>";

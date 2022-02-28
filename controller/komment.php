@@ -27,7 +27,7 @@ function getComments($conn){
         echo "<div class='container'>";
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
-    echo "<div class='adat2'>        
+    echo " <div class='adat2'>      
     <form method='POST' action='".deleteComments($conn)."'>
     <input type='hidden' name='id' value='".$row['velemenyid']."'>
     <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
