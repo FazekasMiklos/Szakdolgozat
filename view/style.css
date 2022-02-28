@@ -50,11 +50,11 @@ h1{
 .container{
     border-top: solid;
     position: relative;
-    width: auto;
 }
 .adat2{
     position: absolute;
     text-align: right;
+    width: 100%;
   }
 #komment{
     position: relative;
@@ -66,5 +66,11 @@ h1{
   color:white;
   width: auto;
 }
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    #btm, #adat, #reg {
+      width: 100%;
+    }
+  }
 
 
