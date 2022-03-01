@@ -19,7 +19,7 @@ include 'controller/komment.php';
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <div class='text-center'>
     <textarea rows='4' class='form-control' name='message'></textarea><br>
-    <button type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='submit'>Küldés</button>
+    <button type='submit' class='btn btn-success' style='color:white;' name='submit'>Küldés</button>
     </div><br>
     </form>";
     } else {

@@ -12,10 +12,13 @@
 } 
 body{
 background-image: url("háttérkép.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
 }
 
 #reg{
-    background-color: rgba(0,0,0, 0.3);   
+    background-color: rgba(0,0,0, 0.5);   
     padding: 20px; 
     text-align: center;  
     margin: 30px auto;
@@ -38,7 +41,7 @@ background-image: url("háttérkép.jpg");
   margin-left:auto;
   margin-right:auto;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.4); 
+  background-color: rgba(0,0,0, 0.5); 
 }
 h1{
     color: white;
@@ -50,25 +53,25 @@ h1{
 .container{
     border-top: solid;
     position: relative;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.6); 
 }
 .adat2{
     position: absolute;
     text-align: right;
-    width: 100%;
+    width: 99%;
   }
 #komment{
     position: relative;
   padding: 10px;
   height: auto;
   color: white;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.4); 
   color:white;
-  width: auto;
+  width: 100%;
 }
 @media only screen and (max-width:500px) {
     /* For mobile phones: */
-    #btm, #adat, #reg {
+    #btm, #adat, #reg{
       width: 100%;
     }
   }

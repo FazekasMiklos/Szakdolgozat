@@ -5,7 +5,8 @@ include 'controller/komment.php';
 <!DOCTYPE html>
 <html lang="HU">
 <head>
-<link rel = "stylesheet" type = "text/css" href = "style.css">   
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">   
 </head>
 <body>
 <div id='adat'>
@@ -19,7 +20,7 @@ include 'controller/komment.php';
     <input type='hidden' name='id' value='".$cid."'>
     <input type='hidden' name='uid' value='".$uid."'>
     <input type='hidden' name='date' value='".$date."'>
-    <textarea name='message'>".$message."</textarea><br>
+    <textarea name='message' class='form-control'>".$message."</textarea><br>
     <button type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='editsubmit'>Módosítás</button>
     </form>";
     ?>
