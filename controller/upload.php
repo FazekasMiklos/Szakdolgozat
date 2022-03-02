@@ -26,6 +26,15 @@ if (move_uploaded_file($file, $destination)) {
 			} else {
 				echo "<p style='color:white;'>Hiba történt a profilkép feltöltése közben.</p>";
 			}
+			$sql = "UPDATE profilkepek SET  name = '$profilkep', size = '$size' WHERE userid = '$userid'";
+
+    $result2 = mysqli_query($conn,$sql);
+    if ($sql) {
+        echo "<p style='color:white;'>Sikeresen módosítva a profilkép!</p>";
+    } else {
+        echo "<p style='color:white;'>Hiba történt a profilkép módosítása közben.</p>";
+    }
+	header('Location: index.php?page=upload');
 		}
 	}
 }

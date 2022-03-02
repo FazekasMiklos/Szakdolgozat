@@ -60,14 +60,18 @@ h1{
     position: absolute;
     text-align: right;
     width: 99%;
-  }
+}
+.adat3{
+    position: absolute;
+    text-align: right;
+    width: 89%;
+}
 #komment{
-    position: relative;
-  padding: 10px;
+  position: relative;
   height: auto;
   color: white;
-  color:white;
   width: 100%;
+  word-break: break-word;
 }
 @media only screen and (max-width:500px) {
     /* For mobile phones: */

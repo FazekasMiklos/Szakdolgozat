@@ -27,11 +27,13 @@ function getComments($conn){
         echo "<div class='container'>";
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
-    echo " <div class='adat2'>      
+    echo "<div class='adat2'>      
     <form method='POST' action='".deleteComments($conn)."'>
     <input type='hidden' name='id' value='".$row['velemenyid']."'>
     <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
     </form>
+    </div>
+    <div class='adat3'> 
     <form method='POST' action='index.php?page=editcomment'>
     <input type='hidden' name='id' value='".$row['velemenyid']."'>
     <input type='hidden' name='uid' value='".$row['userid']."'>
@@ -59,7 +61,9 @@ function getComments($conn){
         <form method='POST' action='".deleteComments($conn)."'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
         <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
-        </form>      
+        </form>
+        </div>
+        <div class='adat3'>      
         <form method='POST' action='index.php?page=editcomment'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
         <input type='hidden' name='uid' value='".$row['userid']."'>
@@ -85,7 +89,7 @@ function editComments($conn){
         $message = $_POST['message'];
         $sql ="UPDATE velemenyek SET szoveg='$message' WHERE velemenyid='$cid'";
         $result = $conn->query($sql);
-        header("Location: index.php?page=jatekos");
+        header("Location: index.php?page=index");
 
     }
 }
@@ -94,6 +98,5 @@ function deleteComments($conn){
         $cid = $_POST['id'];
         $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid'";
         $result = $conn->query($sql);
-
     }
 }
