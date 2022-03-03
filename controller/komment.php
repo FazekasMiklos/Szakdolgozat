@@ -89,9 +89,8 @@ function editComments($conn){
         $message = $_POST['message'];
         $sql ="UPDATE velemenyek SET szoveg='$message' WHERE velemenyid='$cid'";
         $result = $conn->query($sql);
-        header("Location: index.php?page=index");
-
-    }
+        header('Location: index.php?page=team&id2='.$cid.'');
+}
 }
 function deleteComments($conn){
     if(isset($_POST['deletesubmit'])){

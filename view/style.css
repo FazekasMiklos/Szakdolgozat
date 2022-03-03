@@ -64,20 +64,27 @@ h1{
 .adat3{
     position: absolute;
     text-align: right;
-    width: 89%;
+    width: 94%;
 }
 #komment{
   position: relative;
   height: auto;
   color: white;
-  width: 100%;
   word-break: break-word;
 }
-@media only screen and (max-width:500px) {
+#komment2{
+    width: 60%;
+}
+@media only screen and (max-width:1300px) {
     /* For mobile phones: */
-    #btm, #adat, #reg{
+    #btm, #adat, #reg, #komment2{
       width: 100%;
     }
+}
+@media only screen and (max-width:1000px) {
+    .adat3{
+        width: 86%;
+      }
   }
 
 
