@@ -12,7 +12,7 @@
     while($row = $result->fetch_assoc()){
     ?>  
     <a class="navbar-brand">
-    <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" width="50">
+    <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60">
     </a>
     <?php
     }

@@ -10,7 +10,7 @@ $result1 = $conn->query("SELECT * FROM profilkepek INNER JOIN felhasznalok ON (f
 while($row = $result1->fetch_assoc()){
     echo"Profilkép:";
     ?> 
-    <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" width="100"/><br><br>
+    <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100"/><br><br>
     <?php
     }
     ?>

@@ -9,6 +9,8 @@ $result = mysqli_query($conn,$query);
                 echo "<p style='color:white;'>Hiba történt a profilkép törlése közben.</p>";
             }
 header('Location: index.php?page=adatok');
+$sql = "INSERT INTO profilkepek (userid, name, size) VALUES ('$userid','profilkep.jpg', NULL)";
+            $result2 = mysqli_query($conn,$sql);
         }
         if(isset($_POST['nem'])){
             header('Location: index.php?page=adatok');

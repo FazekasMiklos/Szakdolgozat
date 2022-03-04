@@ -16,6 +16,8 @@
 					$_SESSION["userid"] = $row['userid'];
 					$_SESSION["felhasznalonev"] = $felhasznalo->get_felhasznalonev();
                     header('Location: index.php?page=index');
+					$query = "INSERT INTO profilkepek (userid, name, size) VALUES ('".$_SESSION["userid"]."','profilkep.jpg', NULL)";
+			        $result2 = mysqli_query($conn,$query);
                     exit();
 				}
 				else $loginError .= "<p style='color:white;'>Érvénytelen jelszó<br></p>";

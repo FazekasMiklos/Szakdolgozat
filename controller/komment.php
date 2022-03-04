@@ -21,7 +21,7 @@ function setComments($conn){
 function getComments($conn){
     if(isset($_GET['id'])){
     $id = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "SELECT * FROM velemenyek INNER JOIN felhasznalok ON (felhasznalok.userid=velemenyek.userid) WHERE jatekosid='$id' ORDER BY datum DESC";
+    $sql = "SELECT * FROM felhasznalok INNER JOIN velemenyek ON (felhasznalok.userid=velemenyek.userid) INNER JOIN profilkepek ON (felhasznalok.userid=profilkepek.userid) WHERE jatekosid='$id' ORDER BY datum DESC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
         echo "<div class='container'>";
@@ -44,14 +44,17 @@ function getComments($conn){
     </div>";
     }
 }
+?> 
+    <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60"/>
+    <?php
     echo $row['felhasznalonev']."<br>";
     echo $row['datum']."<br>";
-    echo $row['szoveg']."<br>";
+    echo $row['szoveg']."<br>"."<br>";
     echo "</div>";
     }
 }else if(isset($_GET['id2'])){
     $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
-    $sql = "SELECT * FROM velemenyek INNER JOIN felhasznalok ON (felhasznalok.userid=velemenyek.userid) WHERE klubid='$id2' ORDER BY datum DESC";
+    $sql = "SELECT * FROM felhasznalok INNER JOIN velemenyek ON (felhasznalok.userid=velemenyek.userid) INNER JOIN profilkepek ON (felhasznalok.userid=profilkepek.userid) WHERE klubid='$id2' ORDER BY datum DESC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
         echo "<div class='container'>";
@@ -74,6 +77,9 @@ function getComments($conn){
         </div>";
         }
     }
+    ?>
+    <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60"/>
+    <?php
     echo $row['felhasznalonev']."<br>";
     echo $row['datum']."<br>";
     echo $row['szoveg']."<br>"."<br>";
