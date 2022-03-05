@@ -41,6 +41,7 @@ if(isset($_GET['id2'])){
     </div>
 <?php
 }
+include 'view/ertekelesek.php';
 include 'view/kommentek.php';
 ?>
 </body>

@@ -36,6 +36,7 @@ if(isset($_GET['id'])){
     </div>
 <?php
 }
+include 'view/ertekelesek.php';
 include 'view/kommentek.php';
 ?>
 </body>
