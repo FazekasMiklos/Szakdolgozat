@@ -5,15 +5,28 @@ if (isset($_POST['ertekelesSubmit'])){
     $id = mysqli_real_escape_string($conn, $_GET['id']);
     $uid = $_POST['uid'];
     $ertekeles = $_POST['e1'];
+    $azonosertekeles = mysqli_query($conn, "SELECT * FROM ertekelesek WHERE jatekosid = '".$_GET['id']."' AND userid = '$uid'");
+    if(mysqli_num_rows($azonosertekeles)) {
+        $sql2= "UPDATE ertekelesek SET userid = $uid, jatekosid = $id ,klubid = NULL ,ertekeles = $ertekeles WHERE jatekosid = '".$_GET['id']."' AND userid = '$uid'";
+        $result2 = $conn->query($sql2);
+}else{
     $sql= "INSERT INTO ertekelesek (userid,jatekosid,klubid,ertekeles) VALUES ('$uid','$id',NULL,'$ertekeles')";
     $result = $conn->query($sql);
+}
+
     }else if (isset($_GET['id2'])){
     $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
     $uid = $_POST['uid'];
     $ertekeles = $_POST['e1'];
+    $azonosertekeles = mysqli_query($conn, "SELECT * FROM ertekelesek WHERE klubid = '".$_GET['id2']."' AND userid = '$uid'");
+    if(mysqli_num_rows($azonosertekeles)) {
+        $sql2= "UPDATE ertekelesek SET userid = $uid, jatekosid = NULL ,klubid = $id2 ,ertekeles = $ertekeles WHERE klubid = '".$_GET['id2']."' AND userid = '$uid'";
+        $result2 = $conn->query($sql2);
+}else{
     $sql= "INSERT INTO ertekelesek (userid,jatekosid,klubid,ertekeles) VALUES ('$uid',NULL,'$id2','$ertekeles')";
     $result = $conn->query($sql);
-    }
+}
+}
 }
 }
 function getRatings($conn){
