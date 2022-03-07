@@ -16,7 +16,8 @@ if(isset($_GET['id'])){
     $row = mysqli_fetch_array($result);
     $row1 = mysqli_fetch_array($result1);
     ?>
-    <h1 style="color: white;"><?php echo($row['orszagnev']);?><br></h1>
+    <div id='komment3'>
+    <h1 style="color: white;"><?php echo($row['orszagnev']);?><br></h1></div>
     <div id="btn">
     <div id="reg"><?php echo "Világranglistahelyezése:";?><br>
     <?php echo($row['ranglista']);?></div>

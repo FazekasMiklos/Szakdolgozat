@@ -29,6 +29,7 @@ background-size: cover;
 }
 #kozep{
     margin: auto;
+    text-align: center;
 }
 #adat{
   text-align: center;
@@ -43,6 +44,22 @@ background-size: cover;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.5); 
 }
+#komment3{
+    margin-left:auto;
+    margin-right:auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.5);
+    width:60%;
+    padding:1%;
+}
+#adat3{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    color: white;
+    margin-bottom: 10px;
+  }
 h1{
     color: white;
     text-align: center;
@@ -59,11 +76,13 @@ h1{
 .rating{
     display: block;
     border-style: solid;
-    position: relative;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0, 0.6);
     color: white;
-    text-align:center; 
+    text-align:center;
+    width: 60%;
+    margin-left:auto;
+    margin-right:auto;
 }
 .adat2{
     position: absolute;
@@ -86,7 +105,7 @@ h1{
 }
 @media only screen and (max-width:1300px) {
     /* For mobile phones: */
-    #btm, #adat, #reg, #komment2{
+    #btm, #adat, #reg, #komment2, .rating, #kozep, #komment3{
       width: 100%;
     }
 }

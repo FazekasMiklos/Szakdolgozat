@@ -62,9 +62,9 @@ function getRatings2($conn){
     $sql = "SELECT AVG(`ertekeles`),COUNT(`userid`),jatekosid FROM ertekelesek WHERE jatekosid='$id'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
-        echo "Az összes felhasználó értékelései átlagolva:";
-        echo $row['AVG(`ertekeles`)']."<br>";
-        echo "Az összes felhasználó aki értékelt:";
+        echo "Az összes felhasználó értékelései átlagolva:"."<br>";
+        echo $row['AVG(`ertekeles`)']."<br>"."<br>";
+        echo "Az összes felhasználó aki értékelt:"."<br>";
         echo $row['COUNT(`userid`)'];
     }
 }if(isset($_GET['id2'])){
@@ -72,9 +72,9 @@ function getRatings2($conn){
     $sql = "SELECT AVG(`ertekeles`),COUNT(`userid`),klubid FROM ertekelesek WHERE klubid='$id2'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
-        echo "Az összes felhasználó értékelései átlagolva:";
+        echo "Az összes felhasználó értékelései átlagolva:"."<br>";
         echo $row['AVG(`ertekeles`)']."<br>";
-        echo "Az összes felhasználó aki értékelt:";
+        echo "Az összes felhasználó aki értékelt:"."<br>";
         echo $row['COUNT(`userid`)'];
     }
 }

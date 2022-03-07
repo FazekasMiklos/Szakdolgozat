@@ -10,7 +10,11 @@ include 'controller/komment.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<h1 style="color: white;">Vélemények<br></h1>
+<div id='komment3'>
+<div class='text-center'>
+<h2 style="color: white;">Vélemények<br></h2>
+</div>
+</div>
 <div id='komment'>
     <?php
     if (isset($_SESSION['userid'])){ 
@@ -25,7 +29,7 @@ include 'controller/komment.php';
     </div></div></div><br>
     </form>";
     } else {
-        echo "<div class='text-center'><h5>A kommenteléshez be kell jelentkezned!</h5></div><br>";
+        echo "<div class='text-center' id='komment3'><h5>A kommenteléshez be kell jelentkezned!</h5></div>";
     }
     getComments($conn);
     ?>

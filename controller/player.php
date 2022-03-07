@@ -13,7 +13,8 @@ if(isset($_GET['id'])){
     $result = mysqli_query($conn,$sql) or die;
     $row = mysqli_fetch_array($result);
     ?>
-    <h1 style="color: white;"><?php echo($row['nev']);?><br></h1>
+    <div id='komment3'>
+    <h1 style="color: white;"><?php echo($row['nev']);?></h1></div><br>
     <div id="btn">
     <div id="adat"><?php echo"Született:";?><br>
     <?php echo($row['szuletesidatum']);?><br></div>

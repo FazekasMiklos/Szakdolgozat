@@ -1,10 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="nav justify-content-center">
-    <?php 
+<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong justify-content-center">
+<?php 
    if(!empty($_SESSION["userid"])) { 
     ?>
     <?php
@@ -18,6 +13,11 @@
     }
     }
     ?>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav justify-content-center">
       <?php
         foreach($menupontok as $key => $value) {
             $active = '';
@@ -37,7 +37,9 @@
       ?>
       <form action="index.php?page=search" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
       <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés" aria-label="Search">
+      <div id='kozep'>
       <button class="btn btn-success" style='color:white;' type="submit">Keresés</button>
+      </div>
     </form>
     </ul>
 </div>

@@ -14,7 +14,8 @@ if(isset($_GET['id'])){
     $row = mysqli_fetch_array($result);
 
     ?>
-    <h1 style="color: white;"><?php echo($row['liganev']);?><br></h1>
+    <div id='komment3'>
+    <h1 style="color: white;"><?php echo($row['liganev']);?><br></h1></div>
     <div id="btn">
     <div id="reg"><?php echo"A liga csapatai:";?><br>
     <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">

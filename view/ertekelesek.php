@@ -10,12 +10,14 @@ include 'controller/ertekeles.php';
 </head>
 <body>
 <div class='rating'>
-<h3 style="color: white;">Értékelések<br></h3>
+<div class='text-center'>
+<h2 style="color: white;">Értékelések<br></h2>
+</div>
+<div class='d-flex justify-content-center'>
+    <div id='adat3'>
     <?php
     if (isset($_SESSION['userid'])){ 
     echo "<form method='POST' action='".setRatings($conn)."'>
-    <div class='d-flex justify-content-center'>
-    <div id='komment2'>
     <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
     <input type='radio' id='e1' name='e1' value='1' checked>
 <label for='e1'>1</label><br>
@@ -39,13 +41,17 @@ include 'controller/ertekeles.php';
 <label for='e5'>10</label><br>
     <div class='text-center'>
     <button type='submit' class='btn btn-success' style='color:white;' name='ertekelesSubmit'>Értékelés</button>
-    </div></div></div><br>
+    </div><br>
     </form>";
     getRatings($conn);
     } else {
-        echo "<h5>Az értékeléshez be kell jelentkezned!</h5><br>";
+        echo "<div class='text-center'><h5>Az értékeléshez be kell jelentkezned!</h5></div><br>";
     }
+    echo "</div>";
+    echo "<div id='adat3'>";
     getRatings2($conn);
+    echo "</div>";
+    echo "</div>";
     ?>
      </div>
     </body>
