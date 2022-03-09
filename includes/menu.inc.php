@@ -36,7 +36,8 @@
 
       ?>
       <form action="index.php?page=search" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
-      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés" aria-label="Search">
+      <div id='kozep'>
+      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés" aria-label="Search"></div>
       <div id='kozep'>
       <button class="btn btn-success" style='color:white;' type="submit">Keresés</button>
       </div>

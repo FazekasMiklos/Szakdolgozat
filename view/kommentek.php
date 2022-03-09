@@ -31,7 +31,10 @@ include 'controller/komment.php';
     } else {
         echo "<div class='text-center' id='komment3'><h5>A kommenteléshez be kell jelentkezned!</h5></div>";
     }
+    echo "<div class='d-flex justify-content-center'>
+    <div id='komment2'>";
     getComments($conn);
+    echo "</div></div>";
     ?>
      </div>
     </body>

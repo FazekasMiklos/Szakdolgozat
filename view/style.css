@@ -103,13 +103,17 @@ h1{
 #komment2{
     width: 60%;
 }
-@media only screen and (max-width:1300px) {
-    /* For mobile phones: */
-    #btm, #adat, #reg, #komment2, .rating, #kozep, #komment3{
+@media only screen and (max-width:700px) {
+     #adat, #reg, #komment2, .rating, #kozep, #komment3{
       width: 100%;
     }
 }
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:1300px) {
+    #btm{
+      width: 100%;
+    }
+}
+@media only screen and (max-width:1600px) {
     .adat3{
         width: 86%;
       }
