@@ -20,7 +20,7 @@ if ($result->num_rows > 0){
 <?php
 while($row = $result->fetch_assoc() ){
     ?>
-<a style="color: white"; href="index.php?page=league&id=<?php echo ($row['ligaid']); ?>">
+<a style="color: white"; href="index.php?page=league&id3=<?php echo ($row['ligaid']); ?>">
 <?php echo $row["liganev"]?><br></a>
 <?php
 }
