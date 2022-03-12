@@ -42,7 +42,7 @@ if ($result3->num_rows > 0){
 <?php
 while($row = $result3->fetch_assoc() ){
     ?>
-    <a style="color: white"; href="index.php?page=country&id=<?php echo ($row['orszagid']); ?>">
+    <a style="color: white"; href="index.php?page=country&id4=<?php echo ($row['orszagid']); ?>">
 <?php echo $row["orszagnev"]?><br></a>
 <?php
 }

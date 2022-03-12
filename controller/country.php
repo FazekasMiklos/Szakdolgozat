@@ -7,17 +7,17 @@
 <body>
 
 <?php
-if(isset($_GET['id'])){
-    $id = mysqli_real_escape_string($conn, $_GET['id']);
-    $sql = "SELECT * FROM orszagok WHERE orszagok.orszagid = '$id'";
-    $sql1 = "SELECT * FROM orszagok INNER JOIN jatekosok ON (jatekosok.orszagid = orszagok.orszagid) WHERE orszagok.orszagid = '$id' ";
+if(isset($_GET['id4'])){
+    $id4 = mysqli_real_escape_string($conn, $_GET['id4']);
+    $sql = "SELECT * FROM orszagok WHERE orszagok.orszagid = '$id4'";
+    $sql1 = "SELECT * FROM orszagok INNER JOIN jatekosok ON (jatekosok.orszagid = orszagok.orszagid) WHERE orszagok.orszagid = '$id4' ";
     $result = mysqli_query($conn,$sql) or die;
     $result1 = mysqli_query($conn,$sql1) or die;
     $row = mysqli_fetch_array($result);
     $row1 = mysqli_fetch_array($result1);
     ?>
     <div id='komment3'>
-    <h1 style="color: white;"><?php echo($row['orszagnev']);?><br></h1></div>
+    <h1 style="color: white;"><?php echo($row['orszagnev']); include 'view/kedvencek.php'; ?></h1></div>
     <div id="btn">
     <div id="reg"><?php echo "Világranglistahelyezése:";?><br>
     <?php echo($row['ranglista']);?></div>

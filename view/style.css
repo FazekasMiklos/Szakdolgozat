@@ -103,6 +103,9 @@ h1{
 #komment2{
     width: 60%;
 }
+#kedvencek{
+    text-align: center;
+}
 @media only screen and (max-width:700px) {
      #adat, #reg, #komment2, .rating, #kozep, #komment3{
       width: 100%;

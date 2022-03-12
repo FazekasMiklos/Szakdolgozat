@@ -14,7 +14,7 @@ if(isset($_GET['id'])){
     $row = mysqli_fetch_array($result);
     ?>
     <div id='komment3'>
-    <h1 style="color: white;"><?php echo($row['nev']);?></h1></div><br>
+    <h1 style="color: white;"><?php echo($row['nev']); include 'view/kedvencek.php'; ?></h1></div><br>
     <div id="btn">
     <div id="adat"><?php echo"Született:";?><br>
     <?php echo($row['szuletesidatum']);?><br></div>
@@ -27,7 +27,7 @@ if(isset($_GET['id'])){
     <div id="adat"> <?php echo"Védéseinek száma:";?><br>
     <?php echo($row['vedesek']);?><br></div>
     <div id="adat"> <?php echo"Nemzetisége:";?><br>
-    <a style="color: white"; href="index.php?page=country&id=<?php echo ($row['orszagid']); ?>">
+    <a style="color: white"; href="index.php?page=country&id4=<?php echo ($row['orszagid']); ?>">
     <?php echo($row['orszagnev']);?><br></a></div>
     <div id="adat"> <?php echo"Jelenlegi klubja:";?><br>
     <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">

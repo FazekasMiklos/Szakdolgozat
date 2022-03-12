@@ -18,7 +18,7 @@ if(isset($_GET['id2'])){
 
     ?>
     <div id='komment3'>
-    <h1 style="color: white;"><?php echo($row['klubnev']);?><br></h1></div>
+    <h1 style="color: white;"><?php echo($row['klubnev']); include 'view/kedvencek.php'; ?></h1></div>
     <div id="btn">
     <div id="reg"><?php echo"A csapat ligája:";?><br>
     <a style="color: white"; href="index.php?page=league&id3=<?php echo ($row['ligaid']); ?>">

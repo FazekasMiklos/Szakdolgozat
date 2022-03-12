@@ -64,6 +64,7 @@ $menupontok = array(    'index' => "Főoldal",
                         'liga' => "Ligák",
                         'jatekos' => "Játékosok",
                         'csapat' => "Csapatok",
+                        'kedvenc' => "Kedvenceid",
                         'adatok' => "Adatok",
                         'upload' => $upload,      
                 );
