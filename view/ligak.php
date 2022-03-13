@@ -15,7 +15,6 @@ $result = $conn->query("SELECT * FROM ligak");
             <div id="btm">
             <a href="index.php?page=league&id3=<?php echo ($row['ligaid']); ?>">
             <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['logo']); ?>" width="100"/></a><br>
-            <?php echo"Név:";?>
             <?php echo($row['liganev']);?><br>
  </div>
  <?php

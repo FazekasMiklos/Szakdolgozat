@@ -49,7 +49,7 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
-        echo "Értékelésed:";
+        echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";
         }
     }
@@ -61,7 +61,7 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
-        echo "Értékelésed:";
+        echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";
         }
     }
@@ -73,7 +73,7 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
-        echo "Értékelésed:";
+        echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";
         }
     }

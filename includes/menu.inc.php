@@ -33,7 +33,7 @@
         </div>
             <?php            
         }
-
+      ob_start();
       ?>
       <form action="index.php?page=search" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
       <div id='kozep'>

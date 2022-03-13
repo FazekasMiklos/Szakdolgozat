@@ -145,5 +145,6 @@ function deleteComments($conn){
         $cid = $_POST['id'];
         $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid'";
         $result = $conn->query($sql);
+        header('Location: index.php?page=index');
     }
 }

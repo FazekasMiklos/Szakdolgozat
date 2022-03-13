@@ -11,7 +11,8 @@ $result2 = $conn->query("SELECT * FROM klubbok INNER JOIN kedvencek ON (kedvence
 $result3 = $conn->query("SELECT * FROM ligak INNER JOIN kedvencek ON (kedvencek.ligaid = ligak.ligaid) WHERE userid='".$_SESSION["userid"]."'"); 
 $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvencek.orszagid = orszagok.orszagid) WHERE userid='".$_SESSION["userid"]."'");  
 ?>
-<div id="kedvencek">
+<div id="btn">
+<div id="adat2">
 <div class="btn-group">
   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Kedvenc játékosaid
@@ -28,6 +29,8 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  ?>
  </div>
  </div>
+</div>
+<div id="adat2">
  <div class="btn-group">
  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Kedvenc csapataid
@@ -44,6 +47,8 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  ?>
  </div>
  </div>
+</div>
+<div id="adat2">
  <div class="btn-group">
  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Kedvenc ligáid
@@ -60,6 +65,8 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  ?>
  </div>
  </div>
+</div>
+<div id="adat2">
  <div class="btn-group">
  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Kedvenc országaid
@@ -76,6 +83,7 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  ?>
  </div>
  </div>
+</div>
 </div>
 </body>
 </html>
