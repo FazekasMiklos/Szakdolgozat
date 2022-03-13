@@ -40,7 +40,7 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  while($row = $result2->fetch_assoc()){
       ?>
             <a class="dropdown-item" href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
-            <?php echo($row['nev']);?>
+            <?php echo($row['klubnev']);?>
             </a>
  <?php
  } 
@@ -58,7 +58,7 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  while($row = $result3->fetch_assoc()){
       ?>
             <a class="dropdown-item" href="index.php?page=league&id3=<?php echo ($row['ligaid']); ?>">
-            <?php echo($row['nev']);?>
+            <?php echo($row['liganev']);?>
             </a>
  <?php
  } 

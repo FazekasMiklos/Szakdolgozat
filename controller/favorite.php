@@ -49,4 +49,59 @@ if (isset($_POST['kedvenc'])){
 }
 }
 }
+function getFavorites($conn){
+    if(isset($_GET['id'])){
+        $id = mysqli_real_escape_string($conn, $_GET['id']);
+        $sql = "SELECT * FROM kedvencek WHERE jatekosid='$id'";
+        $result = $conn->query($sql);
+        while ($row = $result->fetch_assoc()){
+            if(mysqli_num_rows($result)) {
+        if (isset($_SESSION['userid'])){
+            if ($_SESSION['userid'] == $row['userid']){
+            echo "<i class='fas fa-star star-light mr-1 main_star' style='font-size:30px;'></i>";
+            }
+        }
+}
+}
+}else if(isset($_GET['id2'])){
+    $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
+    $sql = "SELECT * FROM kedvencek WHERE klubid='$id2'";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()){
+        if(mysqli_num_rows($result)) {
+    if (isset($_SESSION['userid'])){
+        if ($_SESSION['userid'] == $row['userid']){
+        echo "<i class='fas fa-star star-light mr-1 main_star' style='font-size:30px;'></i>";
+        }
+    }
+}
+}
+}else if(isset($_GET['id3'])){
+    $id3 = mysqli_real_escape_string($conn, $_GET['id3']);
+    $sql = "SELECT * FROM kedvencek WHERE ligaid='$id3'";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()){
+        if(mysqli_num_rows($result)) {
+    if (isset($_SESSION['userid'])){
+        if ($_SESSION['userid'] == $row['userid']){
+        echo "<i class='fas fa-star star-light mr-1 main_star' style='font-size:30px;'></i>";
+        }
+    }
+}
+}
+}else if(isset($_GET['id4'])){
+    $id4 = mysqli_real_escape_string($conn, $_GET['id4']);
+    $sql = "SELECT * FROM kedvencek WHERE orszagid='$id4'";
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()){
+        if(mysqli_num_rows($result)) {
+    if (isset($_SESSION['userid'])){
+        if ($_SESSION['userid'] == $row['userid']){
+        echo "<i class='fas fa-star star-light mr-1 main_star' style='font-size:30px;'></i>";
+        }
+    }
+}
+}
+}
+}
 ?>
