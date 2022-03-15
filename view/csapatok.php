@@ -5,10 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<form action="index.php?page=csapat" method="post" class="mx-2 my-auto d-inline w-100" name="searchForm">
+      <div id='kozep'>
+      <input style="height: 50px"class="form-control" type="search" name="search" placeholder="Csapat keresése" aria-label="Search"><br>
+      <button class="btn btn-success" style='color:white;' type="submit">Keresés</button>
+      </div>
+    </form>
 <div id="btn"> 
 <?php 
-$result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok"); 
-?>
+$result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok");
+if (!empty($_REQUEST['search'])) {
+      $search = $_REQUEST['search']; 
+      $sql = "SELECT * from klubbok where klubnev like '%".$search."%'";
+      $result2 = $conn->query($sql);
+      if ($result2->num_rows > 0){
+      while($row = $result2->fetch_assoc()){
+            ?>
+           <div id="btm">
+            <?php echo"Név:";?><br>
+            <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
+            <?php echo($row['klubnev']);?></a>
+            </a>
+ </div>
+ <?php
+}
+}else{
+      echo "<div id='reg'><h2><p style='color:white;'>Nincs ilyen csapat</p></h2></div>";
+}
+}else{ 
+ ?>
  <?php 
  while($row = $result->fetch_assoc()){
       ?>
@@ -16,10 +41,12 @@ $result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok");
             <?php echo"Név:";?><br>
             <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
             <?php echo($row['klubnev']);?></a>
+            </a>
  </div>
  <?php
- } 
+ }
+} 
  ?>
  </div>
 </body>
-</html>
+</html> 

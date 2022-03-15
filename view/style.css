@@ -26,6 +26,7 @@ background-size: cover;
     border-radius: 2px;
     border-style: solid;
     color: white;
+    word-break: break-word;
 }
 #kozep{
     margin: auto;
@@ -115,12 +116,12 @@ h1{
     text-align: center;
 }
 @media only screen and (max-width:700px) {
-     #adat, #reg, #komment2, .rating, #kozep, #komment3, #adat2{
+     #adat, #komment2, .rating, #kozep, #komment3, #adat2{
       width: 100%;
     }
 }
 @media only screen and (max-width:1300px) {
-    #btm{
+    #btm,#reg{
       width: 100%;
     }
 }
