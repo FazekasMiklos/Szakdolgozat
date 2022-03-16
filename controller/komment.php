@@ -3,24 +3,21 @@ function setComments($conn){
     if (isset($_POST['submit'])){
     if (isset($_GET['id'])){
     $id = mysqli_real_escape_string($conn, $_GET['id']);
-    $uid = $_POST['uid'];
     $date = $_POST['date'];
     $message = $_POST['message'];
-    $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('$uid','$id',NULL,NULL,'$date','$message')";
+    $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('".$_SESSION["userid"]."','$id',NULL,NULL,'$date','$message')";
     $result = $conn->query($sql);
     }else if (isset($_GET['id2'])){
         $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
-        $uid = $_POST['uid'];
         $date = $_POST['date'];
         $message = $_POST['message'];
-        $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('$uid',NULL,'$id2',NULL,'$date','$message')";
+        $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('".$_SESSION["userid"]."',NULL,'$id2',NULL,'$date','$message')";
         $result = $conn->query($sql);
         }else if (isset($_GET['id3'])){
             $id3 = mysqli_real_escape_string($conn, $_GET['id3']);
-            $uid = $_POST['uid'];
             $date = $_POST['date'];
             $message = $_POST['message'];
-            $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('$uid',NULL,NULL,'$id3','$date','$message')";
+            $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('".$_SESSION["userid"]."',NULL,NULL,'$id3','$date','$message')";
             $result = $conn->query($sql);
 
 }
@@ -132,19 +129,32 @@ else if(isset($_GET['id3'])){
 function editComments($conn){
     if(isset($_POST['editsubmit'])){
         $cid = $_POST['id'];
-        $uid = $_POST['uid'];
         $date = $_POST['date'];
         $message = $_POST['message'];
-        $sql ="UPDATE velemenyek SET szoveg='$message' WHERE velemenyid='$cid'";
+        $sql ="UPDATE velemenyek SET szoveg='$message', datum='$date' WHERE velemenyid='$cid' AND userid='".$_SESSION["userid"]."'";
         $result = $conn->query($sql);
-        header('Location: index.php?page=index');
+        header('Location: index.php?page=player&id='.$_GET["id"].'');
 }
 }
 function deleteComments($conn){
     if(isset($_POST['deletesubmit'])){
+        if (isset($_SESSION['userid'])){ 
         $cid = $_POST['id'];
-        $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid'";
+        $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid' AND userid='".$_SESSION["userid"]."'";
         $result = $conn->query($sql);
-        header('Location: index.php?page=index');
+        header('Location: index.php?page=player&id='.$_GET["id"].'');
+        }
+    if(isset($_GET['id2'])){
+        $cid = $_POST['id'];
+        $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid' AND userid='".$_SESSION["userid"]."'";
+        $result = $conn->query($sql);
+        header('Location: index.php?page=team&id2='.$_GET["id2"].'');
     }
+    if(isset($_GET['id3'])){
+        $cid = $_POST['id'];
+        $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid' AND userid='".$_SESSION["userid"]."'";
+        $result = $conn->query($sql);
+        header('Location: index.php?page=league&id3='.$_GET["id3"].'');
+    }
+}
 }

@@ -18,7 +18,6 @@ include 'controller/ertekeles.php';
     <?php
     if (isset($_SESSION['userid'])){ 
     echo "<form method='POST' action='".setRatings($conn)."'>
-    <input type='hidden' name='uid' value='".$_SESSION['userid']."'>
     <input type='radio' id='e1' name='e1' value='1' checked>
 <label for='e1'>1</label><br>
 <input type='radio' id='e2' name='e1' value='2'>
