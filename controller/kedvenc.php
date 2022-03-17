@@ -75,7 +75,7 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  <?php 
  while($row = $result4->fetch_assoc()){
       ?>
-            <a class="dropdown-item" href="index.php?page=country&id3=<?php echo ($row['orszagid']); ?>">
+            <a class="dropdown-item" href="index.php?page=country&id4=<?php echo ($row['orszagid']); ?>">
             <?php echo($row['orszagnev']);?>
             </a>
  <?php

@@ -133,7 +133,7 @@ function editComments($conn){
         $message = $_POST['message'];
         $sql ="UPDATE velemenyek SET szoveg='$message', datum='$date' WHERE velemenyid='$cid' AND userid='".$_SESSION["userid"]."'";
         $result = $conn->query($sql);
-        header('Location: index.php?page=player&id='.$_GET["id"].'');
+        header('Location: index.php?page=index');
 }
 }
 function deleteComments($conn){
