@@ -36,11 +36,10 @@
       ob_start();
       ?>
       <form action="index.php?page=search" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
-      <div id='kozep'>
-      <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés" aria-label="Search"></div>
-      <div id='kozep'>
-      <button class="btn btn-success" style='color:white;' type="submit">Keresés</button>
-      </div>
+      <div class="input-group">
+      <input class="form-control" type="search" name="search" placeholder="Keresés" aria-label="Search">
+      <div class="input-group-append">
+      <button class="btn btn-success" style='color:white;' type="submit"><i class="fa fa-search"></i></button></div></div>
     </form>
     </ul>
 </div>

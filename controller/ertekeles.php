@@ -48,8 +48,10 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
+        echo "<h4>";
         echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";
+        echo "</h4>";
         }
     }
 }
@@ -60,8 +62,10 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
+        echo "<h4>";
         echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";
+        echo "</h4>";
         }
     }
 }
@@ -72,8 +76,10 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
+        echo "<h4>";
         echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";
+        echo "</h4>";
         }
     }
 }
@@ -85,30 +91,36 @@ function getRatings2($conn){
     $sql = "SELECT AVG(`ertekeles`),COUNT(`userid`),jatekosid FROM ertekelesek WHERE jatekosid='$id'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
+        echo "<h4>";
         echo "Az összes felhasználó értékelései átlagolva:"."<br>";
         echo $row['AVG(`ertekeles`)']."<br>"."<br>";
         echo "Az összes felhasználó aki értékelt:"."<br>";
         echo $row['COUNT(`userid`)'];
+        echo "</h4>";
     }
 }if(isset($_GET['id2'])){
     $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
     $sql = "SELECT AVG(`ertekeles`),COUNT(`userid`),klubid FROM ertekelesek WHERE klubid='$id2'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
+        echo "<h4>";
         echo "Az összes felhasználó értékelései átlagolva:"."<br>";
-        echo $row['AVG(`ertekeles`)']."<br>";
+        echo $row['AVG(`ertekeles`)']."<br>"."<br>";
         echo "Az összes felhasználó aki értékelt:"."<br>";
         echo $row['COUNT(`userid`)'];
+        echo "</h4>";
     }
 }if(isset($_GET['id3'])){
     $id3 = mysqli_real_escape_string($conn, $_GET['id3']);
     $sql = "SELECT AVG(`ertekeles`),COUNT(`userid`),ligaid FROM ertekelesek WHERE ligaid='$id3'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()){
+        echo "<h4>";
         echo "Az összes felhasználó értékelései átlagolva:"."<br>";
-        echo $row['AVG(`ertekeles`)']."<br>";
+        echo $row['AVG(`ertekeles`)']."<br>"."<br>";
         echo "Az összes felhasználó aki értékelt:"."<br>";
         echo $row['COUNT(`userid`)'];
+        echo "</h4>";
     }
 }
 } 

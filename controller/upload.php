@@ -13,7 +13,7 @@ $size = $_FILES['profilkep']['size'];
 
 if (!in_array($extension, ['jpg', 'png', 'svg'])) {
 echo "<p style='color:white;'>A fájl kiterjesztése csak .jpg, .png vagy .svg lehet</p>";
-} elseif ($_FILES['profilkep']['size'] > 1000000) { 
+} elseif ($_FILES['profilkep']['size'] > 10000000) { 
 echo "<p style='color:white;'>A fájl túl nagy!</p>";
 } else {
 

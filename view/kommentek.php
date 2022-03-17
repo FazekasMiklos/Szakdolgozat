@@ -22,7 +22,7 @@ include 'controller/komment.php';
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <div class='d-flex justify-content-center'>
     <div id='komment2'>
-    <textarea rows='4' maxlength='10000' class='form-control' name='message' required></textarea><br>
+    <textarea rows='4' maxlength='10000' class='form-control' name='message' placeholder='Írj véleményt...' required></textarea><br>
     <div class='text-center'>
     <button type='submit' class='btn btn-success' style='color:white;' name='submit'>Küldés</button>
     </div></div></div><br>

@@ -6,10 +6,11 @@
 </head>
 <body>
 <form action="index.php?page=jatekos" method="post" class="mx-2 my-auto d-inline w-100" name="searchForm">
-      <div id='kozep'>
-      <input style="height: 50px"class="form-control" type="search" name="search" placeholder="Játékos keresése" aria-label="Search"><br>
-      <button class="btn btn-success" style='color:white;' type="submit">Keresés</button>
-      </div>
+<div class="input-group">
+      <input style="height: 50px" class="form-control" type="search" name="search" placeholder="Játékos keresése" aria-label="Search">
+      <div class="input-group-append">
+      <button class="btn btn-success" style='color:white;' type="submit"><i class="fa fa-search"></i></button>
+      </div></div>
     </form>
 <div id="btn"> 
  <?php
