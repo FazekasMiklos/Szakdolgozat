@@ -2,6 +2,7 @@
 function setRatings($conn){
 if (isset($_POST['ertekelesSubmit'])){
     if($_POST['e1']<=10){
+    if (isset($_SESSION['userid'])){
     if (isset($_GET['id'])){
     $id = mysqli_real_escape_string($conn, $_GET['id']);
     $ertekeles = $_POST['e1'];
@@ -38,7 +39,45 @@ if (isset($_POST['ertekelesSubmit'])){
 }
 }
 }
-    }
+if (isset($_SESSION['admin'])){
+    if (isset($_GET['id'])){
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
+    $ertekeles = $_POST['e1'];
+    $azonosertekeles = mysqli_query($conn, "SELECT * FROM ertekelesek WHERE jatekosid = '".$_GET['id']."' AND userid = '".$_SESSION["admin"]."'");
+    if(mysqli_num_rows($azonosertekeles)) {
+        $sql2= "UPDATE ertekelesek SET userid = ".$_SESSION['admin'].", jatekosid = $id ,klubid = NULL ,ertekeles = $ertekeles WHERE jatekosid = '".$_GET['id']."' AND userid = '".$_SESSION["admin"]."'";
+        $result2 = $conn->query($sql2);
+}else{
+    $sql= "INSERT INTO ertekelesek (userid,jatekosid,klubid,ertekeles) VALUES ('".$_SESSION["admin"]."','$id',NULL,'$ertekeles')";
+    $result = $conn->query($sql);
+}
+
+    }else if (isset($_GET['id2'])){
+    $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
+    $ertekeles = $_POST['e1'];
+    $azonosertekeles = mysqli_query($conn, "SELECT * FROM ertekelesek WHERE klubid = '".$_GET['id2']."' AND userid = '".$_SESSION["admin"]."'");
+    if(mysqli_num_rows($azonosertekeles)) {
+        $sql2= "UPDATE ertekelesek SET userid = '".$_SESSION["admin"]."', jatekosid = NULL ,klubid = $id2 ,ertekeles = $ertekeles WHERE klubid = '".$_GET['id2']."' AND userid = '".$_SESSION["admin"]."'";
+        $result2 = $conn->query($sql2);
+}else{
+    $sql= "INSERT INTO ertekelesek (userid,jatekosid,klubid,ertekeles) VALUES ('".$_SESSION["admin"]."',NULL,'$id2','$ertekeles')";
+    $result = $conn->query($sql);
+}
+}else if (isset($_GET['id3'])){
+    $id3 = mysqli_real_escape_string($conn, $_GET['id3']);
+    $ertekeles = $_POST['e1'];
+    $azonosertekeles = mysqli_query($conn, "SELECT * FROM ertekelesek WHERE ligaid = '".$_GET['id3']."' AND userid = '".$_SESSION["admin"]."'");
+    if(mysqli_num_rows($azonosertekeles)) {
+        $sql2= "UPDATE ertekelesek SET userid = '".$_SESSION["admin"]."', jatekosid = NULL ,klubid = NULL,ligaid = $id3 ,ertekeles = $ertekeles WHERE ligaid = '".$_GET['id3']."' AND userid = '".$_SESSION["admin"]."'";
+        $result2 = $conn->query($sql2);
+}else{
+    $sql= "INSERT INTO ertekelesek (userid,jatekosid,klubid,ligaid,ertekeles) VALUES ('".$_SESSION["admin"]."',NULL,NULL,'$id3','$ertekeles')";
+    $result = $conn->query($sql);
+}
+}
+}
+}
+}
 }
 function getRatings($conn){
     if(isset($_GET['id'])){
@@ -48,6 +87,14 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
+        echo "<h4>";
+        echo "Értékelésed:"."<br>";
+        echo $row['ertekeles']."<br>";
+        echo "</h4>";
+        }
+    }
+    if (isset($_SESSION['admin'])){
+        if ($_SESSION['admin'] == $row['userid']){
         echo "<h4>";
         echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";
@@ -68,6 +115,14 @@ function getRatings($conn){
         echo "</h4>";
         }
     }
+    if (isset($_SESSION['admin'])){
+        if ($_SESSION['admin'] == $row['userid']){
+        echo "<h4>";
+        echo "Értékelésed:"."<br>";
+        echo $row['ertekeles']."<br>";
+        echo "</h4>";
+        }
+    }
 }
 }else if(isset($_GET['id3'])){
     $id3 = mysqli_real_escape_string($conn, $_GET['id3']);
@@ -76,6 +131,14 @@ function getRatings($conn){
     while ($row = $result->fetch_assoc()){
     if (isset($_SESSION['userid'])){
         if ($_SESSION['userid'] == $row['userid']){
+        echo "<h4>";
+        echo "Értékelésed:"."<br>";
+        echo $row['ertekeles']."<br>";
+        echo "</h4>";
+        }
+    }
+    if (isset($_SESSION['admin'])){
+        if ($_SESSION['admin'] == $row['userid']){
         echo "<h4>";
         echo "Értékelésed:"."<br>";
         echo $row['ertekeles']."<br>";

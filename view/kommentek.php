@@ -17,7 +17,7 @@ include 'controller/komment.php';
 </div>
 <div id='komment'>
     <?php
-    if (isset($_SESSION['userid'])){ 
+    if (isset($_SESSION['userid']) or isset($_SESSION['admin'])){ 
     echo "<form method='POST' action='".setComments($conn)."'>
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <div class='d-flex justify-content-center'>

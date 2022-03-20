@@ -1,6 +1,7 @@
 <?php
 function setComments($conn){
     if (isset($_POST['submit'])){
+    if(!empty($_SESSION["userid"])){ 
     if (isset($_GET['id'])){
     $id = mysqli_real_escape_string($conn, $_GET['id']);
     $date = $_POST['date'];
@@ -20,6 +21,29 @@ function setComments($conn){
             $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('".$_SESSION["userid"]."',NULL,NULL,'$id3','$date','$message')";
             $result = $conn->query($sql);
 
+}
+}
+if(!empty($_SESSION["admin"])){ 
+    if (isset($_GET['id'])){
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
+    $date = $_POST['date'];
+    $message = $_POST['message'];
+    $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('".$_SESSION["admin"]."','$id',NULL,NULL,'$date','$message')";
+    $result = $conn->query($sql);
+    }else if (isset($_GET['id2'])){
+        $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
+        $date = $_POST['date'];
+        $message = $_POST['message'];
+        $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('".$_SESSION["admin"]."',NULL,'$id2',NULL,'$date','$message')";
+        $result = $conn->query($sql);
+        }else if (isset($_GET['id3'])){
+            $id3 = mysqli_real_escape_string($conn, $_GET['id3']);
+            $date = $_POST['date'];
+            $message = $_POST['message'];
+            $sql= "INSERT INTO velemenyek (userid,jatekosid,klubid,ligaid,datum,szoveg) VALUES ('".$_SESSION["admin"]."',NULL,NULL,'$id3','$date','$message')";
+            $result = $conn->query($sql);
+
+}
 }
 }
 }

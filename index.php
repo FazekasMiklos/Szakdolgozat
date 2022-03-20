@@ -31,7 +31,7 @@ if(!empty($_REQUEST['action'])) {
 }
 
 // ki vagy be vagyok lépve?
-if(!empty($_SESSION["userid"])) {
+if(!empty($_SESSION["userid"]) or !empty($_SESSION["admin"])) {
         $szoveg = "Kijelentkezés";
         $upload = "Profilkép beállítás";
         $action = "kilepes";
@@ -57,7 +57,20 @@ if (!empty($_REQUEST['search'])) {
 	$search = $_REQUEST['search']; 
 }
 
-if(!empty($_SESSION["userid"])) {
+if(!empty($_SESSION["admin"])) {
+        $menupontok = array(    'index' => "Főoldal",
+                                'logout' => $szoveg,
+                                'orszag' => "Országok",
+                                'liga' => "Ligák",
+                                'jatekos' => "Játékosok",
+                                'csapat' => "Csapatok",
+                                'kedvenc' => "Kedvenceid",
+                                'adatok' => "Adatok",
+                                'upload' => $upload,   
+                        );
+        }
+
+elseif(!empty($_SESSION["userid"])) {
 $menupontok = array(    'index' => "Főoldal",
                         'logout' => $szoveg,
                         'orszag' => "Országok",

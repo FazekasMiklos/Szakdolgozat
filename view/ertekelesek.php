@@ -16,7 +16,7 @@ include 'controller/ertekeles.php';
 <div class='d-flex justify-content-center'>
     <div id='adat3'>
     <?php
-    if (isset($_SESSION['userid'])){ 
+    if (isset($_SESSION['userid']) or isset($_SESSION['admin'])){ 
     echo "<form method='POST' action='".setRatings($conn)."'>
     <input type='radio' id='e1' name='e1' value='1' checked>
 <label for='e1'>1</label><br>
