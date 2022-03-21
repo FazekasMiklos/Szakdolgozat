@@ -16,7 +16,7 @@
 				  exit("<p style='color:white;'>Ez az email már regisztrálva van</p>");
 				}
 				else{
-			$query = "INSERT INTO `felhasznalok` (`felhasznalonev`,`jelszo`,`email`) VALUES ('$user', '$pass', '$email')";
+			$query = "INSERT INTO `felhasznalok` (`felhasznalonev`,`jelszo`,`email`,`level`) VALUES ('$user', '$pass', '$email', 'user')";
 			$result = mysqli_query($conn,$query);
 			if ($query) {
 				echo "<p style='color:white;'>Sikeresen elmentve a felhasználó!</p>";

@@ -66,7 +66,8 @@ if(!empty($_SESSION["admin"])) {
                                 'csapat' => "Csapatok",
                                 'kedvenc' => "Kedvenceid",
                                 'adatok' => "Adatok",
-                                'upload' => $upload,   
+                                'upload' => $upload,
+                                'felhasznalok' => "Felhasználók"   
                         );
         }
 

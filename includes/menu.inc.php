@@ -37,6 +37,7 @@
             if($_SERVER['REQUEST_URI'] == '/c31c202121/'.$key) $active = ' active';
 
             if($key == 'felhasznalo') $key.='&action='.$action;
+            ob_start();
             ?>
             <div id="kozep">
             <li class="nav-item<?php echo $active; ?>">
@@ -46,7 +47,7 @@
         </div>
             <?php            
         }
-      ob_start();
+        ob_start();
       ?>
       <form action="index.php?page=search" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
       <div class="input-group">
