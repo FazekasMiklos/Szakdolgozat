@@ -1,6 +1,6 @@
 <div id="btn">
 <?php
-$result = $conn->query("SELECT * FROM felhasznalok INNER JOIN profilkepek ON (profilkepek.userid=felhasznalok.userid)");
+$result = $conn->query("SELECT * FROM felhasznalok INNER JOIN profilkepek ON (profilkepek.userid=felhasznalok.userid) WHERE NOT felhasznalok.userid = '".$_SESSION["admin"]."'");
 while($row = $result->fetch_assoc()){
     ?>
           <div id="reg">
@@ -8,7 +8,8 @@ while($row = $result->fetch_assoc()){
           <?php echo($row['felhasznalonev']);?><br>
           <?php echo($row['email']);?><br>
           <?php echo($row['level']);?><br>
-          <a style="color: white"; href="index.php?page=felhasznalok&id=<?php echo ($row['userid']); ?>">Törlés</a><br>
+          <a style="color: white"; href="index.php?page=felhasznalok&id=<?php echo ($row['userid']); ?>">Profil törlés</a><br>
+          <a style="color: white"; href="index.php?page=felhasznalok&id3=<?php echo ($row['userid']); ?>">Profilkép törlés</a><br>
           <a style="color: white"; href="index.php?page=felhasznalok&id2=<?php echo ($row['userid']); ?>">Admin jogosultság hozzáadása/elvétele</a>
 </div>
 <?php
@@ -34,5 +35,13 @@ if (!empty($_GET['id'])){
     $result = $conn->query($sql);
     header('Location: index.php?page=felhasznalok');
     }
+    if (!empty($_GET['id3'])){
+    $id3=$_GET['id3'];
+    $sql = "DELETE FROM profilkepek WHERE userid = '$id3'";
+    $result = $conn->query($sql);
+    $sql2 = "INSERT INTO profilkepek (userid, name, size) VALUES ('$id3','profilkep.jpg', NULL)";
+    $result2 = $conn->query($sql2);
+    header('Location: index.php?page=felhasznalok');
+    } 
 ?>
 </div>

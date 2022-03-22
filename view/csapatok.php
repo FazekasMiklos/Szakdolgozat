@@ -26,7 +26,16 @@ if (!empty($_REQUEST['search'])) {
             <?php echo"Név:";?><br>
             <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
             <?php echo($row['klubnev']);?></a>
+            </a><br>
+            <?php
+            if(!empty($_SESSION["admin"])){
+            ?> 
+            <a style="color: white"; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
+            Törlés
             </a>
+            <?php
+            }
+            ?>
  </div>
  <?php
 }
@@ -42,7 +51,16 @@ if (!empty($_REQUEST['search'])) {
             <?php echo"Név:";?><br>
             <a style="color: white"; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
             <?php echo($row['klubnev']);?></a>
+            </a><br>
+            <?php
+            if(!empty($_SESSION["admin"])){
+            ?> 
+            <a style="color: white"; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
+            Törlés
             </a>
+            <?php
+            }
+            ?>
  </div>
  <?php
  }

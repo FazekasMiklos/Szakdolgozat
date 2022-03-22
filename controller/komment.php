@@ -73,6 +73,14 @@ function getComments($conn){
     </div>";
     }
 }
+if (isset($_SESSION['admin'])){
+echo "<div class='adat2'>      
+<form method='POST' action='".deleteComments($conn)."'>
+<input type='hidden' name='id' value='".$row['velemenyid']."'>
+<button class='btn btn-link' style='color:white;' name='deletekomment'>Törlés</button>
+</form>
+</div>";
+}
 ?> 
     <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60"/>
     <?php
@@ -104,8 +112,16 @@ function getComments($conn){
         <button class='btn btn-link' style='color:white;'>Módosítás</button>
         </form>
         </div>";
+            }
+     }
+     if (isset($_SESSION['admin'])){
+        echo "<div class='adat2'>      
+        <form method='POST' action='".deleteComments($conn)."'>
+        <input type='hidden' name='id' value='".$row['velemenyid']."'>
+        <button class='btn btn-link' style='color:white;' name='deletekomment'>Törlés</button>
+        </form>
+        </div>";
         }
-    }
     ?>
     <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60"/>
     <?php
@@ -140,6 +156,14 @@ else if(isset($_GET['id3'])){
         </div>";
         }
     }
+    if (isset($_SESSION['admin'])){
+        echo "<div class='adat2'>      
+        <form method='POST' action='".deleteComments($conn)."'>
+        <input type='hidden' name='id' value='".$row['velemenyid']."'>
+        <button class='btn btn-link' style='color:white;' name='deletekomment'>Törlés</button>
+        </form>
+        </div>";
+        }
     ?>
     <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60"/>
     <?php
@@ -177,6 +201,26 @@ function deleteComments($conn){
     if(isset($_GET['id3'])){
         $cid = $_POST['id'];
         $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid' AND userid='".$_SESSION["userid"]."'";
+        $result = $conn->query($sql);
+        header('Location: index.php?page=league&id3='.$_GET["id3"].'');
+    }
+}
+if(isset($_POST['deletekomment'])){
+    if(isset($_GET['id'])){
+    $cid = $_POST['id'];
+    $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid'";
+    $result = $conn->query($sql);
+    header('Location: index.php?page=player&id='.$_GET["id"].'');
+    }
+    if(isset($_GET['id2'])){
+        $cid = $_POST['id'];
+        $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid'";
+        $result = $conn->query($sql);
+        header('Location: index.php?page=team&id2='.$_GET["id2"].'');
+    }
+    if(isset($_GET['id3'])){
+        $cid = $_POST['id'];
+        $sql = "DELETE FROM velemenyek WHERE velemenyid='$cid'";
         $result = $conn->query($sql);
         header('Location: index.php?page=league&id3='.$_GET["id3"].'');
     }

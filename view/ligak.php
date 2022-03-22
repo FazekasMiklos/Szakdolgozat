@@ -16,6 +16,15 @@ $result = $conn->query("SELECT * FROM ligak");
             <a href="index.php?page=league&id3=<?php echo ($row['ligaid']); ?>">
             <img src="data:image/jpg;charset=utf8;base64 ,<?php echo base64_encode($row['logo']); ?>" width="100"/></a><br>
             <?php echo($row['liganev']);?><br>
+            <?php
+            if(!empty($_SESSION["admin"])){
+            ?> 
+            <a style="color: white"; href="index.php?page=torles&id3=<?php echo ($row['ligaid']); ?>">
+            Törlés
+            </a>
+            <?php
+            }
+            ?>
  </div>
  <?php
  } 

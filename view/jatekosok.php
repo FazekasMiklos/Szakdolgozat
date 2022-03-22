@@ -27,7 +27,16 @@
             <?php echo"Név:";?><br>
             <a style="color: white"; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
             <?php echo($row['nev']);?>
+            </a><br>
+            <?php
+            if(!empty($_SESSION["admin"])){
+            ?> 
+            <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
+            Törlés
             </a>
+            <?php
+            }
+            ?>
  </div>
  <?php
 }
@@ -43,7 +52,16 @@
             <?php echo"Név:";?><br>
             <a style="color: white"; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
             <?php echo($row['nev']);?>
+            </a><br>
+            <?php
+            if(!empty($_SESSION["admin"])){
+            ?>     
+            <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
+            Törlés
             </a>
+            <?php
+            }
+            ?>
  </div>
  <?php
  }
