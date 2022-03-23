@@ -34,6 +34,9 @@
             <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
             Törlés
             </a>
+            <a style="color: white"; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
+            Módosítás
+            </a>
             <?php
             }
             ?>
@@ -58,6 +61,9 @@
             ?>     
             <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
             Törlés
+            </a>
+            <a style="color: white"; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
+            Módosítás
             </a>
             <?php
             }

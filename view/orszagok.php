@@ -22,6 +22,9 @@ $result = $conn->query("SELECT orszagid,orszagnev,ranglista,zaszlok FROM orszago
             <a style="color: white"; href="index.php?page=torles&id4=<?php echo ($row['orszagid']); ?>">
             Törlés
             </a>
+            <a style="color: white"; href="index.php?page=modositas&id4=<?php echo ($row['orszagid']); ?>">
+            Módosítás
+            </a>
             <?php 
             }
             ?>

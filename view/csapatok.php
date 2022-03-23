@@ -33,6 +33,9 @@ if (!empty($_REQUEST['search'])) {
             <a style="color: white"; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
             Törlés
             </a>
+            <a style="color: white"; href="index.php?page=modositas&id2=<?php echo ($row['klubid']); ?>">
+            Módosítás
+            </a>
             <?php
             }
             ?>
@@ -57,6 +60,9 @@ if (!empty($_REQUEST['search'])) {
             ?> 
             <a style="color: white"; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
             Törlés
+            </a>
+            <a style="color: white"; href="index.php?page=modositas&id2=<?php echo ($row['klubid']); ?>">
+            Módosítás
             </a>
             <?php
             }

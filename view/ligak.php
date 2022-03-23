@@ -22,6 +22,9 @@ $result = $conn->query("SELECT * FROM ligak");
             <a style="color: white"; href="index.php?page=torles&id3=<?php echo ($row['ligaid']); ?>">
             Törlés
             </a>
+            <a style="color: white"; href="index.php?page=modositas&id3=<?php echo ($row['ligaid']); ?>">
+            Módosítás
+            </a>
             <?php
             }
             ?>
