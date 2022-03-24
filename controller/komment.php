@@ -59,7 +59,7 @@ function getComments($conn){
     echo "<div class='adat2'>      
     <form method='POST' action='".deleteComments($conn)."'>
     <input type='hidden' name='id' value='".$row['velemenyid']."'>
-    <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
+    <button class='btn btn-link' style='color:white;' name='deletesubmit'><i class='fas fa-trash'></i></button>
     </form>
     </div>
     <div class='adat3'> 
@@ -68,7 +68,7 @@ function getComments($conn){
     <input type='hidden' name='uid' value='".$row['userid']."'>
     <input type='hidden' name='date' value='".$row['datum']."'>
     <input type='hidden' name='message' value='".$row['szoveg']."'>
-    <button class='btn btn-link' style='color:white;'>Módosítás</button>
+    <button class='btn btn-link' style='color:white;'><i class='fas fa-pencil'></i></button>
     </form>
     </div>";
     }
@@ -77,7 +77,7 @@ if (isset($_SESSION['admin'])){
 echo "<div class='adat2'>      
 <form method='POST' action='".deleteComments($conn)."'>
 <input type='hidden' name='id' value='".$row['velemenyid']."'>
-<button class='btn btn-link' style='color:white;' name='deletekomment'>Törlés</button>
+<button class='btn btn-link' style='color:white;' name='deletekomment'><i class='fas fa-trash'></i></button>
 </form>
 </div>";
 }
@@ -100,7 +100,7 @@ echo "<div class='adat2'>
                 echo "<div class='adat2'>        
         <form method='POST' action='".deleteComments($conn)."'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
-        <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
+        <button class='btn btn-link' style='color:white;' name='deletesubmit'><i class='fas fa-trash'></i></button>
         </form>
         </div>
         <div class='adat3'>      
@@ -109,7 +109,7 @@ echo "<div class='adat2'>
         <input type='hidden' name='uid' value='".$row['userid']."'>
         <input type='hidden' name='date' value='".$row['datum']."'>
         <input type='hidden' name='message' value='".$row['szoveg']."'>
-        <button class='btn btn-link' style='color:white;'>Módosítás</button>
+        <button class='btn btn-link' style='color:white;'><i class='fas fa-pencil'></i></button>
         </form>
         </div>";
             }
@@ -118,7 +118,7 @@ echo "<div class='adat2'>
         echo "<div class='adat2'>      
         <form method='POST' action='".deleteComments($conn)."'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
-        <button class='btn btn-link' style='color:white;' name='deletekomment'>Törlés</button>
+        <button class='btn btn-link' style='color:white;' name='deletekomment'><i class='fas fa-trash'></i></button>
         </form>
         </div>";
         }
@@ -142,7 +142,7 @@ else if(isset($_GET['id3'])){
                 echo "<div class='adat2'>        
         <form method='POST' action='".deleteComments($conn)."'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
-        <button class='btn btn-link' style='color:white;' name='deletesubmit'>Törlés</button>
+        <button class='btn btn-link' style='color:white;' name='deletesubmit'><i class='fas fa-trash'></i></button>
         </form>
         </div>
         <div class='adat3'>      
@@ -151,7 +151,7 @@ else if(isset($_GET['id3'])){
         <input type='hidden' name='uid' value='".$row['userid']."'>
         <input type='hidden' name='date' value='".$row['datum']."'>
         <input type='hidden' name='message' value='".$row['szoveg']."'>
-        <button class='btn btn-link' style='color:white;'>Módosítás</button>
+        <button class='btn btn-link' style='color:white;'><i class='fas fa-pencil'></i></button>
         </form>
         </div>";
         }
@@ -160,7 +160,7 @@ else if(isset($_GET['id3'])){
         echo "<div class='adat2'>      
         <form method='POST' action='".deleteComments($conn)."'>
         <input type='hidden' name='id' value='".$row['velemenyid']."'>
-        <button class='btn btn-link' style='color:white;' name='deletekomment'>Törlés</button>
+        <button class='btn btn-link' style='color:white;' name='deletekomment'><i class='fas fa-trash'></i></button>
         </form>
         </div>";
         }

@@ -115,6 +115,9 @@ h1{
 #kedvencek{
     text-align: center;
 }
+#kereso{
+    width: 50%;
+}
 @media only screen and (max-width:700px) {
      #adat, #komment2, .rating, #kozep, #komment3, #adat2{
       width: 100%; 
@@ -123,14 +126,10 @@ h1{
 @media only screen and (max-width:700px) {
     #kozep{
      background-color: rgba(0,0,0, 0.6);
-     border-top: solid;
-     border-right: solid;
-     border-left: solid;
-     border-color: white;
    }
 }
 @media only screen and (max-width:1300px) {
-    #btm,#reg{
+    #btm,#reg,#kereso{
       width: 100%;
     }
 }

@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<form action="index.php?page=jatekos" method="post" class="mx-2 my-auto d-inline w-100" name="searchForm">
+<form action="index.php?page=jatekos" method="post" class="form-inline justify-content-center my-2 my-lg-0" name="searchForm">
+<div id="kereso"> 
 <div class="input-group">
-      <input style="height: 50px" class="form-control" type="search" name="search" placeholder="Játékos keresése" aria-label="Search">
+      <input style="height: 50px;" class="form-control" type="search" name="search" placeholder="Játékos keresése" aria-label="Search">
       <div class="input-group-append">
       <button class="btn btn-success" style='color:white;' type="submit"><i class="fa fa-search"></i></button>
-      </div></div>
+      </div></div></div>
     </form>
 <div id="btn"> 
  <?php
