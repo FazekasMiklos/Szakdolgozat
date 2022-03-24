@@ -31,10 +31,10 @@ if (!empty($_REQUEST['search'])) {
             if(!empty($_SESSION["admin"])){
             ?> 
             <a style="color: white"; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
-            Törlés
+            <i class="fas fa-trash"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id2=<?php echo ($row['klubid']); ?>">
-            Módosítás
+            <i class="fas fa-pencil"></i>
             </a>
             <?php
             }
@@ -59,10 +59,10 @@ if (!empty($_REQUEST['search'])) {
             if(!empty($_SESSION["admin"])){
             ?> 
             <a style="color: white"; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
-            Törlés
+            <i class="fas fa-trash"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id2=<?php echo ($row['klubid']); ?>">
-            Módosítás
+            <i class="fas fa-pencil"></i>
             </a>
             <?php
             }

@@ -20,10 +20,10 @@ $result = $conn->query("SELECT orszagid,orszagnev,ranglista,zaszlok FROM orszago
             if(!empty($_SESSION["admin"])){
             ?> 
             <a style="color: white"; href="index.php?page=torles&id4=<?php echo ($row['orszagid']); ?>">
-            Törlés
+            <i class="fas fa-trash"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id4=<?php echo ($row['orszagid']); ?>">
-            Módosítás
+            <i class="fas fa-pencil"></i>
             </a>
             <?php 
             }

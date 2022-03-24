@@ -32,10 +32,10 @@
             if(!empty($_SESSION["admin"])){
             ?> 
             <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
-            Törlés
+            <i class="fas fa-trash"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
-            Módosítás
+            <i class="fas fa-pencil"></i>
             </a>
             <?php
             }
@@ -60,10 +60,10 @@
             if(!empty($_SESSION["admin"])){
             ?>     
             <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
-            Törlés
+            <i class="fas fa-trash"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
-            Módosítás
+            <i class="fas fa-pencil"></i>
             </a>
             <?php
             }

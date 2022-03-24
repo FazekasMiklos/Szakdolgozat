@@ -20,10 +20,10 @@ $result = $conn->query("SELECT * FROM ligak");
             if(!empty($_SESSION["admin"])){
             ?> 
             <a style="color: white"; href="index.php?page=torles&id3=<?php echo ($row['ligaid']); ?>">
-            Törlés
+            <i class="fas fa-trash"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id3=<?php echo ($row['ligaid']); ?>">
-            Módosítás
+            <i class="fas fa-pencil"></i>
             </a>
             <?php
             }
