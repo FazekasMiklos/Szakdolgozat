@@ -5,9 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+<?php
+    if(!empty($_SESSION["admin"])){
+    ?>
+    <br>
+    <form action="index.php?page=hozzaadas" method="post">
+    <div class="text-center">
+    <label style="color: white"><h2>Liga hozzáadás:</h2></label><br>
+    <button class="btn btn-success" style='color:white;' type="submit" name="ligafelvitel"><i class="fa fa-plus"></i></button>
+    </div>
+    </form>
+    <?php
+    }
+    ?>
 <div id="btn"> 
 <?php 
-$result = $conn->query("SELECT * FROM ligak"); 
+$result = $conn->query("SELECT * FROM ligak ORDER BY liganev"); 
 ?>
  <?php 
  while($row = $result->fetch_assoc()){

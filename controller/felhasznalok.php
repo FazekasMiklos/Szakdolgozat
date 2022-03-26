@@ -1,6 +1,6 @@
 <div id="btn">
 <?php
-$result = $conn->query("SELECT * FROM felhasznalok INNER JOIN profilkepek ON (profilkepek.userid=felhasznalok.userid) WHERE NOT felhasznalok.userid = '".$_SESSION["admin"]."'");
+$result = $conn->query("SELECT * FROM felhasznalok INNER JOIN profilkepek ON (profilkepek.userid=felhasznalok.userid) WHERE NOT felhasznalok.userid = '".$_SESSION["admin"]."'ORDER BY felhasznalonev");
 while($row = $result->fetch_assoc()){
     ?>
           <div id="reg">

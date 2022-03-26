@@ -10,7 +10,7 @@
 if(isset($_GET['id4'])){
     $id4 = mysqli_real_escape_string($conn, $_GET['id4']);
     $sql = "SELECT * FROM orszagok WHERE orszagok.orszagid = '$id4'";
-    $sql1 = "SELECT * FROM orszagok INNER JOIN jatekosok ON (jatekosok.orszagid = orszagok.orszagid) WHERE orszagok.orszagid = '$id4' ";
+    $sql1 = "SELECT * FROM orszagok INNER JOIN jatekosok ON (jatekosok.orszagid = orszagok.orszagid) WHERE orszagok.orszagid = '$id4' ORDER BY nev";
     $result = mysqli_query($conn,$sql) or die;
     $result1 = mysqli_query($conn,$sql1) or die;
     $row = mysqli_fetch_array($result);

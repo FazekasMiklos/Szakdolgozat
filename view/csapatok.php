@@ -13,9 +13,22 @@
       <button class="btn btn-success" style='color:white;' type="submit"><i class="fa fa-search"></i></button>
       </div></div></div>
     </form>
+    <?php
+    if(!empty($_SESSION["admin"])){
+    ?>
+    <br>
+    <form action="index.php?page=hozzaadas" method="post">
+    <div class="text-center">
+    <label style="color: white"><h2>Csapat hozzáadás:</h2></label><br>
+    <button class="btn btn-success" style='color:white;' type="submit" name="csapatfelvitel"><i class="fa fa-plus"></i></button>
+    </div>
+    </form>
+    <?php
+    }
+    ?>
 <div id="btn"> 
 <?php 
-$result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok");
+$result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok ORDER BY klubnev");
 if (!empty($_REQUEST['search'])) {
       $search = $_REQUEST['search']; 
       $sql = "SELECT * from klubbok where klubnev like '%".$search."%'";

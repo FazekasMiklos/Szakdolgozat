@@ -13,9 +13,22 @@
       <button class="btn btn-success" style='color:white;' type="submit"><i class="fa fa-search"></i></button>
       </div></div></div>
     </form>
+    <?php
+    if(!empty($_SESSION["admin"])){
+    ?>
+    <br>
+    <form action="index.php?page=hozzaadas" method="post">
+    <div class="text-center">
+    <label style="color: white"><h2>Játékos hozzáadás:</h2></label><br>
+    <button class="btn btn-success" style='color:white;' type="submit" name="jatekosfelvitel"><i class="fa fa-plus"></i></button>
+    </div>
+    </form>
+    <?php
+    }
+    ?>
 <div id="btn"> 
  <?php
- $result = $conn->query("SELECT * FROM jatekosok");
+ $result = $conn->query("SELECT * FROM jatekosok ORDER BY nev");
  if (!empty($_REQUEST['search'])) {
 
       $search = $_REQUEST['search']; 

@@ -7,10 +7,10 @@
 <body>
 <?php
 if(!empty($_SESSION["userid"])) {  
-$result = $conn->query("SELECT * FROM jatekosok INNER JOIN kedvencek ON (kedvencek.jatekosid = jatekosok.jatekosid) WHERE userid='".$_SESSION["userid"]."'");
-$result2 = $conn->query("SELECT * FROM klubbok INNER JOIN kedvencek ON (kedvencek.klubid = klubbok.klubid) WHERE userid='".$_SESSION["userid"]."'"); 
-$result3 = $conn->query("SELECT * FROM ligak INNER JOIN kedvencek ON (kedvencek.ligaid = ligak.ligaid) WHERE userid='".$_SESSION["userid"]."'"); 
-$result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvencek.orszagid = orszagok.orszagid) WHERE userid='".$_SESSION["userid"]."'");  
+$result = $conn->query("SELECT * FROM jatekosok INNER JOIN kedvencek ON (kedvencek.jatekosid = jatekosok.jatekosid) WHERE userid='".$_SESSION["userid"]."'ORDER BY nev");
+$result2 = $conn->query("SELECT * FROM klubbok INNER JOIN kedvencek ON (kedvencek.klubid = klubbok.klubid) WHERE userid='".$_SESSION["userid"]."'ORDER BY klubnev"); 
+$result3 = $conn->query("SELECT * FROM ligak INNER JOIN kedvencek ON (kedvencek.ligaid = ligak.ligaid) WHERE userid='".$_SESSION["userid"]."'ORDER BY liganev"); 
+$result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvencek.orszagid = orszagok.orszagid) WHERE userid='".$_SESSION["userid"]."'ORDER BY orszagnev");  
 ?>
 <div id="btn">
 <div id="adat2">
@@ -85,10 +85,10 @@ $result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvenc
  ?>
  <?php
 if(!empty($_SESSION["admin"])) {  
-$result = $conn->query("SELECT * FROM jatekosok INNER JOIN kedvencek ON (kedvencek.jatekosid = jatekosok.jatekosid) WHERE userid='".$_SESSION["admin"]."'");
-$result2 = $conn->query("SELECT * FROM klubbok INNER JOIN kedvencek ON (kedvencek.klubid = klubbok.klubid) WHERE userid='".$_SESSION["admin"]."'"); 
-$result3 = $conn->query("SELECT * FROM ligak INNER JOIN kedvencek ON (kedvencek.ligaid = ligak.ligaid) WHERE userid='".$_SESSION["admin"]."'"); 
-$result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvencek.orszagid = orszagok.orszagid) WHERE userid='".$_SESSION["admin"]."'");  
+$result = $conn->query("SELECT * FROM jatekosok INNER JOIN kedvencek ON (kedvencek.jatekosid = jatekosok.jatekosid) WHERE userid='".$_SESSION["admin"]."'ORDER BY nev");
+$result2 = $conn->query("SELECT * FROM klubbok INNER JOIN kedvencek ON (kedvencek.klubid = klubbok.klubid) WHERE userid='".$_SESSION["admin"]."'ORDER BY klubnev"); 
+$result3 = $conn->query("SELECT * FROM ligak INNER JOIN kedvencek ON (kedvencek.ligaid = ligak.ligaid) WHERE userid='".$_SESSION["admin"]."'ORDER BY liganev"); 
+$result4 = $conn->query("SELECT * FROM orszagok INNER JOIN kedvencek ON (kedvencek.orszagid = orszagok.orszagid) WHERE userid='".$_SESSION["admin"]."'ORDER BY orszagnev");  
 ?>
 <div id="btn">
 <div id="adat2">

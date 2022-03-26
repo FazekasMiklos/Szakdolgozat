@@ -9,7 +9,7 @@
 <?php
 if(isset($_GET['id3'])){
     $id3 = mysqli_real_escape_string($conn, $_GET['id3']);
-    $sql = "SELECT * FROM klubbok INNER JOIN ligak ON (ligak.ligaid = klubbok.ligaid) WHERE ligak.ligaid='$id3'";
+    $sql = "SELECT * FROM klubbok INNER JOIN ligak ON (ligak.ligaid = klubbok.ligaid) WHERE ligak.ligaid='$id3' ORDER BY klubnev";
     $result = mysqli_query($conn,$sql) or die;
     $row = mysqli_fetch_array($result);
 
