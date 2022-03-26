@@ -57,10 +57,10 @@ while($row = $result3->fetch_assoc()){
 		<input type='text' name='golpassz' /><br>
         <label>Védések száma:</label><br>
 		<input type='number' name='vedes' /><br><br>
-		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='jatekos' value = "Hozzáadás" /><br></div></div></form>
+		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='jatekoshozzaadas' value = "Hozzáadás" /><br></div></div></form>
     <?php 
 }
-if (isset($_POST['jatekos'])){
+if (isset($_POST['jatekoshozzaadas'])){
     $orszag = $_POST['orszag'];
     $csapat = $_POST['csapat'];
     $poszt = $_POST['poszt'];
@@ -94,10 +94,10 @@ while($row = $result->fetch_assoc()){
 </select><br>
 		<label>Neve:</label><br>
 		<input type='text' name='nev' required/><br><br>
-		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='csapat' value = "Hozzáadás" /><br></div></div></form>
+		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='csapathozzaadas' value = "Hozzáadás" /><br></div></div></form>
     <?php 
 }
-if (isset($_POST['csapat'])){
+if (isset($_POST['csapathozzaadas'])){
     $liga = $_POST['liga'];
     $nev = $_POST['nev'];
     $query = "INSERT INTO klubbok (klubnev,ligaid) VALUES ('$nev','$liga')";
@@ -126,13 +126,14 @@ while($row = $result->fetch_assoc()){
 		<input type='text' name='nev' required/><br>
 		<label>Logója:</label><br>
 		<input type='file' name='logo' required/><br><br>
-		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='liga' value = "Hozzáadás" /><br></div></div></form>
+		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='ligahozzaadas' value = "Hozzáadás" /><br></div></div></form>
     <?php 
 }
-if (isset($_POST['liga'])){
+if (isset($_POST['ligahozzaadas'])){
     $orszag = $_POST['orszag'];
     $nev = $_POST['nev'];
-    $logo = $_FILES['logo'];
+    $logo = $_FILES['logo']['tmp_name'];
+    $logo = addslashes(file_get_contents($logo));
     $query = "INSERT INTO ligak (liganev,orszagid,logo) VALUES ('$nev','$orszag','$logo')";
     $result = mysqli_query($conn,$query);
     header('Location: index.php?page=liga');
@@ -152,14 +153,15 @@ if (isset($_POST['liga'])){
 		<input type='number' name='ranglista' required/><br>
 		<label>Zászlaja:</label><br>
 		<input type='file' name='zaszlo' required/><br><br>
-		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='orszag' value = "Hozzáadás" /><br></div></div></form>
+		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='orszaghozzaadas' value = "Hozzáadás" /><br></div></div></form>
     <?php 
 }
-if (isset($_POST['orszag'])){
+if (isset($_POST['orszaghozzaadas'])){
     $id = $_POST['id'];
     $nev = $_POST['nev'];
     $ranglista = $_POST['ranglista'];
-    $zaszlo = $_FILES['zaszlo'];
+    $zaszlo = $_FILES['zaszlo']['tmp_name'];
+    $zaszlo = addslashes(file_get_contents($zaszlo));
     $query = "INSERT INTO orszagok (orszagid,orszagnev,ranglista,zaszlok) VALUES ('$id','$nev','$ranglista','$zaszlo')";
     $result = mysqli_query($conn,$query);
     header('Location: index.php?page=orszag');

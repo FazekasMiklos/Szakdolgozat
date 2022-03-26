@@ -25,9 +25,9 @@ if(isset($_GET['id4'])){
     <a style="color: white"; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
     <?php
     if ($result1->num_rows > 0){
-    echo($row1['nev'])."<br>";
+    echo($row1['nev'])."<br>"."</a>";
     while($row1 = $result1->fetch_assoc()){
-        ?></a>
+        ?>
         <a style="color: white"; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
     <?php echo($row1['nev']);?><br></a>
     <?php
