@@ -125,7 +125,7 @@ h1{
 }
 @media only screen and (max-width:700px) {
     #kozep{
-     background-color: rgba(0,0,0, 0.6);
+     background-color: rgba(0, 0, 0, 0.6);
    }
 }
 @media only screen and (max-width:1300px) {
@@ -133,7 +133,7 @@ h1{
       width: 100%;
     }
 }
-@media only screen and (max-width:1600px) {
+@media only screen and (max-width:1200px) {
     .adat3{
         width: 86%;
       }

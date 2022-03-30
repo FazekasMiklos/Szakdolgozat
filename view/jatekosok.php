@@ -46,7 +46,7 @@
             if(!empty($_SESSION["admin"])){
             ?> 
             <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash mr-2"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
             <i class="fas fa-pencil"></i>
@@ -74,7 +74,7 @@
             if(!empty($_SESSION["admin"])){
             ?>     
             <a style="color: white"; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash mr-2"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
             <i class="fas fa-pencil"></i>

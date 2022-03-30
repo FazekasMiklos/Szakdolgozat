@@ -33,7 +33,7 @@ $result = $conn->query("SELECT * FROM ligak ORDER BY liganev");
             if(!empty($_SESSION["admin"])){
             ?> 
             <a style="color: white"; href="index.php?page=torles&id3=<?php echo ($row['ligaid']); ?>">
-            <i class="fas fa-trash"></i>
+            <i class="fas fa-trash mr-2"></i>
             </a>
             <a style="color: white"; href="index.php?page=modositas&id3=<?php echo ($row['ligaid']); ?>">
             <i class="fas fa-pencil"></i>
