@@ -16,7 +16,7 @@
 	<div id="btn">
 	<div id="reg">
 <label>Országa:</label><br>
-<select name ='orszag'>
+<select name ='orszag' class="form-control">
 <?php
 while($row = $result->fetch_assoc()){
     echo"<option value='".$row['orszagid']."'>".
@@ -26,7 +26,7 @@ while($row = $result->fetch_assoc()){
         ?>
 </select><br>
 <label>Csapata:</label><br>
-<select name='csapat'>
+<select name='csapat' class="form-control">
 <?php
 while($row = $result2->fetch_assoc()){
   echo"<option value='".$row['klubid']."'>".
@@ -36,7 +36,7 @@ while($row = $result2->fetch_assoc()){
         ?>
 </select><br>
 <label>Posztja:</label><br>
-<select name='poszt'>
+<select name='poszt' class="form-control">
 <?php
 while($row = $result3->fetch_assoc()){
     echo"<option value='".$row['pozid']."'>".
@@ -46,17 +46,17 @@ while($row = $result3->fetch_assoc()){
         ?>
 </select><br>
 		<label>Neve:</label><br/>
-		<input type='text' name='nev' required/><br>
+		<input type='text' name='nev' class="form-control" required/><br>
 		<label>Születési dátuma:</label><br>
-		<input type='date' name='datum' required/><br>
+		<input type='date' name='datum' class="form-control"required/><br>
         <label>Mérkőzések száma:</label><br/>
-		<input type='number' name='merkozes' required/><br>
+		<input type='number' name='merkozes' class="form-control"required/><br>
         <label>Gólok száma:</label><br>
-		<input type='number' name='gol' /><br>
+		<input type='number' name='gol' class="form-control"/><br>
         <label>Gólpasszok száma:</label><br>
-		<input type='text' name='golpassz' /><br>
+		<input type='text' name='golpassz' class="form-control"/><br>
         <label>Védések száma:</label><br>
-		<input type='number' name='vedes' /><br><br>
+		<input type='number' name='vedes' class="form-control"/><br><br>
 		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='jatekoshozzaadas' value = "Hozzáadás" /><br></div></div></form>
     <?php 
 }
@@ -83,7 +83,7 @@ if (isset($_POST['jatekoshozzaadas'])){
 	<div id="btn">
 	<div id="reg">
 <label>Ligája:</label><br>
-<select name ='liga'>
+<select name ='liga' class="form-control">
 <?php
 while($row = $result->fetch_assoc()){
     echo"<option value='".$row['ligaid']."'>".
@@ -93,7 +93,7 @@ while($row = $result->fetch_assoc()){
         ?>
 </select><br>
 		<label>Neve:</label><br>
-		<input type='text' name='nev' required/><br><br>
+		<input type='text' name='nev' class="form-control" required/><br><br>
 		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='csapathozzaadas' value = "Hozzáadás" /><br></div></div></form>
     <?php 
 }
@@ -113,7 +113,7 @@ if (isset($_POST['csapathozzaadas'])){
 	<div id="btn">
 	<div id="reg">
 <label>Országa:</label><br>
-<select name ='orszag'>
+<select name ='orszag' class="form-control">
 <?php
 while($row = $result->fetch_assoc()){
     echo"<option value='".$row['orszagid']."'>".
@@ -123,7 +123,7 @@ while($row = $result->fetch_assoc()){
         ?>
 </select><br>
 <label>Neve:</label><br>
-		<input type='text' name='nev' required/><br>
+		<input type='text' name='nev' class="form-control" required/><br>
 		<label>Logója:</label><br>
 		<input type='file' name='logo' required/><br><br>
 		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='ligahozzaadas' value = "Hozzáadás" /><br></div></div></form>
@@ -146,11 +146,11 @@ if (isset($_POST['ligahozzaadas'])){
 	<div id="btn">
 	<div id="reg">
     <label>Ország ID:</label><br>
-	<input type='text' name='id' required/><br>  
+	<input type='text' name='id' class="form-control" required/><br>  
     <label>Neve:</label><br/>
-		<input type='text' name='nev' required/><br>
+		<input type='text' name='nev' class="form-control" required/><br>
         <label>Ranglista helyezése:</label><br>
-		<input type='number' name='ranglista' required/><br>
+		<input type='number' name='ranglista' class="form-control" required/><br>
 		<label>Zászlaja:</label><br>
 		<input type='file' name='zaszlo' required/><br><br>
 		<input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='orszaghozzaadas' value = "Hozzáadás" /><br></div></div></form>
