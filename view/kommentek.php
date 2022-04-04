@@ -28,7 +28,7 @@ include 'controller/komment.php';
     </div></div></div><br>
     </form>";
     } else {
-        echo "<div class='text-center' id='komment3'><h5>A kommenteléshez be kell jelentkezned!</h5></div>";
+        echo "<div class='text-center' id='komment3'><h5><a href='index.php?page=login' style='color:white;'>A kommenteléshez be kell jelentkezned!</a></h5></div>";
     }
     echo "<div class='d-flex justify-content-center'>
     <div id='komment2'>";

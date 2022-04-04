@@ -44,7 +44,7 @@ include 'controller/ertekeles.php';
     </form>";
     getRatings($conn);
     } else {
-        echo "<div class='text-center'><h5>Az értékeléshez be kell jelentkezned!</h5></div><br>";
+        echo "<div class='text-center'><h5><a href='index.php?page=login' style='color:white;'>Az értékeléshez be kell jelentkezned!</a></h5></div><br>";
     }
     echo "</div>";
     echo "<div id='adat3'>";

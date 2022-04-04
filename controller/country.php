@@ -15,7 +15,7 @@ if(isset($_GET['id4'])){
     $result1 = mysqli_query($conn,$sql1) or die;
     $row = mysqli_fetch_array($result);
     $row1 = mysqli_fetch_array($result1);
-    ?>
+?>
     <div id='komment3'>
     <h1 style="color: white;"><?php echo($row['orszagnev']); include 'view/kedvencek.php'; ?></h1></div>
     <div id="btn">
@@ -23,19 +23,19 @@ if(isset($_GET['id4'])){
     <?php echo($row['ranglista']);?></h3></div>
     <div id="reg"><?php echo"Az ország játékosai:";?><br>
     <a style="color: white"; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
-    <?php
-    if ($result1->num_rows > 0){
-    echo($row1['nev'])."<br>"."</a>";
-    while($row1 = $result1->fetch_assoc()){
-        ?>
-        <a style="color: white"; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
-    <?php echo($row1['nev']);?><br></a>
-    <?php
+<?php
+    if($result1->num_rows > 0){
+        echo($row1['nev'])."<br>"."</a>";
+        while($row1 = $result1->fetch_assoc()){
+?>
+            <a style="color: white"; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
+            <?php echo($row1['nev']);?><br></a>
+<?php
+        }
     }
-    }
-    ?>
-    </div>
-    </div>
+?>
+</div>
+</div>
 <?php
 }
 ?>

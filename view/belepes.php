@@ -12,6 +12,7 @@
                 <label> Jelszó: </label>  
                 <input type = "password" class="form-control" name  = "pw" required/><br>  
                 <input type = "submit" class="btn mb-2" style="background-color:#228B22; color:white;" value = "Belépés" />   
-        </form>  
+        </form>
+        <a href="index.php?page=register" style='color:white;'>Fiók létrehozása</a>  
     </div>
     

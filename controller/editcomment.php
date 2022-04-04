@@ -5,11 +5,11 @@ include 'controller/komment.php';
 <!DOCTYPE html>
 <html lang="HU">
 <head>
-<link rel = "stylesheet" type = "text/css" href = "style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel = "stylesheet" type = "text/css" href = "style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
 </head>
 <body>
-<div id='adat'>
+    <div id='adat'>
     <?php
     $cid = $_POST['id'];
     $uid = $_POST['uid'];
@@ -23,6 +23,6 @@ include 'controller/komment.php';
     <button type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='editsubmit'>Módosítás</button>
     </form>";
     ?>
-     </div>
-    </body>
+    </div>
+</body>
 </html>
