@@ -1,4 +1,5 @@
 <?php
+//A beírt szöveg eltárolása 
 function setComments($conn)
 {
     if (isset($_POST['submit'])) {
@@ -46,6 +47,7 @@ function setComments($conn)
         }
     }
 }
+//A beírt szöveg megjelenítése
 function getComments($conn)
 {
     if (isset($_GET['id'])) {
@@ -173,6 +175,7 @@ function getComments($conn)
         }
     }
 }
+//A beírt szöveg módosítása
 function editComments($conn)
 {
     if (isset($_POST['editsubmit'])) {
@@ -184,6 +187,7 @@ function editComments($conn)
         header('Location: index.php?page=index');
     }
 }
+//A beírt szöveg törlése
 function deleteComments($conn)
 {
     if (isset($_POST['deletesubmit'])) {

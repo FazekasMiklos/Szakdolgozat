@@ -1,4 +1,5 @@
 <?php
+//bejelentkezés 
 if (isset($_POST['user']) and isset($_POST['pw'])) {
 
 	$loginError = "";
@@ -34,5 +35,5 @@ if (isset($_POST['user']) and isset($_POST['pw'])) {
 	}
 }
 
-include 'view/belepes.php';
+include 'view/belepes.php';//meghívom a kinézetet
 ?>

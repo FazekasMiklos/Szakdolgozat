@@ -9,6 +9,7 @@
 <body>
 
     <?php
+    //Egy megnyitott játékos adatainak kilistázása
     if (isset($_GET['id'])) {
         $id = mysqli_real_escape_string($conn, $_GET['id']);
         $sql = "SELECT * FROM jatekosok INNER JOIN orszagok ON (orszagok.orszagid = jatekosok.orszagid) INNER JOIN klubbok ON (klubbok.klubid = jatekosok.klubid) INNER JOIN posztok ON (posztok.pozid = jatekosok.pozid) WHERE jatekosid='$id' ";
@@ -45,8 +46,8 @@
         </div>
     <?php
     }
-    include 'view/ertekelesek.php';
-    include 'view/kommentek.php';
+    include 'view/ertekelesek.php';//meghívom a kinézetet
+    include 'view/kommentek.php';//meghívom a kinézetet
     ?>
 </body>
 

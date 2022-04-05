@@ -1,4 +1,5 @@
 <?php
+//A kiválasztott érték eltárolása 
 function setRatings($conn)
 {
     if (isset($_POST['ertekelesSubmit'])) {
@@ -78,6 +79,7 @@ function setRatings($conn)
         }
     }
 }
+//A kiválasztott érték 
 function getRatings($conn)
 {
     if (isset($_GET['id'])) {

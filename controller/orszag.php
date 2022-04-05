@@ -1,5 +1,5 @@
 <?php
 
-include 'view/orszagok.php';
+include 'view/orszagok.php';//meghívom a kinézetet
 
 ?>

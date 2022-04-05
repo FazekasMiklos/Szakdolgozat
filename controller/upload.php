@@ -1,4 +1,5 @@
 <?php
+//profilkép feltöltés
 if (isset($_POST['upload'])) {
 	$profilkep = $_FILES['profilkep']['name'];
 
@@ -58,5 +59,5 @@ if (isset($_POST['upload'])) {
 		}
 	}
 }
-include 'view/feltoltes.php';
+include 'view/feltoltes.php';//meghívom a kinézetet
 ?>

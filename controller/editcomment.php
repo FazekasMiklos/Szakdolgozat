@@ -13,6 +13,7 @@ include 'controller/komment.php';
 <body>
     <div id='adat'>
         <?php
+        //A beírt szöveg felülírása egy új szöveggel 
         $cid = $_POST['id'];
         $uid = $_POST['uid'];
         $message = $_POST['message'];

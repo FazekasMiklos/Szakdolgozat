@@ -1,4 +1,5 @@
 <?php
+//felhasználó adatainak módosítása 
 if (isset($_POST['edit'])) {
     $felhasznalonev = $_POST['user'];
     $jelszo = md5($_POST['pass']);
@@ -22,5 +23,5 @@ if (isset($_POST['edit'])) {
         }
     }
 }
-include 'view/editprofile.php';
+include 'view/editprofile.php';//meghívom a kinézetet
 ?>

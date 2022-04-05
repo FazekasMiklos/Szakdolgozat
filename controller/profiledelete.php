@@ -1,4 +1,5 @@
 <?php
+//profil törlése
 if (isset($_POST['igen'])) {
     if (!empty($_SESSION["userid"])) {
         $userid = $_SESSION['userid'];
@@ -29,5 +30,5 @@ if (isset($_POST['igen'])) {
 if (isset($_POST['nem'])) {
     header('Location: index.php?page=adatok');
 }
-include 'view/profiltorles.php';
+include 'view/profiltorles.php';//meghívom a kinézetet
 ?>

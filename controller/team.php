@@ -9,6 +9,7 @@
 <body>
 
     <?php
+    //Egy megnyitott csapat adatainak kilistázása
     if (isset($_GET['id2'])) {
         $id2 = mysqli_real_escape_string($conn, $_GET['id2']);
         $sql = "SELECT * FROM klubbok INNER JOIN ligak ON (ligak.ligaid = klubbok.ligaid) WHERE klubbok.klubid='$id2'";
@@ -21,7 +22,7 @@
     ?>
         <div id='komment3'>
             <h1 style="color: white;"><?php echo ($row['klubnev']);
-                                        include 'view/kedvencek.php'; ?></h1>
+                                        include 'view/kedvencek.php';//meghívom a kinézetet ?></h1>
         </div>
         <div id="btn">
             <div id="reg"><?php echo "A csapat ligája:"; ?><br>
@@ -46,8 +47,8 @@
         </div>
     <?php
     }
-    include 'view/ertekelesek.php';
-    include 'view/kommentek.php';
+    include 'view/ertekelesek.php';//meghívom a kinézetet
+    include 'view/kommentek.php';//meghívom a kinézetet
     ?>
 </body>
 

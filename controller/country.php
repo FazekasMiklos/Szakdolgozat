@@ -9,6 +9,7 @@
 <body>
 
     <?php
+    //Egy megnyitott ország adatainak kilistázása
     if (isset($_GET['id4'])) {
         $id4 = mysqli_real_escape_string($conn, $_GET['id4']);
         $sql = "SELECT * FROM orszagok WHERE orszagok.orszagid = '$id4'";

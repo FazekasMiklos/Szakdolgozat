@@ -1,3 +1,4 @@
+<!--Felhasználók kilistázása-->
 <div id="btn">
     <?php
     $result = $conn->query("SELECT * FROM felhasznalok INNER JOIN profilkepek ON (profilkepek.userid=felhasznalok.userid) WHERE NOT felhasznalok.userid = '" . $_SESSION["admin"] . "'ORDER BY felhasznalonev");
@@ -17,6 +18,7 @@
         </div>
     <?php
     }
+    //Egy kiválasztott felhasználónak admin jogosultság hozzádása/elvétele
     if (!empty($_GET['id2'])) {
         $id2 = $_GET['id2'];
         $sql = "SELECT * FROM felhasznalok WHERE userid = '$id2'";
@@ -32,12 +34,14 @@
         }
         header('Location: index.php?page=felhasznalok');
     }
+    //Egy kiválasztott felhasználó profiljának törlése
     if (!empty($_GET['id'])) {
         $id = $_GET['id'];
         $sql = "DELETE FROM felhasznalok WHERE userid = '$id'";
         $result = $conn->query($sql);
         header('Location: index.php?page=felhasznalok');
     }
+    //Egy kiválasztott felhasználó profilképének törlése  
     if (!empty($_GET['id3'])) {
         $id3 = $_GET['id3'];
         $sql = "DELETE FROM profilkepek WHERE userid = '$id3'";

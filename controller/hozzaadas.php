@@ -9,6 +9,7 @@
 
 <body>
     <?php
+    //játékos hozzáadása
     if (isset($_POST['jatekosfelvitel'])) {
         $result = $conn->query("SELECT * FROM orszagok");
         $result2 = $conn->query("SELECT * FROM klubbok");
@@ -81,6 +82,7 @@
     }
     ?>
     <?php
+    //csapat hozzáadása
     if (isset($_POST['csapatfelvitel'])) {
         $result = $conn->query("SELECT * FROM ligak");
     ?>
@@ -114,6 +116,7 @@
     }
     ?>
     <?php
+    //liga hozzáadása
     if (isset($_POST['ligafelvitel'])) {
         $result = $conn->query("SELECT * FROM orszagok");
     ?>
@@ -151,6 +154,7 @@
     }
     ?>
     <?php
+    //ország hozzáadása
     if (isset($_POST['orszagfelvitel'])) {
     ?>
         <form method='POST' enctype="multipart/form-data">

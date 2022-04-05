@@ -8,6 +8,7 @@
 
 <body>
   <?php
+  //kedvencnek beállított játékos/csapat/liga/ország megjelenítése kilistázva
   if (!empty($_SESSION["userid"])) {
     $result = $conn->query("SELECT * FROM jatekosok INNER JOIN kedvencek ON (kedvencek.jatekosid = jatekosok.jatekosid) WHERE userid='" . $_SESSION["userid"] . "'ORDER BY nev");
     $result2 = $conn->query("SELECT * FROM klubbok INNER JOIN kedvencek ON (kedvencek.klubid = klubbok.klubid) WHERE userid='" . $_SESSION["userid"] . "'ORDER BY klubnev");

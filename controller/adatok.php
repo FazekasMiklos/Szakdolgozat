@@ -1,5 +1,5 @@
 <?php
 
-include 'view/adat.php';
+include 'view/adat.php';//meghívom a kinézetet
 
 ?>

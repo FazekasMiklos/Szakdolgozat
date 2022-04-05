@@ -1,4 +1,5 @@
 <?php
+//A megadott adatok tárolása és hibakezelése ha már használva van vagy érvénytelen a megadott adat
 if (isset($_POST['sentForm'])) {
 	$loginError = '';
 	$user = $_POST['user'];
@@ -23,5 +24,5 @@ if (isset($_POST['sentForm'])) {
 		}
 	}
 }
-include 'view/regisztracio.php';
+include 'view/regisztracio.php';//meghívom a kinézetet
 ?>

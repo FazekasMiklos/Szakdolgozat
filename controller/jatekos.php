@@ -1,5 +1,5 @@
 <?php
 
-include 'view/jatekosok.php';
+include 'view/jatekosok.php';//meghívom a kinézetet
 
 ?>

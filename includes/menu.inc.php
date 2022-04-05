@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong justify-content-center">
+  <!--Profilkép megjelenítése navigációba-->
   <?php
   if (!empty($_SESSION["userid"])) {
   ?>
@@ -28,7 +29,7 @@
   ?>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button><!--Hamburger menü-->
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="nav justify-content-center">
       <?php
@@ -49,6 +50,7 @@
       }
       ob_start();
       ?>
+      <!--Kereső mező megjelenítése navigációba-->
       <form action="index.php?page=search" method="post" class="form-inline my-2 my-lg-0" name="searchForm">
         <div class="input-group">
           <input class="form-control" type="search" name="search" placeholder="Keresés" aria-label="Search">

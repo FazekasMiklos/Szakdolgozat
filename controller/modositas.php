@@ -9,6 +9,7 @@
 
 <body>
     <?php
+    //Egy kiválasztott játékos adatainak módosítása
     if (!empty($_GET['id'])) {
         $result = $conn->query("SELECT * FROM orszagok");
         $result2 = $conn->query("SELECT * FROM klubbok");
@@ -85,6 +86,7 @@
             header('Location: index.php?page=jatekos');
         }
     }
+    //Egy kiválasztott csapat adatainak módosítása
     if (!empty($_GET['id2'])) {
         $result = $conn->query("SELECT * FROM ligak");
         ?>
@@ -122,6 +124,7 @@
             header('Location: index.php?page=csapat');
         }
     }
+    //Egy kiválasztott liga adatainak módosítása
     if (!empty($_GET['id3'])) {
         ?>
         <form method='POST' enctype="multipart/form-data">
@@ -147,6 +150,7 @@
             header('Location: index.php?page=liga');
         }
     }
+    //Egy kiválasztott ország adatainak módosítása
     if (!empty($_GET['id4'])) {
         ?>
         <form method='POST' enctype="multipart/form-data">

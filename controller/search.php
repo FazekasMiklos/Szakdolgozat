@@ -2,6 +2,7 @@
 <div id="reg">
     <h1>Találatok:</h1>
     <?php
+    //keresés játékos/csapat/liga/országra
     if (!empty($_REQUEST['search'])) {
 
         $search = $_REQUEST['search'];

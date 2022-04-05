@@ -9,6 +9,7 @@
 <body>
     <div id="reg">
         <?php
+        //játékos lista gólok alapján
         if (isset($_POST['jatekosgollista'])) {
             $sql = "SELECT * from jatekosok WHERE NOT pozid LIKE 'KA' ORDER BY golok DESC";
             $result = $conn->query($sql) or die;
@@ -31,6 +32,7 @@
                 echo "<br>";
             }
         }
+        //játékos lista gólpasszok alapján
         if (isset($_POST['jatekosassistlista'])) {
             $sql = "SELECT * from jatekosok WHERE NOT pozid LIKE 'KA' ORDER BY golpasszok DESC";
             $result = $conn->query($sql) or die;
@@ -53,6 +55,7 @@
                 echo "<br>";
             }
         }
+        //játékos lista védések alapján
         if (isset($_POST['jatekosvedeslista'])) {
             $sql = "SELECT * from jatekosok WHERE pozid LIKE 'KA' ORDER BY vedesek DESC";
             $result = $conn->query($sql) or die;
@@ -75,6 +78,7 @@
                 echo "<br>";
             }
         }
+        //ország lista világranglista helyezés alapján
         if (isset($_POST['ranglista'])) {
             $sql = "SELECT * from orszagok ORDER BY ranglista";
             $result = $conn->query($sql) or die;
