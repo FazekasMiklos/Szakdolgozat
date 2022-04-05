@@ -3,21 +3,23 @@ include 'controller/ertekeles.php';
 ?>
 <!DOCTYPE html>
 <html lang="HU">
+
 <head>
-<link rel = "stylesheet" type = "text/css" href = "style.css">   
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-<div class='rating'>
-<div class='text-center'>
-<h2 style="color: white;">Értékelések<br></h2>
-</div>
-<div class='d-flex justify-content-center'>
-    <div id='adat3'>
-    <?php
-    if (isset($_SESSION['userid']) or isset($_SESSION['admin'])){ 
-    echo "<form method='POST' action='".setRatings($conn)."'>
+    <div class='rating'>
+        <div class='text-center'>
+            <h2 style="color: white;">Értékelések<br></h2>
+        </div>
+        <div class='d-flex justify-content-center'>
+            <div id='adat3'>
+                <?php
+                if (isset($_SESSION['userid']) or isset($_SESSION['admin'])) {
+                    echo "<form method='POST' action='" . setRatings($conn) . "'>
     <input type='radio' id='e1' name='e1' value='1' checked>
 <label for='e1'>1</label><br>
 <input type='radio' id='e2' name='e1' value='2'>
@@ -42,16 +44,17 @@ include 'controller/ertekeles.php';
     <button type='submit' class='btn btn-success' style='color:white;' name='ertekelesSubmit'>Értékelés</button>
     </div><br>
     </form>";
-    getRatings($conn);
-    } else {
-        echo "<div class='text-center'><h5><a href='index.php?page=login' style='color:white;'>Az értékeléshez be kell jelentkezned!</a></h5></div><br>";
-    }
-    echo "</div>";
-    echo "<div id='adat3'>";
-    getRatings2($conn);
-    echo "</div>";
-    echo "</div>";
-    ?>
-     </div>
-    </body>
+                    getRatings($conn);
+                } else {
+                    echo "<div class='text-center'><h5><a href='index.php?page=login' style='color:white;'>Az értékeléshez be kell jelentkezned!</a></h5></div><br>";
+                }
+                echo "</div>";
+                echo "<div id='adat3'>";
+                getRatings2($conn);
+                echo "</div>";
+                echo "</div>";
+                ?>
+            </div>
+</body>
+
 </html>

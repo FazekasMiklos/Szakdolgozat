@@ -15,98 +15,101 @@ $liga = new Ligak;
 $csapat = new Csapatok;
 $image = new Profilkepek;
 
-if(!isset($_REQUEST['page'])){
+if (!isset($_REQUEST['page'])) {
         header('Location: index.php?page=index');
         exit();
-    }
+}
 
 $page = 'index';
 
-    
+
 
 // kilépés végrehajtása
-if(!empty($_REQUEST['action'])) {
-	if($_REQUEST['action'] == 'kilepes') 
-        session_unset();
+if (!empty($_REQUEST['action'])) {
+        if ($_REQUEST['action'] == 'kilepes')
+                session_unset();
 }
 
 // ki vagy be vagyok lépve?
-if(!empty($_SESSION["userid"]) or !empty($_SESSION["admin"])) {
+if (!empty($_SESSION["userid"]) or !empty($_SESSION["admin"])) {
         $szoveg = "Kijelentkezés";
         $upload = "Profilkép beállítás";
         $action = "kilepes";
-}
-else {
+} else {
         $szoveg = "Belépés";
         $action = "belepes";
-        $reg = "Regisztrálás";     
-} 
-
-if(isset($_GET['id'])){
-        $id=$_GET['id'];
+        $reg = "Regisztrálás";
 }
 
-if(isset($_REQUEST['page'])) {
-        if(file_exists('controller/'.$_REQUEST['page'].'.php')) {
+if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+}
+
+if (isset($_REQUEST['page'])) {
+        if (file_exists('controller/' . $_REQUEST['page'] . '.php')) {
                 $page = $_REQUEST['page'];
         }
 }
 
 if (!empty($_REQUEST['search'])) {
 
-	$search = $_REQUEST['search']; 
+        $search = $_REQUEST['search'];
 }
 
-if(!empty($_SESSION["admin"])) {
-        $menupontok = array(    'index' => "Főoldal",
-                                'logout' => $szoveg,
-                                'orszag' => "Országok",
-                                'liga' => "Ligák",
-                                'jatekos' => "Játékosok",
-                                'csapat' => "Csapatok",
-                                'kedvenc' => "Kedvenceid",
-                                'adatok' => "Adatok",
-                                'upload' => $upload,
-                                'felhasznalok' => "Felhasználók"   
-                        );
-        }
-
-elseif(!empty($_SESSION["userid"])) {
-$menupontok = array(    'index' => "Főoldal",
-                        'logout' => $szoveg,
-                        'orszag' => "Országok",
-                        'liga' => "Ligák",
-                        'jatekos' => "Játékosok",
-                        'csapat' => "Csapatok",
-                        'kedvenc' => "Kedvenceid",
-                        'adatok' => "Adatok",
-                        'upload' => $upload,      
-                );
-}else
-$menupontok = array(    'index' => "Főoldal",
-                        'register' => $reg,
-                        'login' => $szoveg,
-                        'orszag' => "Országok",
-                        'liga' => "Ligák",
-                        'jatekos' => "Játékosok",
-                        'csapat' => "Csapatok",          
-                );
-if(in_array($page,$menupontok)){
-$title = $menupontok[$page];
-}else $title=$page;
+if (!empty($_SESSION["admin"])) {
+        $menupontok = array(
+                'index' => "Főoldal",
+                'logout' => $szoveg,
+                'orszag' => "Országok",
+                'liga' => "Ligák",
+                'jatekos' => "Játékosok",
+                'csapat' => "Csapatok",
+                'kedvenc' => "Kedvenceid",
+                'adatok' => "Adatok",
+                'upload' => $upload,
+                'felhasznalok' => "Felhasználók"
+        );
+} elseif (!empty($_SESSION["userid"])) {
+        $menupontok = array(
+                'index' => "Főoldal",
+                'logout' => $szoveg,
+                'orszag' => "Országok",
+                'liga' => "Ligák",
+                'jatekos' => "Játékosok",
+                'csapat' => "Csapatok",
+                'kedvenc' => "Kedvenceid",
+                'adatok' => "Adatok",
+                'upload' => $upload,
+        );
+} else
+        $menupontok = array(
+                'index' => "Főoldal",
+                'register' => $reg,
+                'login' => $szoveg,
+                'orszag' => "Országok",
+                'liga' => "Ligák",
+                'jatekos' => "Játékosok",
+                'csapat' => "Csapatok",
+        );
+if (in_array($page, $menupontok)) {
+        $title = $menupontok[$page];
+} else $title = $page;
 
 include 'includes/htmlheader.inc.php';
 ?>
 <!doctype html>
+
 <head>
-<link rel = "stylesheet" type = "text/css" href = "style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body> 
-<?php
 
-include 'includes/menu.inc.php';
-include 'controller/'.$page.'.php';
+<body>
+        <?php
 
-?>
+        include 'includes/menu.inc.php';
+        include 'controller/' . $page . '.php';
+
+        ?>
 </body>
+
 </html>
