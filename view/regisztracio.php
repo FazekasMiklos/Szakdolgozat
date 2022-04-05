@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<!--Regisztrációs panel-->
 <div id="reg">
 	<h1>Regisztráció</h1>
 	<form action='index.php?page=register' method='POST'>

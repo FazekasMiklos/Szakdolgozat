@@ -8,6 +8,7 @@
 
 <body>
     <?php
+    //Átírányítja az admint ahol hozzátud adni országot az adatbázisba
     if (!empty($_SESSION["admin"])) {
     ?>
         <br>
@@ -22,6 +23,7 @@
     <?php
     }
     ?>
+    <!--Országok megjelenítése-->
     <div id="btn">
         <?php
         $result = $conn->query("SELECT orszagid,orszagnev,ranglista,zaszlok FROM orszagok ORDER BY orszagnev");
@@ -37,10 +39,10 @@
                 if (!empty($_SESSION["admin"])) {
                 ?>
                     <a style="color: white" ; href="index.php?page=torles&id4=<?php echo ($row['orszagid']); ?>">
-                        <i class="fas fa-trash mr-2"></i>
+                        <i class="fas fa-trash mr-2"></i><!--Ország törlés-->
                     </a>
                     <a style="color: white" ; href="index.php?page=modositas&id4=<?php echo ($row['orszagid']); ?>">
-                        <i class="fas fa-pencil"></i>
+                        <i class="fas fa-pencil"></i><!--Ország módosítás-->
                     </a>
                 <?php
                 }

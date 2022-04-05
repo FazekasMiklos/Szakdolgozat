@@ -55,7 +55,7 @@ if (!empty($_REQUEST['search'])) {
 
         $search = $_REQUEST['search'];
 }
-
+//Navigációs oldalon lévő gombok
 if (!empty($_SESSION["admin"])) {
         $menupontok = array(
                 'index' => "Főoldal",

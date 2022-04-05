@@ -8,6 +8,7 @@
 </head>
 
 <body>
+	<!--A felhasználó itt tudja bevinni az új jelszavát/felhasználónevét/emailjét-->
 	<form action='index.php?page=profile' method='POST' enctype="multipart/form-data">
 		<div id="btn">
 			<div id="reg">

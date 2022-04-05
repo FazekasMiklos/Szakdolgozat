@@ -7,6 +7,7 @@
 </head>
 
 <body>
+      <!--Külön kereső a csapatokra-->
       <form action="index.php?page=csapat" method="post" class="form-inline justify-content-center my-2 my-lg-0" name="searchForm">
             <div id="kereso">
                   <div class="input-group">
@@ -18,6 +19,7 @@
             </div>
       </form>
       <?php
+      //Átírányítja az admint ahol hozzátud adni csapatot az adatbázisba
       if (!empty($_SESSION["admin"])) {
       ?>
             <br>
@@ -32,6 +34,7 @@
       <?php
       }
       ?>
+      <!--Csapatok megjelenítése-->
       <div id="btn">
             <?php
             $result = $conn->query("SELECT klubid,klubnev,ligaid FROM klubbok ORDER BY klubnev");
@@ -80,10 +83,10 @@
                               ?>
                                     <a style="color: white" ; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
                                           <i class="fas fa-trash mr-2"></i>
-                                    </a>
+                                    </a><!--Csapat törlés-->
                                     <a style="color: white" ; href="index.php?page=modositas&id2=<?php echo ($row['klubid']); ?>">
                                           <i class="fas fa-pencil"></i>
-                                    </a>
+                                    </a><!--Csapat módosítás-->
                               <?php
                               }
                               ?>

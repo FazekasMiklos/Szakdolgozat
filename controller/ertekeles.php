@@ -79,7 +79,7 @@ function setRatings($conn)
         }
     }
 }
-//A kiválasztott érték 
+//A kiválasztott érték mejelenítése
 function getRatings($conn)
 {
     if (isset($_GET['id'])) {
@@ -150,6 +150,7 @@ function getRatings($conn)
         }
     }
 }
+//Az összes felhasználó aki értékelt és az értékeléseik átlagának megjelenítése
 function getRatings2($conn)
 {
     if (isset($_GET['id'])) {

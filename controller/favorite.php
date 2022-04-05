@@ -1,4 +1,5 @@
 <?php
+//A kiválasztott játékos/csapat/liga/ország eltárolása
 function setFavorites($conn)
 {
     if (isset($_POST['kedvenc'])) {
@@ -90,6 +91,7 @@ function setFavorites($conn)
         }
     }
 }
+//A kiválasztott játékos/csapat/liga/országnál megjelenik egy csillag
 function getFavorites($conn)
 {
     if (isset($_GET['id'])) {

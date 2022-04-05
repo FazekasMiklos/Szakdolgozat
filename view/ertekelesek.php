@@ -18,6 +18,7 @@ include 'controller/ertekeles.php';
         <div class='d-flex justify-content-center'>
             <div id='adat3'>
                 <?php
+                //1-10 értékek megjelenítése
                 if (isset($_SESSION['userid']) or isset($_SESSION['admin'])) {
                     echo "<form method='POST' action='" . setRatings($conn) . "'>
     <input type='radio' id='e1' name='e1' value='1' checked>
@@ -44,13 +45,13 @@ include 'controller/ertekeles.php';
     <button type='submit' class='btn btn-success' style='color:white;' name='ertekelesSubmit'>Értékelés</button>
     </div><br>
     </form>";
-                    getRatings($conn);
+                    getRatings($conn);//kiválasztott érték megjelenítésének hivatkozása
                 } else {
                     echo "<div class='text-center'><h5><a href='index.php?page=login' style='color:white;'>Az értékeléshez be kell jelentkezned!</a></h5></div><br>";
                 }
                 echo "</div>";
                 echo "<div id='adat3'>";
-                getRatings2($conn);
+                getRatings2($conn);//Az összes felhasználó aki értékelt és az értékeléseik átlagának megjelenítésének hivatkozása
                 echo "</div>";
                 echo "</div>";
                 ?>

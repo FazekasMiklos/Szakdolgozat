@@ -9,6 +9,7 @@
     </audio>
   </h1>
   <div id="btn">
+    <!--Top 5 legtöbb gólt szerzett játékos megjelenítése-->
     <div id="reg">
       <h4>
         <div class="text-center" style='color:white;'>Góllövőlista</div>
@@ -35,12 +36,14 @@
         echo "<br>";
       }
       ?>
+      <!--Itt irányítja át a felhasználót arra az oldalra ahol megtudja tekinteni a teljes góllövőlistát-->
       <form action="index.php?page=lista" method="post" class="mx-2 my-auto d-inline w-100">
         <div class="text-center">
           <button class="btn btn-link" style='color:white;' type="submit" name="jatekosgollista">Teljes lista megtekintése</button>
         </div>
       </form>
     </div>
+    <!--Top 5 legtöbb gólpasszt szerzett játékos megjelenítése-->
     <div id="reg">
       <h4>
         <div class="text-center" style='color:white;'>Gólpasszlista</div>
@@ -67,12 +70,14 @@
         echo "<br>";
       }
       ?>
+      <!--Itt irányítja át a felhasználót arra az oldalra ahol megtudja tekinteni a teljes gólpasszlistát-->
       <form action="index.php?page=lista" method="post" class="mx-2 my-auto d-inline w-100">
         <div class="text-center">
           <button class="btn btn-link" style='color:white;' type="submit" name="jatekosassistlista">Teljes lista megtekintése</button>
         </div>
       </form>
     </div>
+    <!--Top 5 legtöbb védést mutatott játékos megjelenítése-->
     <div id="reg">
       <h4>
         <div class="text-center" style='color:white;'>Legtöbb védéslista</div>
@@ -99,12 +104,14 @@
         echo "<br>";
       }
       ?>
+      <!--Itt irányítja át a felhasználót arra az oldalra ahol megtudja tekinteni a teljes legtöbb védéslistát-->
       <form action="index.php?page=lista" method="post" class="mx-2 my-auto d-inline w-100">
         <div class="text-center">
           <button class="btn btn-link" style='color:white;' type="submit" name="jatekosvedeslista">Teljes lista megtekintése</button>
         </div>
       </form>
     </div>
+    <!--Top 5 legtöbb fifa scoreal rendelkező ország megjelenítése-->
     <div id="reg">
       <h4>
         <div class="text-center" style='color:white;'>Országok ranglista</div>
@@ -132,6 +139,7 @@
         echo "<br>";
       }
       ?>
+      <!--Itt irányítja át a felhasználót arra az oldalra ahol megtudja tekinteni a teljes országok ranglistát-->
       <form action="index.php?page=lista" method="post" class="mx-2 my-auto d-inline w-100">
         <div class="text-center">
           <button class="btn btn-link" style='color:white;' type="submit" name="ranglista">Teljes lista megtekintése</button>

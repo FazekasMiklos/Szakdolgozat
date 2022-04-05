@@ -1,6 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <div id="reg">
     <?php
+    //A felhasználó profiljának oldala ahol látszódik a profilképe,jelszava,email-e
     if (!empty($_SESSION["userid"])) {
     ?>
         <?php
@@ -50,7 +51,7 @@
     <?php
     }
     ?>
-    <a style="color: white" ; href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a>
-    <a style="color: white" ; href="index.php?page=profilepicdelete" title="Profile">Profilkép törlése<br><br></a>
-    <a style="color: white" ; href="index.php?page=profiledelete" title="Profile">Profil törlése<br><br></a>
+    <a style="color: white" ; href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol megtudja változtani az adatait-->
+    <a style="color: white" ; href="index.php?page=profilepicdelete" title="Profile">Profilkép törlése<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol eldöntheti hogy tényleg törli-e a profilképét-->
+    <a style="color: white" ; href="index.php?page=profiledelete" title="Profile">Profil törlése<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol eldöntheti hogy tényleg törli-e a profilját-->
 </div>

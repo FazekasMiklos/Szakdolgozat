@@ -19,6 +19,7 @@ include 'controller/komment.php';
     </div>
     <div id='komment'>
         <?php
+        //szövegmező megjelenítése
         if (isset($_SESSION['userid']) or isset($_SESSION['admin'])) {
             echo "<form method='POST' action='" . setComments($conn) . "'>
     <input type='hidden' name='date' value='" . date('Y-m-d H:i:s') . "'>
@@ -34,7 +35,7 @@ include 'controller/komment.php';
         }
         echo "<div class='d-flex justify-content-center'>
     <div id='komment2'>";
-        getComments($conn);
+        getComments($conn);//Az összes komment megjelenítésének hivatkozása
         echo "</div></div>";
         ?>
     </div>

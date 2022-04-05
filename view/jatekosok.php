@@ -7,6 +7,7 @@
 </head>
 
 <body>
+      <!--Külön kereső a játékosokra-->
       <form action="index.php?page=jatekos" method="post" class="form-inline justify-content-center my-2 my-lg-0" name="searchForm">
             <div id="kereso">
                   <div class="input-group">
@@ -18,6 +19,7 @@
             </div>
       </form>
       <?php
+      //Átírányítja az admint ahol hozzátud adni játékost az adatbázisba
       if (!empty($_SESSION["admin"])) {
       ?>
             <br>
@@ -32,6 +34,7 @@
       <?php
       }
       ?>
+      <!--Játékosok megjelenítése-->
       <div id="btn">
             <?php
             $result = $conn->query("SELECT * FROM jatekosok ORDER BY nev");
@@ -80,10 +83,10 @@
                               if (!empty($_SESSION["admin"])) {
                               ?>
                                     <a style="color: white" ; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
-                                          <i class="fas fa-trash mr-2"></i>
+                                          <i class="fas fa-trash mr-2"></i><!--Csapat törlés-->
                                     </a>
                                     <a style="color: white" ; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
-                                          <i class="fas fa-pencil"></i>
+                                          <i class="fas fa-pencil"></i><!--Csapat módosítás-->
                                     </a>
                               <?php
                               }
