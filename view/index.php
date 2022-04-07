@@ -4,9 +4,6 @@
 <body>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <h1 style="color: white;">Üdvözöllek a weboldalon<br>
-    <audio controls>
-      <source src="hang2.mp3" type="audio/mpeg">
-    </audio>
   </h1>
   <div id="btn">
     <!--Top 5 legtöbb gólt szerzett játékos megjelenítése-->
@@ -130,7 +127,7 @@
           echo ($row['orszagnev']);
           ?>
         </a>
-        <img src="data:image/jpg;charset=utf8;base64 , <?php echo base64_encode($row['zaszlok']); ?>" width="30" />
+        <img src="data:image/jpg;charset=utf8;base64 , <?php echo base64_encode($row['zaszlok']); ?>" width="25" />
       <?php
         echo "</span>";
         echo "<span class='float-right' style='color:white;'>";
