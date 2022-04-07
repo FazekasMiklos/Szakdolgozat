@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="HU">
-
-<head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <!--Regisztrációs panel-->
 <div id="reg">
 	<h1>Regisztráció</h1>
@@ -19,6 +11,3 @@
 		<input type='submit' class="btn mb-2" style="background-color:#228B22; color:white;" name='sentForm' id="sentForm" value="Regisztrálás" />
 	</form>
 </div>
-</body>
-
-</html>

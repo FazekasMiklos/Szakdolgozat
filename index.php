@@ -97,11 +97,6 @@ if (in_array($page, $menupontok)) {
 
 include 'includes/htmlheader.inc.php';
 ?>
-<!doctype html>
-
-<head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-</head>
 
 <body>
         <?php

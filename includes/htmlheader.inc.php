@@ -1,11 +1,9 @@
-<?php
-
-?>
 <!doctype html>
 <html lang="hu">
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $title; ?></title>
   <link rel="icon" type="image/x-icon" href="kepek/labda.png"><!--Favicon meghívása a title elé-->
   <link rel="stylesheet" type="text/css" href="view/style.css">

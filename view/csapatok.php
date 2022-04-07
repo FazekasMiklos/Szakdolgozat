@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="HU">
-
-<head>
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
       <!--Külön kereső a csapatokra-->
       <form action="index.php?page=csapat" method="post" class="form-inline justify-content-center my-2 my-lg-0" name="searchForm">
             <div id="kereso">
@@ -83,10 +74,12 @@
                               ?>
                                     <a style="color: white" ; href="index.php?page=torles&id2=<?php echo ($row['klubid']); ?>">
                                           <i class="fas fa-trash mr-2"></i>
-                                    </a><!--Csapat törlés-->
+                                    </a>
+                                    <!--Csapat törlés-->
                                     <a style="color: white" ; href="index.php?page=modositas&id2=<?php echo ($row['klubid']); ?>">
                                           <i class="fas fa-pencil"></i>
-                                    </a><!--Csapat módosítás-->
+                                    </a>
+                                    <!--Csapat módosítás-->
                               <?php
                               }
                               ?>
@@ -96,6 +89,3 @@
             }
             ?>
       </div>
-</body>
-
-</html>

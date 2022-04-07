@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<body>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <h1 style="color: white;">Üdvözöllek a weboldalon<br>
   </h1>
   <div id="btn">
@@ -143,6 +138,3 @@
         </div>
       </form>
     </div>
-</body>
-
-</html>

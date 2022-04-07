@@ -1,17 +1,7 @@
 <?php
 include 'controller/ertekeles.php';
 ?>
-<!DOCTYPE html>
-<html lang="HU">
-
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-    <div class='rating'>
+<div class='rating'>
         <div class='text-center'>
             <h2 style="color: white;">Értékelések<br></h2>
         </div>
@@ -56,6 +46,3 @@ include 'controller/ertekeles.php';
                 echo "</div>";
                 ?>
             </div>
-</body>
-
-</html>

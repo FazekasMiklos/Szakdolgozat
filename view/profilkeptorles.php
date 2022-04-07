@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="HU">
-
-<head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <div id="btn">
 	<div id="reg">
 		<!--Profilkép törlésének panelja ahol a felhasználó eldöntheti hogy tényleg kitörli a profilképét vagy nem-->
@@ -16,6 +8,3 @@
 		</form>
 	</div>
 </div>
-</body>
-
-</html>

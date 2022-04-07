@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <div id="reg">
     <?php
     //A felhasználó profiljának oldala ahol látszódik a profilképe,jelszava,email-e
