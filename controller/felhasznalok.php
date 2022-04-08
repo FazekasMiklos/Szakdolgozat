@@ -5,16 +5,16 @@
     while ($row = $result->fetch_assoc()) {
     ?>
         <div class="reg">
-            <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100" /><br>
+            <img alt="" src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100" /><br>
             <?php echo "Neve:" ?>
             <?php echo ($row['felhasznalonev']); ?><br>
             <?php echo "E-mail:" ?>
             <?php echo ($row['email']); ?><br>
             <?php echo "Felhasználó típusa:" ?>
             <?php echo ($row['level']); ?><br>
-            <a class="mx-4" style="color: white" ; href="index.php?page=felhasznalok&id=<?php echo ($row['userid']); ?>">Profil törlés</a>
-            <a style="color: white" ; href="index.php?page=felhasznalok&id3=<?php echo ($row['userid']); ?>">Profilkép törlés</a><br>
-            <a style="color: white" ; href="index.php?page=felhasznalok&id2=<?php echo ($row['userid']); ?>">Admin jogosultság hozzáadása/elvétele</a>
+            <a class="mx-4" style="color: white" href="index.php?page=felhasznalok&id=<?php echo ($row['userid']); ?>">Profil törlés</a>
+            <a style="color: white" href="index.php?page=felhasznalok&id3=<?php echo ($row['userid']); ?>">Profilkép törlés</a><br>
+            <a style="color: white" href="index.php?page=felhasznalok&id2=<?php echo ($row['userid']); ?>">Admin jogosultság hozzáadása/elvétele</a>
         </div>
     <?php
     }

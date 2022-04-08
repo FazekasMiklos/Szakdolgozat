@@ -8,7 +8,7 @@
     while ($row = $result->fetch_assoc()) {
     ?>
       <a class="navbar-brand">
-        <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60">
+        <img alt="" src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60">
       </a>
     <?php
     }
@@ -20,7 +20,7 @@
       while ($row = $result->fetch_assoc()) {
       ?>
         <a class="navbar-brand">
-          <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60">
+          <img alt="" src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="60" height="60">
         </a>
   <?php
       }

@@ -39,16 +39,16 @@ if (!empty($_SESSION["admin"])) {
       ?>
                         <div class="btm">
                               <?php echo "Név:"; ?><br>
-                              <a style="color: white" ; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
+                              <a style="color: white" href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
                                     <?php echo ($row['nev']); ?>
                               </a><br>
                               <?php
                               if (!empty($_SESSION["admin"])) {
                               ?>
-                                    <a style="color: white" ; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
+                                    <a style="color: white" href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
                                           <i class="fas fa-trash mr-2"></i>
                                     </a>
-                                    <a style="color: white" ; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
+                                    <a style="color: white" href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
                                           <i class="fas fa-pencil"></i>
                                     </a>
                               <?php
@@ -67,17 +67,17 @@ if (!empty($_SESSION["admin"])) {
             ?>
                   <div class="btm">
                         <?php echo "Név:"; ?><br>
-                        <a style="color: white" ; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
+                        <a style="color: white" href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
                               <?php echo ($row['nev']); ?>
                         </a><br>
                         <?php
                         if (!empty($_SESSION["admin"])) {
                         ?>
-                              <a style="color: white" ; href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
+                              <a style="color: white" href="index.php?page=torles&id=<?php echo ($row['jatekosid']); ?>">
                                     <i class="fas fa-trash mr-2"></i>
                                     <!--Csapat törlés-->
                               </a>
-                              <a style="color: white" ; href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
+                              <a style="color: white" href="index.php?page=modositas&id=<?php echo ($row['jatekosid']); ?>">
                                     <i class="fas fa-pencil"></i>
                                     <!--Csapat módosítás-->
                               </a>

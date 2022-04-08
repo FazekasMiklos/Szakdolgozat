@@ -3,9 +3,7 @@
   <div id="btn">
     <!--Top 5 legtöbb gólt szerzett játékos megjelenítése-->
     <div class="reg">
-      <h4>
-        <div class="text-center" style='color:white'>Góllövőlista</div>
-      </h4>
+        <div class="text-center" style='color:white'><h4>Góllövőlista</h4></div>
       <?php
       $sql = "SELECT * from jatekosok ORDER BY golok DESC LIMIT 5";
       $result = $conn->query($sql) or die;
@@ -37,9 +35,7 @@
     </div>
     <!--Top 5 legtöbb gólpasszt szerzett játékos megjelenítése-->
     <div class="reg">
-      <h4>
-        <div class="text-center" style='color:white;'>Gólpasszlista</div>
-      </h4>
+        <div class="text-center" style='color:white;'><h4>Gólpasszlista</h4></div>
       <?php
       $sql = "SELECT * from jatekosok ORDER BY golpasszok DESC LIMIT 5";
       $result = $conn->query($sql) or die;
@@ -49,7 +45,7 @@
       while ($row = $result->fetch_assoc()) {
         echo "<span class='float-left' style='color:white;'>";
       ?>
-        <a style="color: white" ; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
+        <a style="color: white" href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
           <?php
           echo ($row['nev']);
           ?>
@@ -71,9 +67,7 @@
     </div>
     <!--Top 5 legtöbb védést mutatott játékos megjelenítése-->
     <div class="reg">
-      <h4>
-        <div class="text-center" style='color:white;'>Legtöbb védéslista</div>
-      </h4>
+        <div class="text-center" style='color:white;'><h4>Legtöbb védéslista</h4></div>
       <?php
       $sql = "SELECT * from jatekosok ORDER BY vedesek DESC LIMIT 5";
       $result = $conn->query($sql) or die;
@@ -105,9 +99,7 @@
     </div>
     <!--Top 5 legtöbb fifa scoreal rendelkező ország megjelenítése-->
     <div class="reg">
-      <h4>
-        <div class="text-center" style='color:white;'>Országok ranglista</div>
-      </h4>
+        <div class="text-center" style='color:white;'><h4>Országok ranglista</h4></div>
       <?php
       $sql = "SELECT * from orszagok ORDER BY ranglista LIMIT 5";
       $result = $conn->query($sql) or die;
@@ -122,7 +114,7 @@
           echo ($row['orszagnev']);
           ?>
         </a>
-        <img src="data:image/jpg;charset=utf8;base64 , <?php echo base64_encode($row['zaszlok']); ?>" width="25" />
+        <img alt="" src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['zaszlok']);?>" width="25" />
       <?php
         echo "</span>";
         echo "<span class='float-right' style='color:white;'>";
@@ -137,4 +129,5 @@
           <button class="btn btn-link" style='color:white;' type="submit" name="ranglista">Teljes lista megtekintése</button>
         </div>
       </form>
+    </div>
     </div>

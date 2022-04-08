@@ -10,7 +10,7 @@
         while ($row = $result1->fetch_assoc()) {
             echo "Profilkép:";
         ?>
-            <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100" /><br><br>
+            <img alt="" src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100" /><br><br>
         <?php
         }
         ?>
@@ -35,7 +35,7 @@
         while ($row = $result1->fetch_assoc()) {
             echo "Profilkép:";
         ?>
-            <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100" /><br><br>
+            <img alt="" src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100" /><br><br>
         <?php
         }
         ?>
@@ -50,7 +50,7 @@
     <?php
     }
     ?>
-    <a style="color: white" ; href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol megtudja változtani az adatait-->
-    <a style="color: white" ; href="index.php?page=profilepicdelete" title="Profile">Profilkép törlése<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol eldöntheti hogy tényleg törli-e a profilképét-->
-    <a style="color: white" ; href="index.php?page=profiledelete" title="Profile">Profil törlése<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol eldöntheti hogy tényleg törli-e a profilját-->
+    <a style="color: white" href="index.php?page=profile" title="Profile">Adatok módosítása<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol megtudja változtani az adatait-->
+    <a style="color: white" href="index.php?page=profilepicdelete" title="Profile">Profilkép törlése<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol eldöntheti hogy tényleg törli-e a profilképét-->
+    <a style="color: white" href="index.php?page=profiledelete" title="Profile">Profil törlése<br><br></a><!--Itt irányítja át a felhasználót arra az oldalra ahol eldöntheti hogy tényleg törli-e a profilját-->
 </div>
