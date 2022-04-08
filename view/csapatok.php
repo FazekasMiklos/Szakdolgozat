@@ -36,7 +36,7 @@
                   if ($result2->num_rows > 0) {
                         while ($row = $result2->fetch_assoc()) {
             ?>
-                              <div id="btm">
+                              <div class="btm">
                                     <?php echo "Név:"; ?><br>
                                     <a style="color: white" ; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
                                           <?php echo ($row['klubnev']); ?></a>
@@ -57,14 +57,14 @@
                   <?php
                         }
                   } else {
-                        echo "<div id='reg'><h2><p style='color:white;'>Nincs ilyen csapat</p></h2></div>";
+                        echo "<div class='reg'><h2><p style='color:white;'>Nincs ilyen csapat</p></h2></div>";
                   }
             } else {
                   ?>
                   <?php
                   while ($row = $result->fetch_assoc()) {
                   ?>
-                        <div id="btm">
+                        <div class="btm">
                               <?php echo "Név:"; ?><br>
                               <a style="color: white" ; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
                                     <?php echo ($row['klubnev']); ?></a>

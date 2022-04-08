@@ -7,7 +7,7 @@ if (!empty($_GET['id'])) {
 ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label>Országa:</label><br>
                 <select name='orszag' class="form-control">
                     <?php
@@ -82,7 +82,7 @@ if (!empty($_GET['id2'])) {
     ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label for="user">Neve:</label><br>
                 <input type='text' name='nev' class="form-control" required /><br>
                 <label>Ligája:</label><br>
@@ -119,7 +119,7 @@ if (!empty($_GET['id3'])) {
     ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label>Neve:</label><br>
                 <input type='text' name='nev' class="form-control" required /><br><br>
                 <input type='submit' class='btn btn-outline-success my-2 my-sm-0' style='color:white;' name='liga' value="Módosítás" /><br>
@@ -145,7 +145,7 @@ if (!empty($_GET['id4'])) {
     ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label>Neve:</label><br>
                 <input type='text' name='nev' class="form-control" required /><br>
                 <label>Ranglista helyezése:</label><br>

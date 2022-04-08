@@ -1,4 +1,4 @@
-<div id="reg">
+<div class="reg">
     <h1>Találatok:</h1>
     <?php
     //keresés játékos/csapat/liga/országra

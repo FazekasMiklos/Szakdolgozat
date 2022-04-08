@@ -14,11 +14,11 @@ if (isset($_GET['id4'])) {
                                     include 'view/kedvencek.php'; ?></h1>
     </div>
     <div id="btn">
-        <div id="reg">
+        <div class="reg">
             <h3><?php echo "Világranglistahelyezése:"; ?><br>
                 <?php echo ($row['ranglista']); ?></h3>
         </div>
-        <div id="reg"><?php echo "Az ország játékosai:"; ?><br>
+        <div class="reg"><?php echo "Az ország játékosai:"; ?><br>
             <a style="color: white" ; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
                 <?php
                 if ($result1->num_rows > 0) {

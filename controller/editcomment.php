@@ -2,7 +2,7 @@
 date_default_timezone_set('Europe/Budapest');
 include 'controller/komment.php';
 ?>
-<div id='adat'>
+<div class='adat'>
     <?php
     //A beírt szöveg felülírása egy új szöveggel 
     $cid = $_POST['id'];

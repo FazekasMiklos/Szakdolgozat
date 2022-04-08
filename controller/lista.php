@@ -1,4 +1,4 @@
-<div id="reg">
+<div class="reg">
     <?php
     //játékos lista gólok alapján
     if (isset($_POST['jatekosgollista'])) {

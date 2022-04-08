@@ -7,7 +7,7 @@ if (isset($_POST['jatekosfelvitel'])) {
 ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label>Országa:</label><br>
                 <select name='orszag' class="form-control">
                     <?php
@@ -78,7 +78,7 @@ if (isset($_POST['csapatfelvitel'])) {
 ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label>Ligája:</label><br>
                 <select name='liga' class="form-control">
                     <?php
@@ -112,7 +112,7 @@ if (isset($_POST['ligafelvitel'])) {
 ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label>Országa:</label><br>
                 <select name='orszag' class="form-control">
                     <?php
@@ -149,7 +149,7 @@ if (isset($_POST['orszagfelvitel'])) {
 ?>
     <form method='POST' enctype="multipart/form-data">
         <div id="btn">
-            <div id="reg">
+            <div class="reg">
                 <label>Ország ID:</label><br>
                 <input type='text' name='id' class="form-control" required /><br>
                 <label>Neve:</label><br />

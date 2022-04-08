@@ -1,4 +1,4 @@
-<div id="reg">
+<div class="reg">
 	<h2>Profilkép feltöltés</h2>
 	<!--Profilkép beállításának panelja-->
 	<form action='index.php?page=upload' method='POST' enctype="multipart/form-data">

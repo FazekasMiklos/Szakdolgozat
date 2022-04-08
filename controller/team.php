@@ -16,11 +16,11 @@ if (isset($_GET['id2'])) {
                                     ?></h1>
     </div>
     <div id="btn">
-        <div id="reg"><?php echo "A csapat ligája:"; ?><br>
+        <div class="reg"><?php echo "A csapat ligája:"; ?><br>
             <a style="color: white" ; href="index.php?page=league&id3=<?php echo ($row['ligaid']); ?>">
                 <?php echo ($row['liganev']); ?><br></a>
         </div>
-        <div id="reg"><?php echo "A csapat játékosai:"; ?><br>
+        <div class="reg"><?php echo "A csapat játékosai:"; ?><br>
             <a style="color: white" ; href="index.php?page=player&id=<?php echo ($row1['jatekosid']); ?>">
                 <?php
                 if ($result1->num_rows > 0) {

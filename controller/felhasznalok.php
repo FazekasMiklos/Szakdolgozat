@@ -4,7 +4,7 @@
     $result = $conn->query("SELECT * FROM felhasznalok INNER JOIN profilkepek ON (profilkepek.userid=felhasznalok.userid) WHERE NOT felhasznalok.userid = '" . $_SESSION["admin"] . "'ORDER BY felhasznalonev");
     while ($row = $result->fetch_assoc()) {
     ?>
-        <div id="reg">
+        <div class="reg">
             <img src="<?php echo 'kepek/profilkepek/' . $row['name']; ?>" class="rounded-circle" width="100" height="100" /><br>
             <?php echo "Neve:" ?>
             <?php echo ($row['felhasznalonev']); ?><br>

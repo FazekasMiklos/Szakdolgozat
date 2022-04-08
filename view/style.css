@@ -3,7 +3,7 @@
     flex-wrap: wrap;
 }
 
-#btm {
+.btm {
     background-color: rgba(0, 0, 0, 0.5);
     width: 10%;
     margin: 30px auto;
@@ -19,7 +19,7 @@ body {
     background-size: cover;
 }
 
-#reg {
+.reg {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     text-align: center;
@@ -36,7 +36,7 @@ body {
     text-align: center;
 }
 
-#adat {
+.adat {
     text-align: center;
     width: 20%;
     padding: 10px;
@@ -138,7 +138,7 @@ h1 {
 
 @media only screen and (max-width:700px) {
 
-    #adat,
+    .adat,
     #komment2,
     .rating,
     #kozep,
@@ -156,8 +156,8 @@ h1 {
 
 @media only screen and (max-width:1300px) {
 
-    #btm,
-    #reg,
+    .btm,
+    .reg,
     #kereso {
         width: 100%;
     }

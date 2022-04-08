@@ -1,5 +1,5 @@
 <!--Regisztrációs panel-->
-<div id="reg">
+<div class="reg">
 	<h1>Regisztráció</h1>
 	<form action='index.php?page=register' method='POST'>
 		<label>Felhasználónév:</label><br>

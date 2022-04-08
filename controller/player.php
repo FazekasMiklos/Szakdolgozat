@@ -13,25 +13,25 @@
          </div>
      </div><br>
      <div id="btn">
-         <div id="adat"><?php echo "Született:"; ?><br>
+         <div class="adat"><?php echo "Született:"; ?><br>
              <?php echo ($row['szuletesidatum']); ?><br></div>
-         <div id="adat"><?php echo "Lejátszott mérkőzései:"; ?><br>
+         <div class="adat"><?php echo "Lejátszott mérkőzései:"; ?><br>
              <?php echo ($row['merkozesek']); ?><br></div>
-         <div id="adat"><?php echo "Góljainak száma:"; ?><br>
+         <div class="adat"><?php echo "Góljainak száma:"; ?><br>
              <?php echo ($row['golok']); ?><br></div>
-         <div id="adat"><?php echo "Gólpasszainak száma:"; ?><br>
+         <div class="adat"><?php echo "Gólpasszainak száma:"; ?><br>
              <?php echo ($row['golpasszok']); ?><br></div>
-         <div id="adat"> <?php echo "Védéseinek száma:"; ?><br>
+         <div class="adat"> <?php echo "Védéseinek száma:"; ?><br>
              <?php echo ($row['vedesek']); ?><br></div>
-         <div id="adat"> <?php echo "Nemzetisége:"; ?><br>
+         <div class="adat"> <?php echo "Nemzetisége:"; ?><br>
              <a style="color: white" ; href="index.php?page=country&id4=<?php echo ($row['orszagid']); ?>">
                  <?php echo ($row['orszagnev']); ?><br></a>
          </div>
-         <div id="adat"> <?php echo "Jelenlegi klubja:"; ?><br>
+         <div class="adat"> <?php echo "Jelenlegi klubja:"; ?><br>
              <a style="color: white" ; href="index.php?page=team&id2=<?php echo ($row['klubid']); ?>">
                  <?php echo ($row['klubnev']); ?><br></a>
          </div>
-         <div id="adat"> <?php echo "Posztja:"; ?><br>
+         <div class="adat"> <?php echo "Posztja:"; ?><br>
              <?php echo ($row['poznev']); ?><br></div>
      </div>
  <?php

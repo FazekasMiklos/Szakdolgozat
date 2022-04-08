@@ -1,7 +1,7 @@
 <!--A felhasználó itt tudja bevinni az új jelszavát/felhasználónevét/emailjét-->
 <form action='index.php?page=profile' method='POST' enctype="multipart/form-data">
 	<div id="btn">
-		<div id="reg">
+		<div class="reg">
 			<h2>Adatok módosítása</h2>
 			<label for="user">Felhasználónév:</label> <br />
 			<input type='text' name='user' id="user" required /><br />

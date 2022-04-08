@@ -9,13 +9,13 @@ if (isset($_GET['id3'])) {
     $row = mysqli_fetch_array($result);
     $row2 = mysqli_fetch_array($result2);
 ?>
-    <div id='komment3'>
+    <viv class='komment3'>
         <h1 style="color: white;"><?php echo ($row2['liganev']);
                                     include 'view/kedvencek.php'; //meghívom a kinézetet 
                                     ?></h1>
     </div>
     <div id="btn">
-        <div id="reg"><?php echo "A liga csapatai:"; ?><br>
+        <div class="reg"><?php echo "A liga csapatai:"; ?><br>
             <?php
             if ($result->num_rows > 0) {
             ?>

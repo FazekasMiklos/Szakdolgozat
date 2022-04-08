@@ -40,12 +40,10 @@
         if ($key == 'felhasznalo') $key .= '&action=' . $action;
         ob_start();
       ?>
-        <div id="kozep">
           <li class="nav-item<?php echo $active; ?>">
             <a class="nav-link" style="color: white;" href="index.php?page=<?php echo $key; ?>"><?php echo $value; ?>
             </a>
           </li>
-        </div>
       <?php
       }
       ob_start();

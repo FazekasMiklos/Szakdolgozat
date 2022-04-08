@@ -37,7 +37,7 @@ if (!empty($_SESSION["admin"])) {
             if ($result2->num_rows > 0) {
                   while ($row = $result2->fetch_assoc()) {
       ?>
-                        <div id="btm">
+                        <div class="btm">
                               <?php echo "Név:"; ?><br>
                               <a style="color: white" ; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
                                     <?php echo ($row['nev']); ?>
@@ -58,14 +58,14 @@ if (!empty($_SESSION["admin"])) {
             <?php
                   }
             } else {
-                  echo "<div id='reg'><h2><p style='color:white;'>Nincs ilyen játékos</p></h2></div>";
+                  echo "<div class='reg'><h2><p style='color:white;'>Nincs ilyen játékos</p></h2></div>";
             }
       } else {
             ?>
             <?php
             while ($row = $result->fetch_assoc()) {
             ?>
-                  <div id="btm">
+                  <div class="btm">
                         <?php echo "Név:"; ?><br>
                         <a style="color: white" ; href="index.php?page=player&id=<?php echo ($row['jatekosid']); ?>">
                               <?php echo ($row['nev']); ?>

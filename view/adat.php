@@ -1,4 +1,4 @@
-<div id="reg">
+<div class="reg">
     <?php
     //A felhasználó profiljának oldala ahol látszódik a profilképe,jelszava,email-e
     if (!empty($_SESSION["userid"])) {

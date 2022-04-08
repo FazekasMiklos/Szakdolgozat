@@ -3,7 +3,7 @@
 if (isset($_POST['user']))
         echo $loginError;
 ?>
-<div id="reg">
+<div class="reg">
         <h1>Bejelentkezés</h1>
         <form name="f1" action="index.php?page=login" method="post">
                 <label> Felhasználó: </label>

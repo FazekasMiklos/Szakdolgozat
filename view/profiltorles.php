@@ -1,5 +1,5 @@
 <div id="btn">
-	<div id="reg">
+	<div class="reg">
 		<!--Profilkép törlésének panelja ahol a felhasználó eldöntheti hogy tényleg kitörli a profilját vagy nem-->
 		<form action='index.php?page=profiledelete' method='POST'>
 			<label for="user">Biztos hogy törölni akarod a profilod?</label> <br />
